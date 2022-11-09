@@ -13,6 +13,11 @@ Key learnings
   > npx create-react-app my-app --template typescript
  Make sure to change the 'my-app' bit 'todo-app' (or something that you want to name it to)
  
+ - Create a new folder in src called components, and create a Home component, can return empty fragments for now.
+ - in App.tsx
+   - Replace boiler plate code with the home component
+   - Remove css import, then delete the file app.css file
+ 
  ## Make some base components
   - todo: add list of compoennts
  
