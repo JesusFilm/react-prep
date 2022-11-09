@@ -1,0 +1,31 @@
+# Todo app
+
+This is to consolidate learnings to be ready to contribute to CORE. This project will be built off the knowledge from the previous modules in a way that it is more alinged to the CORE project.
+Key learnings
+ - Typescript
+ - Material UI
+ - UseState/ UseEffect react hooks
+ - Async await / callbacks
+ - Unit tests
+ 
+ ## Create typescript project
+ In the terminal (confirm you're in the correct folder you want to be in, `ls`) paste
+  > npx create-react-app my-app --template typescript
+ Make sure to change the 'my-app' bit 'todo-app' (or something that you want to name it to)
+ 
+ ## Make some base components
+  - todo: add list of compoennts
+ 
+ ## Use MUI to fill out the base components
+  - Import MUI
+  
+ ## Use state
+ 
+ ## Use effect
+ 
+ ## Async await
+ 
+ ## Unit tests
+ 
+ 
+  
