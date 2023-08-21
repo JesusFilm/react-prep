@@ -4,7 +4,7 @@ This is to consolidate learnings from the previous modules and to prepare you fo
 
 There are intentional gaps left in the instructions, try to figure out what you should do to make something work. Ask for help if you get stuck on a problem for over an how though.
 
-> We are writting `functional react components`. Some of the videos may mention `class based components`, those places can be skipepd.
+> We are writing `functional react components`. Some of the videos may mention `class based components`, those places can be skipped.
 
 Key learnings
 
@@ -15,6 +15,6 @@ Key learnings
 - [Unit tests](./5-UnitTests.md)
 - [Storybook](./6-Storybook.md)
 
-If youu complete all the tasks ahead of time, have a look at this stretch goals
+If you complete all the tasks ahead of time, have a look at this stretch goals
 
 - [Stretch material](./7-Strectch.md)

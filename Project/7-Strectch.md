@@ -4,11 +4,11 @@ Just some things to challenge you if you finished all the other tasks already.
 
 ## 1. Styling
 
-Are your compoents styled? Is it something you would show someone? Use the `sx` prop to add additonal styling. Make use of flex box for the layout of the page.
+Are your components styled? Is it something you would show someone? Use the `sx` prop to add additional styling. Make use of flex box for the layout of the page.
 
 ## 2. Dialog
 
-The form should be seperated from the task list. Convert the `Form` component into a `Dialog` compoent.
+The form should be separated from the task list. Convert the `Form` component into a `Dialog` component.
 
 ## 3. Reward
 

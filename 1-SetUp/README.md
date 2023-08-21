@@ -1,6 +1,6 @@
 # First things first
 
-## Get the tools
+## Get the tools (1hr)
 
 We use [Visual Studio Code](https://code.visualstudio.com/) with the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension. This lets you use a [Docker container](https://docker.com/) as a full-featured development environment. A devcontainer.json file in Core tells VS Code how to access (or create) a development container with a well-defined tool and runtime stack.
 
@@ -40,7 +40,7 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
 1. Click 'Apply & Restart'
 </details>
 
-## Github
+## Github (30min)
 
 [Why is version control important?](https://www.youtube.com/watch?v=uUuTYDg9XoI&ab_channel=CodemySchool)
 

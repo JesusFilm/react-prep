@@ -6,7 +6,7 @@ A few key practical differences:
 
 - A react component should always start with a **capital letter**
 - Instead of `.js`, use `.jsx`. This lets vscode know its a react file
-- Because this is a react app, your console logs won't be logged in the termnial anymore, it will appear in your browser
+- Because this is a react app, your console logs won't be logged in the terminal anymore, it will appear in your browser
   > 1. Run your project, and open in the browser
   > 2. Right click and click `inspect`
   > 3. Select the `Console`
@@ -29,7 +29,7 @@ A few key practical differences:
       <Logo />
       <Header />
     </div>
-  );
+  )
   ```
 
 > If the exercise below is looking a little confusing have a go at a few [freeCodeCamp](https://www.freecodecamp.org/learn/front-end-development-libraries#react) exercises first!
@@ -38,7 +38,7 @@ A few key practical differences:
 
 <br />
 
-# Paws for Effect (4hrs)
+# Paws for Effect (8hrs)
 
 This exercise walks you through the basics of React development. By the end of it, you should have been exposed to:
 
@@ -73,7 +73,7 @@ And now have a look at `src/components/Logo/Logo.jsx`, now's where we start seei
 
 ```jsx
 export function Logo() {
-  return <img className="spinner" src="/images/paw.png" alt="spinner" />;
+  return <img className="spinner" src="/images/paw.png" alt="spinner" />
 }
 ```
 
@@ -99,7 +99,7 @@ export function Dog(props) {
         <span className="dog-superpower">{props.superpower}</span>
       </div>
     </div>
-  );
+  )
 }
 ```
 
@@ -113,10 +113,10 @@ Here, `name`, `breed`, and `superpower` are _props_. The `Dog` component will re
 
 ```js
 const props = {
-  name: "Desdemona",
-  breed: "Bulldog",
-  superpower: "Heat vision",
-};
+  name: 'Desdemona',
+  breed: 'Bulldog',
+  superpower: 'Heat vision',
+}
 ```
 
 When we refer to a prop in JSX we have to put it inside curly braces, like so:
@@ -128,7 +128,7 @@ When we refer to a prop in JSX we have to put it inside curly braces, like so:
 One last thing before we try out our component, make a file called `index.js`, also in the same folder (`src/components/Dog`) and paste the following in.
 
 ```js
-export { Dog } from "./Dog";
+export { Dog } from './Dog'
 ```
 
 This just makes our component easier to be imported and used.
@@ -142,7 +142,7 @@ This just makes our component easier to be imported and used.
 In `App.jsx`, import your new Dog component:
 
 ```js
-import { Dog } from "./components/Dog";
+import { Dog } from './components/Dog'
 ```
 
 and add a Dog tag (use Desdemona, above if you like). The JSX returned should look something like this:
@@ -188,7 +188,7 @@ The `server/public/images` directory contains a few dog silhouettes. Try modifyi
 
 Now by yourself add 2 more dogs to your app component.
 
-> As developers we want to be efficent with our code. Adding a few more dogs may be no problem, but what if we want 10 more? What if 100 more? This is where all our javascript practise comes into use!
+> As developers we want to be efficient with our code. Adding a few more dogs may be no problem, but what if we want 10 more? What if 100 more? This is where all our javascript practice comes into use!
 
 ### 5.2 DogList
 
@@ -202,14 +202,14 @@ Example of array being passed in
 ```jsx
 const array = [
   {
-    firstName: "John",
-    lastName: "Doe",
+    firstName: 'John',
+    lastName: 'Doe',
   },
   {
-    firstName: "Jane",
-    lastName: "Doe",
+    firstName: 'Jane',
+    lastName: 'Doe',
   },
-];
+]
 ```
 
 Using javascript in the `return` of the function
@@ -248,4 +248,4 @@ Create your array of dog objects and call it `DogsArray`, and pass it into your 
 
 <br/>
 
-_These exercies are adapted from resoruces used by [Enspiral Dev Academy](https://devacademy.co.nz/?gclid=CjwKCAjw4c-ZBhAEEiwAZ105Re-c0454ENn1Hm-4VD-Z0JQEVPt1Ul30ODpbw2m26cHs-oi7_KEtihoCZNEQAvD_BwE) under the [ISC](https://opensource.org/licenses/ISC) license._
+_These exercises are adapted from resources used by [Enspiral Dev Academy](https://devacademy.co.nz/?gclid=CjwKCAjw4c-ZBhAEEiwAZ105Re-c0454ENn1Hm-4VD-Z0JQEVPt1Ul30ODpbw2m26cHs-oi7_KEtihoCZNEQAvD_BwE) under the [ISC](https://opensource.org/licenses/ISC) license._

@@ -1,6 +1,6 @@
 # What its all led to (4hrs +)
 
-Now that we've created a react app together, its time for you to havw a go yourself. Try out one of the ideas below, or come up with one yourself!
+Now that we've created a react app together, its time for you to have a go yourself. Try out one of the ideas below, or come up with one yourself!
 
 > If you find your self getting stuck, try scour youtube for some tutorials of your project. Eg [react todo app](https://www.youtube.com/watch?v=E1E08i2UJGI)
 
@@ -18,7 +18,7 @@ Spend as long (or short) as you want on this. Remember, _be curious_, and have s
 
 1. Create a new repo on github
 2. Open the repo on your VS code
-3. Run the following command to create your react app, follow the promts from the termnial.
+3. Run the following command to create your react app, follow the prompts from the terminal.
    ```
    npx create-react-app my-app
    ```

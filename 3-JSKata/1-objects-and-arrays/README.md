@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this exercise we'll practise some of the fundamentals of JavaScript and start learning about automated testing. We're going to start getting used to seeing tests coloured RED, and writing code to make them go GREEN.
+In this exercise we'll practice some of the fundamentals of JavaScript and start learning about automated testing. We're going to start getting used to seeing tests coloured RED, and writing code to make them go GREEN.
 
 ## Installation
 
@@ -84,7 +84,7 @@ Ok, so it wants us to return a string using the input parameter `name`. Let's so
 
 ```js
 function getGreeting(name) {
-  return "Hello " + name;
+  return 'Hello ' + name
 }
 ```
 
@@ -105,7 +105,7 @@ Watch Usage: Press w to show more.
 
 Now you should press the `q` key in the terminal to stop the test runner (`w` will show you all the options) and you can move on to the next function.
 
-This way we can practise the basics of JavaScript and build up our muscle memory:
+This way we can practice the basics of JavaScript and build up our muscle memory:
 
 1.  read what the next function is supposed to do
 1.  run the tests using `npm test nameOfTheFunctionYoureWorkingOn`

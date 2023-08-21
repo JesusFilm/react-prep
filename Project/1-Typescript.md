@@ -4,7 +4,7 @@
 
 ## Create typescript project
 
-1. In your ternmail paste in the following command.
+1. In your terminal paste in the following command.
 
 ```
 npx create-react-app my-app --template typescript
@@ -12,7 +12,7 @@ npx create-react-app my-app --template typescript
 
 _Be sure to update the project name_
 
-2. Remove the uneeded boilerplate code from `App.tsx`
+2. Remove the unneeded boilerplate code from `App.tsx`
 
    - Remove everything from between the header tags
    - Remove the css file import
@@ -31,9 +31,9 @@ _Be sure to update the project name_
 
 In the `src` folder create a folder called `components`.
 
-- For each new component you must create a new sub folder with the title of that compoennt.
+- For each new component you must create a new sub folder with the title of that component.
 
-- The contens of should have the component itself as well as a index file that exports the component.
+- The contents of should have the component itself as well as a index file that exports the component.
 
 - The component return type should be `ReactElement`
 
