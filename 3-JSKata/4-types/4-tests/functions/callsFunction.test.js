@@ -1,12 +1,12 @@
-const functions = require("../../functions");
+const functions = require('../../functions')
 
-test("functions.callsFunction takes a function as a parameter and calls it once", function () {
-  let actual = 0;
-  const expected = 1;
+test('functions.callsFunction takes a function as a parameter and calls it once', function () {
+  let actual = 0
+  const expected = 1
 
   function increment() {
-    actual++;
+    actual++
   }
-  functions.callsFunction(increment);
-  expect(actual).toBe(expected);
-});
+  functions.callsFunction(increment)
+  expect(actual).toBe(expected)
+})
