@@ -12,7 +12,7 @@ This kata is similar to the others. Some tests have been written in the `tests` 
 
   ```js
   function getType(thing) {
-    return typeof thing;
+    return typeof thing
   }
   ```
 
