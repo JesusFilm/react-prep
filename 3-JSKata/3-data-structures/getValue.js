@@ -1,3 +1,3 @@
 function getValue(obj, key) {}
 
-module.exports = getValue;
+module.exports = getValue

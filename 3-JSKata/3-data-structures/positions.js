@@ -5,4 +5,4 @@ function getLast(arr) {}
 module.exports = {
   getFirst,
   getLast,
-};
+}

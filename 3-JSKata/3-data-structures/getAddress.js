@@ -1,3 +1,5 @@
-function getAddress(obj) {}
+function getAddress(obj) {
+  return obj.address
+}
 
-module.exports = getAddress;
+module.exports = getAddress
