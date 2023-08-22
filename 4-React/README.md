@@ -166,7 +166,7 @@ You should see something like this in the browser:
 
 ## 4. The Subtitle component
 
-Try it yourself. Define a component called `Subtitle` that takes just one prop, `text`, and wraps it in `<h2>` tags. Import it in the App component and use it like so:
+Try it yourself. Define a component called `Subtitle` that takes just one prop, `text`, and wraps it in `<h2>` tags. Import it in the Main component and use it like so:
 
 ```jsx
   <Logo />
