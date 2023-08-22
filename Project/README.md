@@ -2,7 +2,7 @@
 
 This is to consolidate learnings from the previous modules and to prepare you for contributing to the CORE project.
 
-There are intentional gaps left in the instructions, try to figure out what you should do to make something work. Ask for help if you get stuck on a problem for over an how though.
+There are intentional gaps left in the instructions, try to figure out what you should do to make something work. Ask for help if you get stuck on a problem for over an hour though.
 
 > We are writing `functional react components`. Some of the videos may mention `class based components`, those places can be skipped.
 
