@@ -126,4 +126,4 @@ module.exports = {
   returnErrorIfFalsy,
   unzipObject,
   zipObject,
-};
+}

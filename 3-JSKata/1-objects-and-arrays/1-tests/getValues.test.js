@@ -1,23 +1,23 @@
-const kata = require("../kata.js");
+const kata = require('../kata.js')
 
-test("getValues returns own values for an object", () => {
+test('getValues returns own values for an object', () => {
   // Arrange
   const dracula = {
-    name: "Count Dracula",
-    email: "dracula@hotmail.com",
-    password: "12345",
-    country: "Transylvania",
-  };
+    name: 'Count Dracula',
+    email: 'dracula@hotmail.com',
+    password: '12345',
+    country: 'Transylvania',
+  }
   const expected = [
-    "Count Dracula",
-    "dracula@hotmail.com",
-    "12345",
-    "Transylvania",
-  ];
+    'Count Dracula',
+    'dracula@hotmail.com',
+    '12345',
+    'Transylvania',
+  ]
 
   // Act
-  const actual = kata.getValues(dracula);
+  const actual = kata.getValues(dracula)
 
   // Assert
-  expect(actual).toEqual(expected);
-});
+  expect(actual).toEqual(expected)
+})

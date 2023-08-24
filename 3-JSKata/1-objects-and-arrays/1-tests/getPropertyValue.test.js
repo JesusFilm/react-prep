@@ -1,12 +1,12 @@
-const kata = require("../kata.js");
+const kata = require('../kata.js')
 
-test("getPropertyValue gets values from objects", () => {
+test('getPropertyValue gets values from objects', () => {
   // Arrange
-  const expected = 21;
+  const expected = 21
 
   // Act
-  const actual = kata.getPropertyValue({ age: 21 }, "age");
+  const actual = kata.getPropertyValue({ age: 21 }, 'age')
 
   // Assert
-  expect(actual).toBe(expected);
-});
+  expect(actual).toBe(expected)
+})

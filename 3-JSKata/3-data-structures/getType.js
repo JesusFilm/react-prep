@@ -1,3 +1,3 @@
 function getType(thing) {}
 
-module.exports = getType;
+module.exports = getType

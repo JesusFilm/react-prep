@@ -1,3 +1,3 @@
 function find(arr, searchDetails) {}
 
-module.exports = find;
+module.exports = find

@@ -1,3 +1,3 @@
 function where(arr, searchDetails) {}
 
-module.exports = where;
+module.exports = where

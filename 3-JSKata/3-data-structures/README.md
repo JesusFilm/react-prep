@@ -4,7 +4,7 @@ This challenge is designed to practice interacting with JavaScript objects, pull
 
 ## The first test
 
-Hopefuly you're getting used tothe flow of completing these activities now, have a look back at the other projects for a refresher.
+Hopefully you're getting used to the flow of completing these activities now, have a look back at the other projects for a refresher.
 
 ## Next steps
 

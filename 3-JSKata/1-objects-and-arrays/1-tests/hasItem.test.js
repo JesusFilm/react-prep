@@ -1,23 +1,23 @@
-const kata = require("../kata.js");
+const kata = require('../kata.js')
 
-test("hasItem returns true if item is in array", () => {
+test('hasItem returns true if item is in array', () => {
   // Arrange
-  const arr = ["a", 1, null, true];
+  const arr = ['a', 1, null, true]
 
   // Act
-  const actual = kata.hasItem(arr, "a");
+  const actual = kata.hasItem(arr, 'a')
 
   // Assert
-  expect(actual).toBe(true);
-});
+  expect(actual).toBe(true)
+})
 
-test("hasItem returns false if item is not in array", () => {
+test('hasItem returns false if item is not in array', () => {
   // Arrange
-  const arr = ["a", 1, null, true];
+  const arr = ['a', 1, null, true]
 
   // Act
-  const actual = kata.hasItem(arr, "b");
+  const actual = kata.hasItem(arr, 'b')
 
   // Assert
-  expect(actual).toBe(false);
-});
+  expect(actual).toBe(false)
+})

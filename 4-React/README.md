@@ -6,7 +6,7 @@ A few key practical differences:
 
 - A react component should always start with a **capital letter**
 - Instead of `.js`, use `.jsx`. This lets vscode know its a react file
-- Because this is a react app, your console logs won't be logged in the termnial anymore, it will appear in your browser
+- Because this is a react app, your console logs won't be logged in the terminal anymore, it will appear in your browser
   > 1. Run your project, and open in the browser
   > 2. Right click and click `inspect`
   > 3. Select the `Console`
@@ -29,16 +29,16 @@ A few key practical differences:
       <Logo />
       <Header />
     </div>
-  );
+  )
   ```
 
 > If the exercise below is looking a little confusing have a go at a few [freeCodeCamp](https://www.freecodecamp.org/learn/front-end-development-libraries#react) exercises first!
 >
-> - Complete: Create a Simple JSX Element - Create a Stateless Functional Component
+> - Complete from `Create a Simple JSX Element` to `Create a Stateless Functional Component`
 
 <br />
 
-# Paws for Effect (4hrs)
+# Paws for Effect (8hrs)
 
 This exercise walks you through the basics of React development. By the end of it, you should have been exposed to:
 
@@ -56,7 +56,7 @@ After navigating to this folder in your terminal:
 
 ```shell
 npm i
-npm start
+npm run dev
 ```
 
 ![Spinning paw](/4-React/public/screenshots/paw.png)
@@ -65,15 +65,15 @@ npm start
 
 ## 2. The Project Structure
 
-Take a look at `src/index.js`, this is the main "entry point" of our app.
+Take a look at `app/page.js`, this is the main "entry point" of our app.
 
-From there have a look at `src/App.jsx`. This is the main file thats going to contain all our components. Kinda boring right, but I promise it'll get more exciting.
+From there have a look at `src/components/Main/Main.jsx`. This is the main file thats going to contain all our components. Kinda simple right, but I promise it'll get more exciting.
 
 And now have a look at `src/components/Logo/Logo.jsx`, now's where we start seeing some action! You should see the code below:
 
 ```jsx
 export function Logo() {
-  return <img className="spinner" src="/images/paw.png" alt="spinner" />;
+  return <img src="/images/paw.png" alt="spinner" className="spinner" />
 }
 ```
 
@@ -85,7 +85,7 @@ You are looking at a functional react component! Instead of showing a web page i
 
 ### 3.1 Let's make a component now
 
-In your editor, open the `src/components/Dog` directory, and make a new component called `Dog.jsx` there:
+In your editor, open the `src/components`, create a new `Dog` folder here, and make a new component called `Dog.jsx`:
 
 ```jsx
 export function Dog(props) {
@@ -99,11 +99,11 @@ export function Dog(props) {
         <span className="dog-superpower">{props.superpower}</span>
       </div>
     </div>
-  );
+  )
 }
 ```
 
-Copy/paste will do for this one. Notice that it looks a lot like `App.jsx`, except there are a few extra tags and we're making use of _props_. The props come from what we would normally think of as 'attributes' on the component's tag in JSX:
+Copy/paste will do for this one. Notice that it looks a lot like `pages.js`, except there are a few extra tags and we're making use of _props_. The props come from what we would normally think of as 'attributes' on the component's tag in JSX:
 
 ```jsx
 <Dog name="Desdemona" breed="Bulldog" superpower="Heat vision" />
@@ -113,10 +113,10 @@ Here, `name`, `breed`, and `superpower` are _props_. The `Dog` component will re
 
 ```js
 const props = {
-  name: "Desdemona",
-  breed: "Bulldog",
-  superpower: "Heat vision",
-};
+  name: 'Desdemona',
+  breed: 'Bulldog',
+  superpower: 'Heat vision',
+}
 ```
 
 When we refer to a prop in JSX we have to put it inside curly braces, like so:
@@ -128,7 +128,7 @@ When we refer to a prop in JSX we have to put it inside curly braces, like so:
 One last thing before we try out our component, make a file called `index.js`, also in the same folder (`src/components/Dog`) and paste the following in.
 
 ```js
-export { Dog } from "./Dog";
+export { Dog } from './Dog'
 ```
 
 This just makes our component easier to be imported and used.
@@ -139,16 +139,16 @@ This just makes our component easier to be imported and used.
 
 ### 3.2 Time to try it out
 
-In `App.jsx`, import your new Dog component:
+In `Main.jsx`, import your new Dog component:
 
 ```js
-import { Dog } from "./components/Dog";
+import { Dog } from '../Dog'
 ```
 
 and add a Dog tag (use Desdemona, above if you like). The JSX returned should look something like this:
 
 ```jsx
-<div className="container">
+<div>
   <Logo />
   <Dog name="Desdemona" breed="Bulldog" superpower="Heat vision" />
 </div>
@@ -166,7 +166,7 @@ You should see something like this in the browser:
 
 ## 4. The Subtitle component
 
-Try it yourself. Define a component called `Subtitle` that takes just one prop, `text`, and wraps it in `<h2>` tags. Import it in the App component and use it like so:
+Try it yourself. Define a component called `Subtitle` that takes just one prop, `text`, and wraps it in `<h2>` tags. Import it in the Main component and use it like so:
 
 ```jsx
   <Logo />
@@ -178,7 +178,7 @@ You should see something like this:
 
 ![Subtitle component](/4-React/public/screenshots/subtitle.png)
 
-The `server/public/images` directory contains a few dog silhouettes. Try modifying the components to add an image for each `Dog`.
+The `/public/images` directory contains a few dog silhouettes. Try modifying the components to add an image for each `Dog`.
 
 <br />
 
@@ -188,7 +188,7 @@ The `server/public/images` directory contains a few dog silhouettes. Try modifyi
 
 Now by yourself add 2 more dogs to your app component.
 
-> As developers we want to be efficent with our code. Adding a few more dogs may be no problem, but what if we want 10 more? What if 100 more? This is where all our javascript practise comes into use!
+> As developers we want to be efficient with our code. Adding a few more dogs may be no problem, but what if we want 10 more? What if 100 more? This is where all our javascript practice comes into use!
 
 ### 5.2 DogList
 
@@ -202,14 +202,14 @@ Example of array being passed in
 ```jsx
 const array = [
   {
-    firstName: "John",
-    lastName: "Doe",
+    firstName: 'John',
+    lastName: 'Doe',
   },
   {
-    firstName: "Jane",
-    lastName: "Doe",
+    firstName: 'Jane',
+    lastName: 'Doe',
   },
-];
+]
 ```
 
 Using javascript in the `return` of the function
@@ -235,7 +235,7 @@ return (
 
 ### 5.3 DogsArray
 
-Now back in `App.jsx`, import your `DogList` component.
+Now back in `Main.jsx`, import your `DogList` component.
 
 Create your array of dog objects and call it `DogsArray`, and pass it into your `DogList` component.
 
@@ -248,4 +248,4 @@ Create your array of dog objects and call it `DogsArray`, and pass it into your 
 
 <br/>
 
-_These exercies are adapted from resoruces used by [Enspiral Dev Academy](https://devacademy.co.nz/?gclid=CjwKCAjw4c-ZBhAEEiwAZ105Re-c0454ENn1Hm-4VD-Z0JQEVPt1Ul30ODpbw2m26cHs-oi7_KEtihoCZNEQAvD_BwE) under the [ISC](https://opensource.org/licenses/ISC) license._
+_These exercises are adapted from resources used by [Enspiral Dev Academy](https://devacademy.co.nz/?gclid=CjwKCAjw4c-ZBhAEEiwAZ105Re-c0454ENn1Hm-4VD-Z0JQEVPt1Ul30ODpbw2m26cHs-oi7_KEtihoCZNEQAvD_BwE) under the [ISC](https://opensource.org/licenses/ISC) license._

@@ -1,6 +1,6 @@
 # Use MUI to fill out the base components
 
-[Watch this video](https://youtu.be/Xoz31I1FuiY)
+[Watch this video](https://www.youtube.com/watch?v=FB-sKY63AWo)
 
 [Import](https://mui.com/material-ui/getting-started/installation/) MUI into your project.
 
@@ -28,7 +28,8 @@ When react renders components with an array, each item needs to have a unique ke
 
 ```
 npm i uuid
-npm i @types/uuid
+npm i --save @types/uuid
+
 ```
 
 [How to use UUID](https://github.com/uuidjs/uuid#readme)

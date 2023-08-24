@@ -1,34 +1,34 @@
-const getType = require("../getType");
+const getType = require('../getType')
 
-test("getType returns correct data type for number", function () {
-  const expected = "number";
+test('getType returns correct data type for number', function () {
+  const expected = 'number'
 
-  const actual = getType(123);
+  const actual = getType(123)
 
-  expect(actual).toBe(expected);
-});
+  expect(actual).toBe(expected)
+})
 
-test("getType returns correct data type for string", function () {
-  const expected = "string";
+test('getType returns correct data type for string', function () {
+  const expected = 'string'
 
-  const actual = getType("123"); // Notice the difference between '123' and 123
+  const actual = getType('123') // Notice the difference between '123' and 123
 
-  expect(actual).toBe(expected);
-});
+  expect(actual).toBe(expected)
+})
 
-test("getType returns the expected data types", function () {
+test('getType returns the expected data types', function () {
   const arrayWithDifferentTypes = [
-    "d",
+    'd',
     3,
     function () {
-      return "hello";
+      return 'hello'
     },
     true,
     [],
-  ];
-  const expected = ["string", "number", "function", "boolean", "object"];
+  ]
+  const expected = ['string', 'number', 'function', 'boolean', 'object']
 
-  const actual = arrayWithDifferentTypes.map(getType);
+  const actual = arrayWithDifferentTypes.map(getType)
 
-  expect(actual).toEqual(expected);
-});
+  expect(actual).toEqual(expected)
+})
