@@ -1,7 +1,6 @@
 'use client'
 
 import { ReactElement, useState } from 'react'
-// import { v4 as uuidv4 } from 'uuid'
 import Container from '@mui/material/Container'
 import { Title } from '../Title'
 import { Form } from '../Form'
@@ -16,27 +15,35 @@ export function Main(): ReactElement {
   }
 
   function handleCheck(id: string): void {
-    const newTasks = tasks.map((task) => {
-      if (task.id === id) {
-        return {
-          ...task,
-          completed: !task.completed,
+    setTasks((previousTasks) =>
+      previousTasks.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            completed: !task.completed,
+          }
+        } else {
+          return task
         }
-      } else {
-        return task
-      }
-    })
-    setTasks(newTasks)
+      })
+    )
   }
 
-  function handleDelete(id: string): void {}
+  function handleDelete(id: string): void {
+    setTasks((previousTasks) => previousTasks.filter((task) => task.id !== id))
+  }
 
   return (
     <Container maxWidth="sm">
       <Title label="Todo" />
-      <Form />
+      <Form handleAdd={handleAdd} />
       {tasks.map((task) => (
-        <TaskCard key={task.id} task={task} handleCheck={handleCheck} />
+        <TaskCard
+          key={task.id}
+          task={task}
+          handleCheck={handleCheck}
+          handleDelete={handleDelete}
+        />
       ))}
     </Container>
   )
