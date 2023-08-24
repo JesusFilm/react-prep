@@ -1,10 +1,10 @@
 # Stretch
 
-Just some things to challenge you if you finished all the other tasks already.
+Some things to challenge you if you finished all the other tasks already.
 
 ## 1. Styling
 
-Are your components styled? Is it something you would show someone? Use the `sx` prop to add additional styling. Make use of flex box for the layout of the page.
+Are your components styled? Use the `sx` prop to add additional styling. Make use of flex box for the layout of the page.
 
 ## 2. Dialog
 
