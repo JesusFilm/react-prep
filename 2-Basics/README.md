@@ -24,8 +24,8 @@ Javascript is the language we'll be using for coding, so its pretty important. C
 
 > [Free Code Camp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript)
 >
-> - Complete "Comment your Javascript Code” to “Nesting For Loops”
-> - Complete "Use Conditional (Ternary) Operator" to "Use Multiple Conditional (Ternary) Operator"
+> - Complete from `Comment your Javascript Code` to `Nesting For Loops`
+> - Complete from `Use Conditional (Ternary) Operator` to `Use Multiple Conditional (Ternary) Operator`
 
 <br/>
 
