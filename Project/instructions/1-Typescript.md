@@ -40,8 +40,6 @@ In the `src` folder create a folder called `components`.
 
 - At this point we're only creating the skeleton for the project, components can return an empty fragment.
 
-<!-- TODO: Update header tags -->
-
 1. Create a component called `Main`. It should take no props import this into `pages.ts` between the header tags.
 
 2. Create a component called `Title`. It should take in an **optional** prop called `label` with type `string`
