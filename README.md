@@ -1,5 +1,7 @@
 # Getting Started
 
+Hi there my name is Jay
+
 ## Intro
 
 Hello and welcome, I'm so excited that you're embarking on this journey of becoming a developer!
@@ -18,7 +20,7 @@ The recommended time is how much time you should spend on that task. If you find
 
 ## Contents
 
-- [ ] 1. [Initial Set Up](/1-SetUp/README.md) (1.5hrs)
+- [x] 1. [Initial Set Up](/1-SetUp/README.md) (1.5hrs)
 - [ ] 2. [Basics](/2-Basics/README.md) (7hrs)
 - [ ] 3. [Java Script Kata's](/3-JSKata/README.md) (8hrs)
 - [ ] 4. [Basic React](/4-React/README.md) (8hrs)
