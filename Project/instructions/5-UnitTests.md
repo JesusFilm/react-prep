@@ -1,4 +1,4 @@
-# Unit tests (WIP)
+# Unit tests
 
 1. [Watch these videos](https://frontendmasters.com/courses/testing-practices-principles/)
 
