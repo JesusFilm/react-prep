@@ -2,13 +2,16 @@ import { Logo } from '../Logo'
 
 import { Dog } from '../Dog'
 
-import{Subtitle} from '../Subtitle'
+import { Subtitle } from '../Subtitle'
+
+import { Doglist } from '../Doglist'
 
 export function Main() {
+  console.log('lkjdsfhkljsdfh')
   return (
     <>
       <Logo />
-      <Subtitle text='Canines using supercanine abilities for social good.' />
+      <Subtitle text="These are ma dwags" />
       <Dog name="Desdemona" breed="Bulldog" superpower="Heat vision" />
       <Dog
         name="Bobo"
@@ -19,6 +22,13 @@ export function Main() {
         name="Jack"
         breed="Poodle"
         superpower="Breaking things down to its finest component"
+      />
+      <Doglist
+        dogArray={[
+          { name: 'Desmond', breed: 'dog', superpower: 'lookin' },
+          { name: 'Tatai', breed: 'dog', superpower: 'lookin' },
+          { name: 'Siyang', breed: 'dog', superpower: 'lookin' },
+        ]}
       />
     </>
   )
