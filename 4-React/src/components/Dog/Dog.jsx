@@ -1,4 +1,5 @@
 export function Dog(props) {
+  console.log(props)
   return (
     <div className="dog-wrapper">
       <div className="dog">
