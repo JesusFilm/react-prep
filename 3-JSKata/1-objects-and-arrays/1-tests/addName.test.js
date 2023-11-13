@@ -18,3 +18,4 @@ test('addName returns a copy of the input object with an added name property', (
   expect(actual).not.toBe(obj)
   expect(actual).toEqual(expected)
 })
+
