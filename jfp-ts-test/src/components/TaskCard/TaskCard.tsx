@@ -1,5 +1,5 @@
 import { Task } from '@/libs/data'
-import { Button, Card, Typography } from '@mui/material'
+import { Box, Button, Card, Typography } from '@mui/material'
 import { ReactElement } from 'react'
 
 interface TaskCardProps {
@@ -18,15 +18,33 @@ export function TaskCard(props: TaskCardProps): ReactElement {
   }
 
   return (
-    <Card>
-      <Typography variant="h1">{props.task.name}</Typography>
+    <Card
+      sx={{
+        paddingX: 4,
+        marginY: 4,
+        bgcolor: '#DDDDDD',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        height: '180px',
+      }}
+    >
+      <Typography variant="h3">{props.task.name}</Typography>
       <Typography variant="body1">
-        {props.task.completed ? 'completed' : 'incomplete'}
+        {props.task.completed ? 'Completed' : 'Incomplete'}
       </Typography>
-      <Button onClick={handleCompleteButtonClick}>
-        {props.task.completed ? 'Mark Incomplete' : 'Mark Complete'}
-      </Button>
-      <Button onClick={handleDeleteButtonClick}>Delete</Button>
+      <Box>
+        <Button onClick={handleCompleteButtonClick} variant="contained">
+          {props.task.completed ? 'Mark Incomplete' : 'Mark Complete'}
+        </Button>
+        <Button
+          onClick={handleDeleteButtonClick}
+          variant="contained"
+          sx={{ ml: 2 }}
+        >
+          Delete
+        </Button>
+      </Box>
     </Card>
   )
 }

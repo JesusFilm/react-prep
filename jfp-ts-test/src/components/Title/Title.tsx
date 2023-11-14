@@ -6,5 +6,5 @@ interface TitleProps {
 }
 
 export function Title(props: TitleProps): ReactElement {
-  return <Typography variant="h2">Title</Typography>
+  return <Typography variant="h2">To Do List</Typography>
 }
