@@ -1,7 +1,9 @@
+import { ReactElement } from 'react'
+
 interface label {
   label?: string
 }
 
-export function Title() {
-  return null
+export function Title(label: label): ReactElement {
+  return <></>
 }
