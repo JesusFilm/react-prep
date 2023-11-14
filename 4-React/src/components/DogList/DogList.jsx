@@ -1,4 +1,4 @@
-import { Dog } from '../Dog/Dog'
+import { Dog } from '../Dog'
 
 export function DogList(props) {
   const dogsArray = props.dogsArray
