@@ -1,6 +1,6 @@
 // Basic Types
 let id: number = 5
-let compnay: string = 'Bobo Media'
+let company: string = 'hi Media'
 let isPublished: boolean = true
 let x: any = 'Hello'
 let age: number
@@ -63,7 +63,7 @@ function log(message: string | number) {
   console.log(message)
 }
 
-// Interfaces - custom type, or specific type ot an object 
+// Interfaces - custom type, or specific type of an object 
 // read only makes properties read only, and cannot be changedf
 interface userInterface {
   readonly id: number, 
