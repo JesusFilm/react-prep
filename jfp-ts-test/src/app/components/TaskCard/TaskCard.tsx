@@ -3,12 +3,12 @@ import { ReactElement } from 'react'
 import { Card } from '@mui/material'
 import { Task } from '@/app/libs/data'
 export function TaskCard({ name, completed }: Task): ReactElement {
-  let Status = ''
+  let statusTask = ''
 
-  if (cardStatus === true) {
-    Status = 'Done'
+  if (completed === true) {
+    statusTask = 'Done'
   } else {
-    Status = 'Not Done'
+    statusTask = 'Not Done'
   }
 
   return (
@@ -16,7 +16,7 @@ export function TaskCard({ name, completed }: Task): ReactElement {
       <Card variant="outlined">
         <CardContent>
           <Typography variant="h3">{name}</Typography>
-          <Typography variant="h3">{completed}</Typography>
+          <Typography variant="h3">{statusTask}</Typography>
         </CardContent>
       </Card>
     </>

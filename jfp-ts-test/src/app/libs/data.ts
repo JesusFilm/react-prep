@@ -3,7 +3,7 @@ export interface Task {
   completed: boolean
 }
 
-export const array: Task[] = [
+export const cardArray: Task[] = [
   {
     name: 'Clean up desk',
     completed: true,
