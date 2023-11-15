@@ -1,9 +1,18 @@
+import { Typography } from '@mui/material'
 import { ReactElement } from 'react'
 
-interface label {
+interface TitleProps {
   label?: string
 }
 
-export function Title(label: label): ReactElement {
-  return <></>
+export function Title(label: TitleProps): ReactElement {
+  return (
+    <Typography
+      variant="h1"
+      sx={{ textAlign: 'centre', my: 4 }}
+      justifyContent={'center'}
+    >
+      To Do:
+    </Typography>
+  )
 }

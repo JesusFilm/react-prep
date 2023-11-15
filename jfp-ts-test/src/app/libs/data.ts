@@ -1,6 +1,19 @@
-interface Task {
+export interface Task {
   name: string
   completed: boolean
 }
 
-let array: number[] = [1, 2, 3, 4, 5]
+export const array: Task[] = [
+  {
+    name: 'Clean up desk',
+    completed: true,
+  },
+  {
+    name: 'Write code',
+    completed: true,
+  },
+  {
+    name: 'finish off',
+    completed: false,
+  },
+]
