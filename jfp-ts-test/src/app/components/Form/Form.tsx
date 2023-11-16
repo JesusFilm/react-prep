@@ -12,7 +12,7 @@ interface FormProps {
 
 export function Form({ handleAdd }: FormProps): ReactElement {
   // const [taskArray, setTaskArray] = useState(taskArr)
-  const [name, setName] = useState('Task Name')
+  const [name, setName] = useState('')
 
 
   function changeName(newName: string) {
@@ -35,7 +35,8 @@ export function Form({ handleAdd }: FormProps): ReactElement {
         value={name}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
           changeName(event.target.value)
-        }}
+        }  
+      }
       />
 
       <Button variant="contained" size="large" onClick={consoleLog}>

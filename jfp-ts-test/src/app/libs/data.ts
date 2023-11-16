@@ -3,17 +3,4 @@ export interface Task {
   completed: boolean
 }
 
-export const tasksData: Task[] = [
-  {
-    name: 'clean room',
-    completed: false,
-  },
-  {
-    name: 'mow lawns',
-    completed: false,
-  },
-  {
-    name: 'do dishes',
-    completed: true,
-  },
-]
+export const tasksData: Task[] = []
