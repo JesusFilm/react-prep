@@ -1,5 +1,5 @@
 import { Card, Switch, Typography } from '@mui/material'
-import { ReactElement, useState,  } from 'react'
+import { ReactElement, useState, ChangeEvent } from 'react'
 import { Task } from '../../libs/data'
 import CardContent from '@mui/material/CardContent'
 
@@ -10,12 +10,15 @@ export interface TaskCardProps {
 export function TaskCard({ item }: TaskCardProps): ReactElement {
   // let taskStatus = ''
   const taskName = item.name
-  const taskStatus = item.completed ? 'Completed' : 'Not Completed'
-  const label = { inputProps: { 'aria-label': 'Switch demo' } };
+  let taskStatus = item.completed ? 'Completed' : 'Not Completed'
+  const label = { inputProps: { 'aria-label': 'Switch demo' } }
   const [compState, setCompState] = useState(false)
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCompState(event.target.checked);
+  console.log(item)
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setCompState(event.target.checked)
+    console.log(compState)
   }
 
   return (
@@ -23,11 +26,12 @@ export function TaskCard({ item }: TaskCardProps): ReactElement {
       <CardContent>
         <Typography variant="h4">{taskName}</Typography>
         <Typography variant="overline">{taskStatus}</Typography>
+
         <Switch
-        checked={compState}
-        onChange={handleChange}
-        inputProps={{ 'aria-label': 'controlled' }}
-/>
+          checked={item.completed}
+          onChange={handleChange}
+          inputProps={{ 'aria-label': 'controlled' }}
+        />
       </CardContent>
     </Card>
   )

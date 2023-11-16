@@ -3,26 +3,18 @@ import { Button, Stack, TextField } from '@mui/material'
 import { ReactElement } from 'react'
 import React, { useState, ChangeEvent } from 'react'
 
-// import { taskArr } from '@/app/libs/data'
-
 interface FormProps {
-  handleAdd: (str: string) => void
-  // handleAdd: (task: Task) => void
+  handleAdd: (name: string) => void
 }
 
 export function Form({ handleAdd }: FormProps): ReactElement {
-  // const [taskArray, setTaskArray] = useState(taskArr)
   const [name, setName] = useState('')
 
-
-  function changeName(newName: string) {
+  function handleChangeTextField(newName: string) {
     setName(newName)
-    
   }
 
- 
-
-  function consoleLog(): void {
+  function handleSubmit(): void {
     handleAdd(name)
   }
 
@@ -34,13 +26,11 @@ export function Form({ handleAdd }: FormProps): ReactElement {
         variant="outlined"
         value={name}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
-          changeName(event.target.value)
-        }  
-      }
+          handleChangeTextField(event.target.value)
+        }}
       />
 
-      <Button variant="contained" size="large" onClick={consoleLog}>
-        {/* <Button variant="contained" size="large" onClick={() => handleAdd('str')}> */}
+      <Button variant="contained" size="large" onClick={handleSubmit}>
         Submit
       </Button>
     </Stack>
