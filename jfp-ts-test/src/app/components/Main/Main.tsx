@@ -8,16 +8,19 @@ import { v4 as uuidv4 } from 'uuid'
 import react, { useState } from 'react'
 
 export function Main(): ReactElement {
+  const [name, setName] = useState('Task')
+  const [cardArray, setCardArray] = useState([...cardsData])
+
   return (
     <>
       <Title />
 
       <Form></Form>
 
-      {cardsData.map((card) => (
+      {cardsData.map((cardArray) => (
         <TaskCard
-          name={card.name}
-          completed={card.completed}
+          name={cardArray.name}
+          completed={cardArray.completed}
           key={uuidv4()}
         ></TaskCard>
       ))}
