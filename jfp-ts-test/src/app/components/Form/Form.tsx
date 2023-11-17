@@ -5,15 +5,17 @@ import React, { useState } from 'react'
 import { Task, cardsData } from '@/app/libs/data'
 import { Main } from '../Main'
 
-export function Form(): ReactElement {
-  const [name, setName] = useState('Task')
-  const [cardArray, setCardArray] = useState([...cardsData])
+interface FormProps {
+  name: string
+  onChangeName: (newName: string) => void
+  onAddTask: (newTask: Task) => void
+}
 
-  function changeName(newName: string) {
-    setName(newName)
-    //console.log(name)
-  }
-
+export function Form({
+  name,
+  onChangeName,
+  onAddTask,
+}: FormProps): ReactElement {
   return (
     <>
       <TextField
@@ -23,16 +25,14 @@ export function Form(): ReactElement {
         sx={{ ml: 8 }}
         value={name}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-          changeName(event.target.value)
+          onChangeName(event.target.value)
         }}
       ></TextField>
 
       <Button
         variant="contained"
         sx={{ ml: 12 }}
-        onClick={() =>
-          setCardArray([...cardArray, { name: name, completed: true }])
-        }
+        onClick={() => onAddTask({ name: name, completed: true })}
       >
         Button
       </Button>
