@@ -1,15 +1,14 @@
-export function Title({label}: string) {
+import { ReactElement } from 'react' 
+
+interface TitleProps {
+  label?: string;
+}
+
+export function Title({label = 'This is a Title'}: TitleProps) :ReactElement {
+  console.log(label)
   return(
   <>
-    <h2 className="title">{label?? 'This is a Title'}</h2>
+    <h2 className="title">{label}</h2>
   </>);
 }
 
-
-export function Title({ label }: TitleProps): ReactElement {
-  return (
-    <Typography variant="h1" sx={{ my: 4, textAlign: 'center' }}>
-      {label ?? 'Hello World'}
-    </Typography>
-  )
-}
