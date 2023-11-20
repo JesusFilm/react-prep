@@ -1,43 +1,34 @@
-import { ReactElement } from 'react'
-import Box from '@mui/material/Box'
+import React, { useState, ReactElement } from 'react'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import { useState } from 'react'
-
-// const Form = () => {
-//   const [toDoName, setName] = useState({
-//     name: ''
-//   })
-// }
+import { useFormState } from 'react-dom'
+import { TaskCard } from '../TaskCard'
 
 export function Form(): ReactElement {
+  
   const [toDoName, setName] = useState('')
+
+  function addCard() {
+    //write code that adds the input into a new card
+    console.log('Adding task:', toDoName)
+  }
 
   return (
     <>
-      <Box
-        component="form"
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <>
-          <Typography variant="h4" component="div">
-            New Task:
-          </Typography>
-          <TextField
-            onChange={(e) => setName(e.target.value)}
-            value={toDoName}
-            name="name"
-            id="name"
-          />
-
-          <Button variant="outlined">Submit</Button>
-        </>
-      </Box>
+      <Typography variant="h4" component="div">
+        New Task:
+      </Typography>
+      <TextField
+        onChange={(e) => setName(e.target.value)}
+        value={toDoName}
+        name="name"
+        id="name"
+      />
+      <Button variant="outlined" onClick={addCard}>
+        Submit
+      </Button>
     </>
+
   )
 }

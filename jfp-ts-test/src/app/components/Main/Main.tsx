@@ -5,20 +5,28 @@ import { TaskCard } from '../TaskCard'
 import { tasks } from '../../libs/data'
 // import { v4 as uuidv4 } from 'uuid';
 import {useState} from 'react'
+import {toDoName} from '../Form/form'
 
 export function Main(): ReactElement {
+  const [taskName, setTaskName] = useState ([])
+
   return (
     <>
       <Title />
       <Form />
-      {tasks.map((taskItem) => (
+      {/* {tasks.map((taskItem) => (
         <TaskCard task={taskItem} />
+      ))} */}
+      {taskName.map((tasks) => (
+        <TaskCard task={tasks} />
       ))}
     </>
   )
 }
 
-
+//new state of array of tasks - empty array? or a default value of static tasks in data 
+// t o add something use the setState to add the card to the list - lets you add and re-render 
+//call the setstate in the form 
 
 
 //only use hooks in function components , not class , the use state needs to execute in the same order.  
