@@ -8,17 +8,15 @@ import {useState} from 'react'
 import {toDoName} from '../Form/form'
 
 export function Main(): ReactElement {
-  const [taskName, setTaskName] = useState ([])
+  const [tasksArray, setTasksArray] = useState (tasks)
 
   return (
     <>
       <Title />
       <Form />
-      {/* {tasks.map((taskItem) => (
+
+      {tasksArray.map((taskItem) => (
         <TaskCard task={taskItem} />
-      ))} */}
-      {taskName.map((tasks) => (
-        <TaskCard task={tasks} />
       ))}
     </>
   )

@@ -32,3 +32,6 @@ export function Form(): ReactElement {
 
   )
 }
+
+
+//pass setTasksArray into the component and use in addCard (call) 
