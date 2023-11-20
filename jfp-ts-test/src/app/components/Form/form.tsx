@@ -3,8 +3,17 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import { useState } from 'react'
+
+// const Form = () => {
+//   const [toDoName, setName] = useState({
+//     name: ''
+//   })
+// }
 
 export function Form(): ReactElement {
+  const [toDoName, setName] = useState('')
+
   return (
     <>
       <Box
@@ -16,16 +25,18 @@ export function Form(): ReactElement {
         autoComplete="off"
       >
         <>
-          <Typography variant="h4" component="div">New Task:</Typography>
+          <Typography variant="h4" component="div">
+            New Task:
+          </Typography>
           <TextField
-            required
-            id="standard-required"
-            label="Required"
-            variant="standard"
+            onChange={(e) => setName(e.target.value)}
+            value={toDoName}
+            name="name"
+            id="name"
           />
-          <br/>
+
           <Button variant="outlined">Submit</Button>
-          </>
+        </>
       </Box>
     </>
   )

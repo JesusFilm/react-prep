@@ -1,3 +1,4 @@
+'use client'
 import {Main} from '../app/components/Main'
 
 
