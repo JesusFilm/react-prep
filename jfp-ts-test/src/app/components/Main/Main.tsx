@@ -30,6 +30,8 @@ export function Main(): ReactElement {
     setName('')
   }
 
+  
+
   return (
     <>
       <Title />
