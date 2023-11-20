@@ -20,7 +20,6 @@ export function TaskCard({
   completed,
   onDeleteTodo,
 }: Task): ReactElement {
-  const completion = completed ? 'Done' : 'Not Done'
   const [checked, setChecked] = useState(completed)
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked)
@@ -31,15 +30,15 @@ export function TaskCard({
       <Card variant="outlined">
         <CardContent>
           <Typography variant="h3">{name}</Typography>
-          <Typography variant="h3">
-          </Typography>
+          <Typography variant="h3"></Typography>
           <Button variant="contained" onClick={() => onDeleteTodo(uuidv4())}>
             Remove Task
           </Button>
           <FormControlLabel
             sx={{ ml: 10 }}
             control={<Checkbox checked={checked} onChange={handleChange} />}
-            label={completion }
+            label="Completed?"
+            labelPlacement="start"
           />
         </CardContent>
       </Card>
