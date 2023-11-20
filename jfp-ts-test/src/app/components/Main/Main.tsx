@@ -12,6 +12,11 @@ export function Main(): ReactElement {
   const [cardArray, setCardArray] = useState([...cardsData])
   const [name, setName] = useState('Task')
 
+  function deleteTodo(key: string) {
+    setCardArray(cardArray.filter((cardArray) => cardArray.key !== key))
+    console.log(key, cardArray.key)
+  }
+
   function changeName(newName: string) {
     setName(newName)
     //console.log(name)
@@ -23,17 +28,19 @@ export function Main(): ReactElement {
     console.log('After adding task:', cardArray)
     setName('')
   }
+
   return (
     <>
       <Title />
 
       <Form name={name} onChangeName={changeName} onAddTask={handleAddTask} />
 
-      {cardsData.map((cardArray) => (
+      {cardArray.map((cardArray: Task) => (
         <TaskCard
           name={cardArray.name}
           completed={cardArray.completed}
           key={uuidv4()}
+          onDeleteTodo={deleteTodo}
         ></TaskCard>
       ))}
     </>

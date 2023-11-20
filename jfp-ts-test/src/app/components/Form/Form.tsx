@@ -3,7 +3,7 @@ import { Button } from '@mui/material'
 import { ReactElement } from 'react'
 import React, { useState } from 'react'
 import { Task, cardsData } from '@/app/libs/data'
-import { Main } from '../Main'
+import { v4 as uuidv4 } from 'uuid'
 
 interface FormProps {
   name: string
@@ -32,7 +32,9 @@ export function Form({
       <Button
         variant="contained"
         sx={{ ml: 12 }}
-        onClick={() => onAddTask({ name: name, completed: true })}
+        onClick={() =>
+          onAddTask({ name: name, completed: false, key: uuidv4() })
+        }
       >
         Button
       </Button>

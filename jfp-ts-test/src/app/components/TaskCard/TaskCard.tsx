@@ -1,16 +1,19 @@
 import { CardContent, Typography } from '@mui/material'
 import { ReactElement } from 'react'
-import { Card } from '@mui/material'
-import { Task } from '@/app/libs/data'
-export function TaskCard({ name, completed }: Task): ReactElement {
-  // let statusTask = ''
+import { Card, Button } from '@mui/material'
+import { v4 as uuidv4 } from 'uuid'
 
-  // if (completed === true) {
-  //   statusTask = 'Done'
-  // } else {
-  //   statusTask = 'Not Done'
-  // }
+interface Task {
+  name: string
+  completed: boolean
+  onDeleteTodo: (key: string) => void
+}
 
+export function TaskCard({
+  name,
+  completed,
+  onDeleteTodo,
+}: Task): ReactElement {
   return (
     <>
       <Card variant="outlined">
@@ -19,6 +22,14 @@ export function TaskCard({ name, completed }: Task): ReactElement {
           <Typography variant="h3">
             {completed ? 'Done' : 'Not Done'}
           </Typography>
+          <Button
+            variant="contained"
+            onClick={() =>
+              onDeleteTodo(uuidv4())}
+  
+          >
+            Remove Task
+          </Button>
         </CardContent>
       </Card>
     </>
