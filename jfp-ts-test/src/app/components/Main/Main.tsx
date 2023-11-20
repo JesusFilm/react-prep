@@ -1,17 +1,17 @@
-import { ReactElement } from 'react' 
+import { ReactElement } from 'react'
 import { Title } from '../Title'
 import { Form } from '../Form'
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import { TaskCard } from '../TaskCard'
+import { tasks } from '../../libs/data'
 
-export function Main() :ReactElement {
+export function Main(): ReactElement {
   return (
     <>
       <Title />
-      <Form /> 
-
+      <Form />
+      {tasks.map((taskItem) => (
+        <TaskCard task={taskItem} />
+      ))}
     </>
   )
 }
