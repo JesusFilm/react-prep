@@ -13,8 +13,9 @@ export function Main(): ReactElement {
   const [name, setName] = useState('Task')
 
   function deleteTodo(key: string) {
-    setCardArray(cardArray.filter((cardArray) => cardArray.key !== key))
-    console.log(key, cardArray.key)
+    setCardArray((cardArray) =>
+      cardArray.filter((cardItem) => cardItem.key !== key)
+    )
   }
 
   function changeName(newName: string) {
@@ -40,7 +41,7 @@ export function Main(): ReactElement {
           name={cardArray.name}
           completed={cardArray.completed}
           key={uuidv4()}
-          onDeleteTodo={deleteTodo}
+          onDeleteTodo={() => deleteTodo(cardArray.key)}
         ></TaskCard>
       ))}
     </>
