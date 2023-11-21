@@ -14,7 +14,7 @@ interface Task {
   id: string
   name: string
   completed: boolean
-  onHandleUpdate  : (id: string, completed: boolean) => void
+  onHandleUpdate: (id: string, completed: boolean) => void
   onDeleteTodo: (key: string) => void
 }
 
@@ -23,22 +23,17 @@ export function TaskCard({
   name,
   completed,
   onDeleteTodo,
-  
 }: Task): ReactElement {
   // const [checked, setChecked] = useState(completed)
- // const handleChange = () => {
-    //onHandleUpdate(id, !completed);
-  }
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  
-  }
+  // const handleChange = () => {
+  //onHandleUpdate(id, !completed);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {}
 
   function handleDelete(): void {
     console.log(id)
     onDeleteTodo(id)
   }
-
-
 
   console.log(name, completed)
 
