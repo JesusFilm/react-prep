@@ -30,14 +30,16 @@ export function Main(): ReactElement {
     setName('')
   }
 
-  function handleUpdate(id: string, completed: boolean) {
+  function handleUpdate(id: string) {
     setCardArray((cardArray) =>
       cardArray.map((cardItem) =>
-        cardItem.key === id ? { ...cardItem, completed } : cardItem
+        cardItem.key === id
+          ? { ...cardItem, completed: !cardItem.completed }
+          : cardItem
       )
     )
-    console.log(cardArray)
   }
+  console.log(cardArray)
 
   return (
     <>
@@ -52,7 +54,7 @@ export function Main(): ReactElement {
           name={name}
           completed={completed}
           onDeleteTodo={deleteTodo}
-          handleChange={handleUpdate}
+          onHandleChange={handleUpdate}
         ></TaskCard>
       ))}
     </>
