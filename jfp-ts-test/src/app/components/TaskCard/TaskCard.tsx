@@ -13,12 +13,14 @@ interface Task {
   name: string
   completed: boolean
   onDeleteTodo: (key: string) => void
+  onToggle: (complete: boolean) => void
 }
 
 export function TaskCard({
   name,
   completed,
   onDeleteTodo,
+  onToggle,
 }: Task): ReactElement {
   const [checked, setChecked] = useState(completed)
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +38,7 @@ export function TaskCard({
           </Button>
           <FormControlLabel
             sx={{ ml: 10 }}
-            control={<Checkbox checked={checked} onChange={handleChange} />}
+            control={<Checkbox checked={checked} onChange={() => onToggle(completed)} />}
             label="Completed?"
             labelPlacement="start"
           />

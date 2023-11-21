@@ -23,12 +23,16 @@ export function Main(): ReactElement {
     //console.log(name)
   }
 
+  function onToggle
+
   function handleAddTask(newTask: Task) {
     console.log('Before adding task:', cardArray)
     setCardArray([...cardArray, newTask])
     console.log('After adding task:', cardArray)
     setName('')
   }
+
+  
 
   return (
     <>
@@ -39,7 +43,7 @@ export function Main(): ReactElement {
       {cardArray.map((cardArray: Task) => (
         <TaskCard
           name={cardArray.name}
-          completed={cardArray.completed}
+          onToggle={cardArray.completed}
           key={uuidv4()}
           onDeleteTodo={() => deleteTodo(cardArray.key)}
         ></TaskCard>
