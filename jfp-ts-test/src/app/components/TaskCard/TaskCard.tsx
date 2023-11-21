@@ -8,24 +8,39 @@ import { ReactElement } from 'react'
 import { Card, Button } from '@mui/material'
 import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react'
+import { cardsData } from '@/app/libs/data'
 
 interface Task {
+  id: string
   name: string
   completed: boolean
+  onHandleUpdate  : (id: string, completed: boolean) => void
   onDeleteTodo: (key: string) => void
-  onToggle: (complete: boolean) => void
 }
 
 export function TaskCard({
+  id,
   name,
   completed,
   onDeleteTodo,
-  onToggle,
+  
 }: Task): ReactElement {
-  const [checked, setChecked] = useState(completed)
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked)
+  // const [checked, setChecked] = useState(completed)
+ // const handleChange = () => {
+    //onHandleUpdate(id, !completed);
   }
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  
+  }
+
+  function handleDelete(): void {
+    console.log(id)
+    onDeleteTodo(id)
+  }
+
+
+
+  console.log(name, completed)
 
   return (
     <>
@@ -33,12 +48,12 @@ export function TaskCard({
         <CardContent>
           <Typography variant="h3">{name}</Typography>
           <Typography variant="h3"></Typography>
-          <Button variant="contained" onClick={() => onDeleteTodo(uuidv4())}>
+          <Button variant="contained" onClick={handleDelete}>
             Remove Task
           </Button>
           <FormControlLabel
             sx={{ ml: 10 }}
-            control={<Checkbox checked={checked} onChange={() => onToggle(completed)} />}
+            control={<Checkbox checked={completed} onChange={handleChange} />}
             label="Completed?"
             labelPlacement="start"
           />

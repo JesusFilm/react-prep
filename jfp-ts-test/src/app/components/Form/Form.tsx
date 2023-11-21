@@ -36,7 +36,7 @@ export function Form({
           onAddTask({ name: name, completed: false, key: uuidv4() })
         }
       >
-        Button
+        Add Task
       </Button>
     </>
   )

@@ -3,6 +3,7 @@ export interface Task {
   name: string
   completed: boolean
   key: string
+  
 }
 
 export const cardsData: Task[] = [

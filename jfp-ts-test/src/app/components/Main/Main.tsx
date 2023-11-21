@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 import { Title } from '../Title'
 import { Form } from '../Form'
 import { TaskCard } from '../TaskCard'
-import { cardMediaClasses } from '@mui/material'
+import { cardContentClasses, cardMediaClasses } from '@mui/material'
 import { cardsData } from '@/app/libs/data'
 import { v4 as uuidv4 } from 'uuid'
 import react, { useState } from 'react'
@@ -23,8 +23,6 @@ export function Main(): ReactElement {
     //console.log(name)
   }
 
-  function onToggle
-
   function handleAddTask(newTask: Task) {
     console.log('Before adding task:', cardArray)
     setCardArray([...cardArray, newTask])
@@ -32,7 +30,14 @@ export function Main(): ReactElement {
     setName('')
   }
 
-  
+  function handleUpdate(id: string, completed: boolean) {
+    setCardArray((cardArray) =>
+      cardArray.map((cardItem) =>
+        cardItem.key === id ? { ...cardItem, completed } : cardItem
+      )
+    )
+    console.log(cardArray)
+  }
 
   return (
     <>
@@ -40,12 +45,14 @@ export function Main(): ReactElement {
 
       <Form name={name} onChangeName={changeName} onAddTask={handleAddTask} />
 
-      {cardArray.map((cardArray: Task) => (
+      {cardArray.map(({ name, completed, key }) => (
         <TaskCard
-          name={cardArray.name}
-          onToggle={cardArray.completed}
-          key={uuidv4()}
-          onDeleteTodo={() => deleteTodo(cardArray.key)}
+          id={key}
+          key={key}
+          name={name}
+          completed={completed}
+          onDeleteTodo={deleteTodo}
+          handleChange={handleUpdate}
         ></TaskCard>
       ))}
     </>
