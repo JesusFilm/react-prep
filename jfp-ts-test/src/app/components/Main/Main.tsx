@@ -3,31 +3,30 @@ import { Title } from '../Title'
 import { Form } from '../Form'
 import { TaskCard } from '../TaskCard'
 import { tasks } from '../../libs/data'
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react'
-import { toDoName } from '../Form/form'
-import { Herr_Von_Muellerhoff } from 'next/font/google'
 
 export function Main(): ReactElement {
   const [tasksArray, setTasksArray] = useState(tasks)
 
-  // const updateCard = () => {
-  //   setTasksArray({...tasksArray, newSetTasksArray})
-  // }
-
-  // const removeCard = () => {
-  //   setArray(array.slice(0, array.length - 1));
-  // };
-  //i need to make the todoName go into the taskcard name.
-
   return (
     <>
       <Title label="Hello World" />
-      <Form setTasksArray = {setTasksArray}/>
-
-      {tasksArray.map((taskItem) => (
-        <TaskCard task={taskItem} />
-      ))}
+      <Form setTasksArray={setTasksArray} />
+      <ul>
+        {/* {tasksArray.map((taskItem) => (
+          <TaskCard task={taskItem} />
+        ))} */}
+        {tasksArray.map(task => {
+          return <li>
+            <label>
+              <input type="checkbox" checked={task.completed}></input>
+              {task.name}
+            </label>
+            <button className="btn-delete">Delete</button>
+          </li>
+        })}
+      </ul>
     </>
   )
 }
@@ -47,3 +46,8 @@ export function Main(): ReactElement {
 //call a return on the function:
 // return ( <button onClick ={decrement Count}></button>
 // <span>{count}</span> )
+
+
+
+//https://www.youtube.com/watch?v=Rh3tobg7hEo&ab_channel=WebDevSimplified
+//24.58 timestamp 
