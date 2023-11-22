@@ -4,13 +4,25 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { useFormState } from 'react-dom'
 import { TaskCard } from '../TaskCard'
+import { Task } from '@/app/libs/data'
 
-export function Form(): ReactElement {
+
+interface FormProps{
+  setTasksArray:(arr: Task[]) => void
+}
+
+export function Form( {setTasksArray}: FormProps): ReactElement {
   
   const [toDoName, setName] = useState('')
 
   function addCard() {
-    //write code that adds the input into a new card
+    setTasksArray([
+      {
+      name: {},
+      completed: true
+    }
+  ])
+    //write code that adds the input into a new card\
     console.log('Adding task:', toDoName)
   }
 
@@ -20,10 +32,12 @@ export function Form(): ReactElement {
         New Task:
       </Typography>
       <TextField
-        onChange={(e) => setName(e.target.value)}
+        onChange={(e) => {
+          const textValue = (e.target.value);
+          setName(prev => prev + textValue)}}
         value={toDoName}
-        name="name"
-        id="name"
+        // name="name"
+        // id="name"
       />
       <Button variant="outlined" onClick={addCard}>
         Submit
@@ -32,6 +46,3 @@ export function Form(): ReactElement {
 
   )
 }
-
-
-//pass setTasksArray into the component and use in addCard (call) 
