@@ -20,9 +20,9 @@ export function Form({
     <>
       <TextField
         id="filled-basic"
-        label="Filled"
+        label="Add Task Here!"
         variant="filled"
-        sx={{ ml: 8 }}
+        sx={{}}
         value={name}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
           onChangeName(event.target.value)
@@ -31,7 +31,9 @@ export function Form({
 
       <Button
         variant="contained"
-        sx={{ ml: 12 }}
+        sx={{ mb: 7, ml: 5, mt: 1 }}
+        color="success"
+        size="large"
         onClick={() =>
           onAddTask({ name: name, completed: false, key: uuidv4() })
         }

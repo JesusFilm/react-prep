@@ -34,23 +34,28 @@ export function TaskCard({
   }
 
   function handleDelete(): void {
-    console.log(id)
+    //console.log(id)
     onDeleteTodo(id)
   }
 
-  console.log(name, completed)
-  
+ //console.log(name, completed)
+
   return (
     <>
-      <Card variant="outlined">
+      <Card sx={{ width: 300, height: 230, mb: 2 }}>
         <CardContent>
-          <Typography variant="h3">{name}</Typography>
-          <Typography variant="h3"></Typography>
-          <Button variant="contained" onClick={handleDelete}>
+          <Typography variant="h4">{name}</Typography>
+          <Typography variant="h4"></Typography>
+          <Button
+            sx={{ mt: 3 }}
+            variant="contained"
+            color="success"
+            onClick={handleDelete}
+          >
             Remove Task
           </Button>
           <FormControlLabel
-            sx={{ ml: 10 }}
+            sx={{ mt: 6 }}
             control={<Checkbox checked={completed} onChange={handleChange} />}
             label="Completed?"
             labelPlacement="start"

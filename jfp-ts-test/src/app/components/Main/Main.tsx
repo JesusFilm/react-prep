@@ -5,12 +5,16 @@ import { TaskCard } from '../TaskCard'
 import { cardContentClasses, cardMediaClasses } from '@mui/material'
 import { cardsData } from '@/app/libs/data'
 import { v4 as uuidv4 } from 'uuid'
-import react, { useState } from 'react'
+import react, { useState, useEffect } from 'react'
 import { Task } from '@/app/libs/data'
 
 export function Main(): ReactElement {
   const [cardArray, setCardArray] = useState([...cardsData])
   const [name, setName] = useState('Task')
+
+  useEffect(() => {
+    
+  })
 
   function deleteTodo(key: string) {
     setCardArray((cardArray) =>

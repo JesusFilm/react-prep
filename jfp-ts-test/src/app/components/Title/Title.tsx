@@ -7,12 +7,8 @@ interface TitleProps {
 
 export function Title(label: TitleProps): ReactElement {
   return (
-    <Typography
-      variant="h1"
-      sx={{ textAlign: 'centre', my: 4 }}
-      justifyContent={'center'}
-    >
-      To Do:
+    <Typography variant="h2" align="left" sx={{ mb: 5, mt: 2.5, ml: 5 }}>
+      Jacks cool to-do List
     </Typography>
   )
 }
