@@ -12,7 +12,7 @@ export function TaskCard({ task }: TaskCardProps): ReactElement {
   return (
     <>
       <Card sx={{ minWidth: 275 }}>
-        <CardContent>
+        <CardContent >
               <Typography variant="h3" component="div">
                 Task: {task.name}
               </Typography>

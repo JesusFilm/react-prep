@@ -13,20 +13,21 @@ export function Main(): ReactElement {
     <>
       <Title label="Hello World" />
       <Form setTasksArray={setTasksArray} />
-      <ul>
+      {/* <ul> */}
         {/* {tasksArray.map((taskItem) => (
           <TaskCard task={taskItem} />
         ))} */}
         {tasksArray.map(task => {
-          return <li>
+          return <>
             <label>
+            {/* uuid={task.uuid} */}
               <input type="checkbox" checked={task.completed}></input>
-              {task.name}
+              {task.name} 
             </label>
             <button className="btn-delete">Delete</button>
-          </li>
+          </>
         })}
-      </ul>
+      {/* </ul> */}
     </>
   )
 }
@@ -50,4 +51,4 @@ export function Main(): ReactElement {
 
 
 //https://www.youtube.com/watch?v=Rh3tobg7hEo&ab_channel=WebDevSimplified
-//24.58 timestamp 
+//24.58 timestamp

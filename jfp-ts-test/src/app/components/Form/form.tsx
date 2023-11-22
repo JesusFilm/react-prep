@@ -34,7 +34,7 @@ export function Form({ setTasksArray }: FormProps): ReactElement {
       return [
         ...currentToDos,
         {
-          id:uuidv4(), title: toDoName, completed: true
+          uuid:uuidv4(), title: toDoName, completed: true
         },
       ]
     })
