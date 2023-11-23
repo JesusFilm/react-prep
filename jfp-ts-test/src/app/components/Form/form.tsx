@@ -27,22 +27,23 @@ export function Form({ setTasksArray }: FormProps): ReactElement {
   //   console.log('Adding task:', toDoName)
   // }
 
-  function addCard(e){
-    e.preventDefault() 
-    //this prevents page from refreshing so it can be added ? 
-    setTasksArray(currentToDos => {
-      return [
-        ...currentToDos,
-        {
-          uuid:uuidv4(), title: toDoName, completed: true
-        },
-      ]
-    })
-  }
+  // function addCard(e){
+  //   e.preventDefault() 
+  //   //this prevents page from refreshing so it can be added ? 
+  //   setTasksArray(currentToDos => {
+  //     return [
+  //       ...currentToDos,
+  //       {
+  //         uuid:uuidv4(), title: toDoName, completed: true
+  //       },
+  //     ]
+  //   })
+  //   setName('')
+  // }
 
   return (
     <>
-      <Form>
+      {/* <Form>
         <Typography variant="h4" component="div">
           New Task:
         </Typography>
@@ -58,7 +59,7 @@ export function Form({ setTasksArray }: FormProps): ReactElement {
         <Button variant="outlined"onClick={addCard}>
           Submit
         </Button>
-      </Form>
+      </Form> */}
     </>
   )
 }

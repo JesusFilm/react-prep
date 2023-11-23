@@ -8,26 +8,27 @@ import { useState } from 'react'
 
 export function Main(): ReactElement {
   const [tasksArray, setTasksArray] = useState(tasks)
+  console.log(tasks[0].uuid)
+
 
   return (
     <>
       <Title label="Hello World" />
+      
       <Form setTasksArray={setTasksArray} />
-      {/* <ul> */}
-        {/* {tasksArray.map((taskItem) => (
-          <TaskCard task={taskItem} />
-        ))} */}
-        {tasksArray.map(task => {
+      <ul>
+        {tasksArray.map((task) => {
           return <>
+          <li key={task.uuid}>
             <label>
-            {/* uuid={task.uuid} */}
               <input type="checkbox" checked={task.completed}></input>
               {task.name} 
             </label>
             <button className="btn-delete">Delete</button>
+            </li>
           </>
         })}
-      {/* </ul> */}
+      </ul>
     </>
   )
 }
@@ -52,3 +53,8 @@ export function Main(): ReactElement {
 
 //https://www.youtube.com/watch?v=Rh3tobg7hEo&ab_channel=WebDevSimplified
 //24.58 timestamp
+
+
+ {/* {tasksArray.map((taskItem) => (
+          <TaskCard task={taskItem} />
+        ))} */}
