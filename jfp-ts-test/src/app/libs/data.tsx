@@ -1,20 +1,26 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export interface Task {
   name: string,
-  completed: boolean
+  completed: boolean,
+  id:string
 }
 
 export const tasks: Array<Task>  = [
   {
     name:'Anna',
-    completed: true
+    completed: true,
+    id:uuidv4(),
   },
   {
     name:'Jack',
-    completed: false
+    completed: false,
+    id:uuidv4(),
   },
   {
     name:'Des',
-    completed: true
+    completed: true,
+    id:uuidv4(),
   }
 ];
 

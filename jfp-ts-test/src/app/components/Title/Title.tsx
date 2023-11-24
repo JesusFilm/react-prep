@@ -5,8 +5,7 @@ interface TitleProps {
   label?: string;
 }
 
-export function Title({label = 'Anna Page'}: TitleProps) :ReactElement {
-  console.log(label)
+export function Title({label = 'Annas To-dos'}: TitleProps) :ReactElement {
   return(
   <>
      <Typography variant="h2" gutterBottom>{label}</Typography>
