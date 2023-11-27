@@ -11,28 +11,30 @@ import { Form } from '../Form'
 interface TaskCardProps {
   task: Task
   deleteTodo: (key: string) => void
-  toggleTodo: (key: string) => void
+  toggleTodo: (key: string, completed: boolean) => void
 }
 
 export function TaskCard({ task, toggleTodo, deleteTodo }: TaskCardProps): ReactElement {
-
+  const {id, name, completed} = task
+  //object destructuring 
   return (
     <>
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography variant="h3" component="div">
-            Task: {task.name}
+            Task: {name}
           </Typography>
           <div className="status">
             <Checkbox
               color="primary"
-              onChange={e => toggleTodo(task.id, e.target.checked)}
+              checked={completed}
+              onChange={e => toggleTodo(id, e.target.checked)}
             />
             <Typography variant="h6" component="div">
-              Status: {task.completed ? 'Completed' : 'Not Completed'}
+              Status: {completed ? 'Completed' : 'Not Completed'}
             </Typography>
           </div>
-          <Button onClick={() =>deleteTodo(task.id)}>Delete</Button>
+          <Button onClick={() =>deleteTodo(id)}>Delete</Button>
         </CardContent>
       </Card>
     </>

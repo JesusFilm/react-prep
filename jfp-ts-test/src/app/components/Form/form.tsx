@@ -8,16 +8,18 @@ import { tasks } from '../../libs/data'
 import { v4 as uuidv4 } from 'uuid'
 
 interface FormProps {
-  setToDoItems: (arr: Task[]) => void
+  setToDoItems: React.Dispatch<React.SetStateAction<Task[]>>
+  // setToDoItems: (callback: (prevItems: Task[]) => void) => void
+  // setToDoItems: (arr: Task[]) => void
 }
 
 export function Form({ setToDoItems }: FormProps): ReactElement {
   const [textfieldItem, setTextFieldItem] = useState('')
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     e.preventDefault()
     console.log('Form submitted with textfieldItem:', textfieldItem)
-    setToDoItems((prevItems: Task[]) => {
+    setToDoItems((prevItems) => {
       const updatedItems = [
         ...prevItems,
         { id: uuidv4(), name: textfieldItem, completed: false },
@@ -50,7 +52,8 @@ export function Form({ setToDoItems }: FormProps): ReactElement {
             onChange={(e) => setTextFieldItem(e.target.value)}
           />
           <br />
-          <Button variant="outlined" onClick={(e) => handleSubmit(e)}>
+          <Button variant="outlined" onClick={handleSubmit}>
+            {/* <Button variant="outlined" onClick={(e) => handleSubmit(e)}> */}
             Submit
           </Button>
         </>

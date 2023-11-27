@@ -7,12 +7,12 @@ import { v4 as uuidv4 } from 'uuid'
 import { Task } from '@/app/libs/data'
 
 export function Main(): ReactElement {
-  const [toDoItems, setToDoItems] = useState<Task[]>([])
+  const [toDoItems, setToDoItems] = useState<Task[]>(tasks)
   console.log(toDoItems)
 
-  function toggleTodo(key, completed) {
-    setToDoItems(currentTodos => {
-      return currentTodos.map(todo => {
+  function toggleTodo(key: string, completed: boolean) {
+    setToDoItems((currentTodos) => {
+      return currentTodos.map((todo) => {
         if (todo.id === key) {
           return { ...todo, completed }
         }
@@ -21,16 +21,17 @@ export function Main(): ReactElement {
     })
   }
 
-  function deleteTodo(key) {
-    setToDoItems(currentTodos => {
-      return currentTodos.filter(todo => todo.id !== key)
+  function deleteTodo(key: string) {
+    setToDoItems((currentTodos) => {
+      return currentTodos.filter((todo) => todo.id !== key)
     })
   }
 
   return (
     <>
       <Title />
-      <Form setToDoItems={(arr) => setToDoItems(arr)} />
+      <Form setToDoItems={setToDoItems} />
+      {/* <Form setToDoItems={(arr) => setToDoItems(arr)} /> */}
       {toDoItems.map((taskItem) => (
         <TaskCard
           task={taskItem}
