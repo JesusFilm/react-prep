@@ -45,21 +45,41 @@ function addName(obj, name) {
 // deleteProperty should return a new copy of `obj` without the property name
 // that matches the `key` parameter
 // Tip: consider JavaScript's `delete` operator
-function deleteProperty(obj, key) {}
+function deleteProperty(obj, key) {
+  console.log(obj)
+  const obj2 = { ...obj } // make a copy of the object
+  delete obj2[key]
+  console.log(obj2)
+  return obj2
+}
 
 // returnErrorIfFalsy should return a JavaScript Error object with message:
 //   'Oh no, an error!'
 // if val evaluates to false
 // Tip: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
-function returnErrorIfFalsy(val) {}
+function returnErrorIfFalsy(val) {
+  if (val == 0) {
+    const customError = new Error('Oh no, an error!')
+    return customError
+  }
+}
 
 // keys should return an array of the object's property names (keys)
 // For example, given { foo: 1, bar: 2 } it would return ['foo', 'bar']
-function getKeys(obj) {}
+function getKeys(obj) {
+  const nameList = []
+  for (element in obj) {
+    console.log(element)
+    nameList.push(element)
+  }
+  return nameList
+}
 
 // getValues should return an array of the object's own values
 // For example, given { foo: 1, bar: 2 } it would return [1, 2]
-function getValues(obj) {}
+function getValues(obj) {
+  return Object.values(obj)
+}
 
 /**
  * Arrays
@@ -68,16 +88,27 @@ function getValues(obj) {}
 // makeArrayOfItem should return an array that is `length` long, made up of
 // `item`. For example, makeArrayOfItem('foo', 2) would return:
 // ['foo', 'foo']
-function makeArrayOfItem(item, length) {}
+function makeArrayOfItem(item, length) {
+  return Array(length).fill(item)
+}
 
 // makeArrayOfItems should return an array containing all arguments passed to it
 // Tip: consider JavaScript's Rest parameters
-function makeArrayOfItems() {}
+function makeArrayOfItems(...items) {
+  return items
+}
 
 // hasItem should return true if `item` is present in `arr` at least once,
 // otherwise it should return false.
 // Tip: there is an array function that makes this straightforward
-function hasItem(arr, item) {}
+function hasItem(arr, item) {
+  for (const element in arr) {
+    if (arr[element] == item) {
+      return true
+    }
+  }
+  return false
+}
 
 // getItemAtIndex should return arr[idx] but only if that index exists:
 // if it doesn't, return a JavaScript Error object.
