@@ -1,20 +1,24 @@
 function where(arr, searchDetails) {
-  return arr.filter((item) => {
-    return Object.keys(searchDetails).every(
-      (key) => item[key] === searchDetails[key]
-    )
-  })
+  const result = []
+
+  for (let i = 0; i < arr.length; i++) {
+    const item = arr[i]
+    let isMatch = true
+    for (let key in searchDetails) {
+      if (searchDetails.hasOwnProperty(key)) {
+        if (item[key] !== searchDetails[key]) {
+          isMatch = false
+          break
+        }
+      }
+    }
+
+    if (isMatch) {
+      result.push(item)
+    }
+  }
+
+  return result
 }
 
 module.exports = where
-
-/*    wip version 
-  for (let i = 0; i < arr.length; i++) {
-    for (let j in arr[i]) {
-      if (arr[i][j] == searchDetails[j]) {
-        return [arr[i]]
-      }
-    }
-  }
-  return false
-*/
