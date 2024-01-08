@@ -64,7 +64,7 @@ function log(message: string | number) {
 }
 
 // Interfaces - custom type, or specific type of an object 
-// read only makes properties read only, and cannot be changedf
+// read only makes properties read only, and cannot be changed
 interface userInterface {
   readonly id: number, 
   name: string

@@ -1,6 +1,6 @@
 import { Task } from '@/app/libs/data'
 import { Button, Stack, TextField } from '@mui/material'
-import { ReactElement } from 'react'
+import { ReactElement, useEffect } from 'react'
 import React, { useState, ChangeEvent } from 'react'
 
 interface FormProps {
@@ -9,6 +9,10 @@ interface FormProps {
 
 export function Form({ handleAdd }: FormProps): ReactElement {
   const [name, setName] = useState('')
+
+  useEffect(() => {
+    setName('')
+  }, [handleAdd])
 
   function handleChangeTextField(newName: string) {
     setName(newName)

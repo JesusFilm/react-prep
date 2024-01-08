@@ -13,7 +13,11 @@ export function Main(): ReactElement {
   const [taskArray, setTaskArray] = useState([...tasksData])
 
   function addTask(name: string) {
-    setTaskArray((taskArray) => [...taskArray, { name, completed: false }])
+    setTaskArray((taskArray) => [...taskArray, { name, completed: false, taskId: uuidv4() }])
+  }
+
+  function deleteTask(removeId: string) {
+    setTaskArray((taskArray) => [...taskArray].filter((task) => task.taskId != removeId))
   }
 
   return (
@@ -21,8 +25,9 @@ export function Main(): ReactElement {
       <Title label={'To Do List'} />
       <Form handleAdd={addTask} />
       {taskArray.map((task) => (
-        <TaskCard item={task} key={uuidv4()} />
+        <TaskCard item={task} key={uuidv4()} deleteTask={deleteTask} />
       ))}
     </>
   )
 }
+ 
