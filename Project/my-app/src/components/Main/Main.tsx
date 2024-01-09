@@ -1,8 +1,6 @@
 //imports
-import { Title } from '../Title/Title'
+//import { Title } from '../Title/Title'
 
 export function Main() {
-  return {
-    Title,
-  }
+  return <p>MAinn thing!</p>
 }
