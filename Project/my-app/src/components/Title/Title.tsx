@@ -6,11 +6,9 @@ interface TitleProps {
 }
 
 export function Title({ label }: TitleProps) {
-  return label ? (
+  return (
     <Typography variant="h3" sx={{ textAlign: 'center' }}>
-      {label}
+      {label ?? 'No Label was given.'}
     </Typography>
-  ) : (
-    <Typography>No Label was given.</Typography>
   )
 }

@@ -2,11 +2,26 @@ import React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
-import Task from '../../libs/data'
+import { Task, initialTasks } from '../../libs/data'
+import { Box, Button } from '@mui/material'
 
-export function TaskCard(task: Task) {
+interface taskCardProps {
+  task: Task
+  onDelete: (taskId: string) => void
+  onComplete: (taskId: string) => void
+}
+
+export function TaskCard({ task, onDelete, onComplete }: taskCardProps) {
+  const handleDelete = () => {
+    onDelete(task.id)
+  }
+
+  const handleComplete = () => {
+    onComplete(task.id)
+  }
+
   return (
-    <Card sx={{ maxWidth: '70%', pb: '5px', mb: '15px', textAlign: 'center' }}>
+    <Card sx={{ minWidth: '100%', pb: '5px', mb: '15px', textAlign: 'center' }}>
       <CardContent>
         <Typography variant="h6" component="div">
           {task.name}
@@ -14,6 +29,15 @@ export function TaskCard(task: Task) {
         <Typography variant="body2" color="text.secondary">
           {task.completed ? 'Completed' : 'Not Completed'}
         </Typography>
+
+        <Box sx={{ minWidth: '50%', pb: '5px', mb: '15px', pt: '5px' }}>
+          <Button variant="outlined" color="primary" onClick={handleComplete}>
+            Complete
+          </Button>
+        </Box>
+        <Button variant="contained" color="error" onClick={handleDelete}>
+          x
+        </Button>
       </CardContent>
     </Card>
   )
