@@ -21,7 +21,15 @@ export function TaskCard({ task, onDelete, onComplete }: taskCardProps) {
   }
 
   return (
-    <Card sx={{ minWidth: '100%', pb: '5px', mb: '15px', textAlign: 'center' }}>
+    <Card
+      sx={{
+        width: '30%',
+        pb: '5px',
+        mb: '15px',
+        textAlign: 'center',
+        justifyContent: 'flex-start',
+      }}
+    >
       <CardContent>
         <Typography variant="h6" component="div">
           {task.name}

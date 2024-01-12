@@ -7,7 +7,7 @@ interface TaskFormProps {
   onAddTask: (taskName: string) => void
 }
 
-export const Form: React.FC<TaskFormProps> = ({ onAddTask }) => {
+export function Form({ onAddTask }: TaskFormProps) {
   const [text, setText] = useState('')
   const [submitButtonPressed, setSubmitButtonPressed] = useState(false)
 
@@ -27,9 +27,10 @@ export const Form: React.FC<TaskFormProps> = ({ onAddTask }) => {
   }, [submitButtonPressed])
 
   return (
-    <Box>
-      <Box sx={{ maxWidth: '100%', textAlign: 'left', pb: 0 }}>
+    <Box sx={{ textAlign: 'center' }}>
+      <Box sx={{ width: '100%', textAlign: 'top', pb: 1 }}>
         <TextField
+          sx={{ width: '50%', textAlign: 'center', pb: 1 }}
           label="Enter Task"
           variant="outlined"
           value={text}
