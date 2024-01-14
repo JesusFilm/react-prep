@@ -2,8 +2,7 @@
 
 import { TaskCard } from '../TaskCard'
 import { Task } from '../../libs/data'
-import Box from '@mui/material/Box' //remeber to specifically get this and not the entire materials folder
-import Grow from '@mui/material/Grow'
+import Box from '@mui/material/Box' //remeber to specifically get this and not the entire materials folders
 
 interface mainProps {
   initialTasks: Task[]
@@ -12,7 +11,6 @@ interface mainProps {
 }
 export function TaskList({ initialTasks, onDelete, onComplete }: mainProps) {
   return (
-    ///<Grow>
     <Box
       aria-label="Close"
       sx={{
@@ -26,6 +24,7 @@ export function TaskList({ initialTasks, onDelete, onComplete }: mainProps) {
     >
       {initialTasks.map((task: Task) => (
         <TaskCard
+          data-testid={`task-card-${task.id}`}
           key={task.id}
           task={task}
           onDelete={onDelete}
@@ -33,6 +32,5 @@ export function TaskList({ initialTasks, onDelete, onComplete }: mainProps) {
         />
       ))}
     </Box>
-    // </Grow>
   )
 }
