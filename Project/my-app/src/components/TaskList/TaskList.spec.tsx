@@ -9,7 +9,19 @@ describe('TaskList', () => {
       { id: '1', name: 'Task 1' },
       { id: '2', name: 'Task 2' },
     ]
-    const test = render(
+    // const test = render(
+    //   <TaskList
+    //     initialTasks={initialTasks}
+    //     onDelete={mockFunction}
+    //     onComplete={mockFunction}
+    //   />
+    // )
+
+    // initialTasks.forEach((task) => {
+    //   expect(test.getByText(task.name)).toBeInTheDocument()
+    // })
+
+    const { getByText } = render(
       <TaskList
         initialTasks={initialTasks}
         onDelete={mockFunction}
@@ -17,9 +29,8 @@ describe('TaskList', () => {
       />
     )
 
-    initialTasks.forEach((task) => {
-      expect(test.getByText(task.name)).toBeInTheDocument()
-    })
+    expect(getByText('Task 1')).toBeInTheDocument()
+    expect(getByText('Task 2')).toBeInTheDocument()
   })
 })
 

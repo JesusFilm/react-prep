@@ -12,21 +12,20 @@ import { Form } from '../Form'
 export function Main() {
   const [tasks, setTasks] = useState<Task[]>(initialTasks)
 
-  const onAddTask = (taskName: string) => {
+  const onAddTask = (name: string) => {
     const newTask: Task = {
       id: uuidv4(),
-      name: taskName ? taskName : 'Unnamed Task',
+      name,
+      // name: taskName ? taskName : 'Unnamed Task',
     }
     setTasks((prevTasks) => [...prevTasks, newTask])
   }
 
   const handleDelete = (taskId: string) => {
-    // Remove the task with the given taskId
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId))
   }
 
   const handleComplete = (taskId: string) => {
-    // set the task with the task id of 'taskId' to completed
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
         task.id === taskId ? { ...task, completed: true } : task

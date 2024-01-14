@@ -11,6 +11,11 @@ export function Form({ onAddTask }: TaskFormProps) {
   const [text, setText] = useState('')
   const [submitButtonPressed, setSubmitButtonPressed] = useState(false)
 
+  useEffect(() => {
+    submitButtonPressed && setText('')
+    setSubmitButtonPressed(false)
+  }, [submitButtonPressed])
+
   const handleTaskNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value)
   }
@@ -18,13 +23,8 @@ export function Form({ onAddTask }: TaskFormProps) {
   const handleSubmit = () => {
     onAddTask(text)
     setSubmitButtonPressed(true)
-    //setText('b') //this would have been way better but ther purpose is to learn useEffect
+    //setText('b') //this would have been faster but ther purpose is to learn useEffect
   }
-
-  useEffect(() => {
-    submitButtonPressed && setText('')
-    setSubmitButtonPressed(false)
-  }, [submitButtonPressed])
 
   return (
     <Box sx={{ textAlign: 'center' }}>

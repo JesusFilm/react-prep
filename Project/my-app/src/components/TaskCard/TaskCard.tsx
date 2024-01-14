@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
-import { Task, initialTasks } from '../../libs/data'
+import { Task } from '../../libs/data'
 import { Box, Button } from '@mui/material'
 
 interface taskCardProps {
@@ -43,7 +43,12 @@ export function TaskCard({ task, onDelete, onComplete }: taskCardProps) {
             Complete
           </Button>
         </Box>
-        <Button variant="contained" color="error" onClick={handleDelete}>
+        {/* <Button variant="contained" color="error" onClick={handleDelete}> */}
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => onDelete(task.id)}
+        >
           x
         </Button>
       </CardContent>
