@@ -16,7 +16,6 @@ export function Main() {
     const newTask: Task = {
       id: uuidv4(),
       name,
-      // name: taskName ? taskName : 'Unnamed Task',
     }
     setTasks((prevTasks) => [...prevTasks, newTask])
   }
