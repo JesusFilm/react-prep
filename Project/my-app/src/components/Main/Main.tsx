@@ -52,5 +52,3 @@ export function Main() {
     </Box>
   )
 }
-
-//TODO add task completed change button css to say completed anchange colour
