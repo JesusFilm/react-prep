@@ -28,7 +28,7 @@ export function Form({ handleAdd }: FormProps): ReactElement {
         id="outlined-basic"
         label="Task Name"
         variant="outlined"
-        value={name}
+        value= {name}
         onChange={(event: ChangeEvent<HTMLInputElement>) => {
           handleChangeTextField(event.target.value)
         }}

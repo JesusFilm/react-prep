@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
 import Box from '@mui/material/Box'
 
-export interface TaskCardProps {
+interface TaskCardProps {
   item: Task
   deleteTask: (removeId: string) => void
 }
@@ -34,7 +34,7 @@ function handleDelete(removeTaskId: string) {
           />
           <IconButton>
             <DeleteIcon
-              onClick={() => {handleDelete(item.taskId)}}
+              aria-label='Delete Button' onClick={() => {handleDelete(item.taskId)}}
             />
           </IconButton>
         </Box>

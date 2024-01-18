@@ -6,13 +6,15 @@ import { Button, TextField } from '@mui/material'
 import { Form } from '../Form'
 import { TaskCard } from '../TaskCard'
 import { TaskCardProps } from '../TaskCard'
+import { Box } from '@mui/material'
 
 import { v4 as uuidv4 } from 'uuid'
+
 
 export function Main(): ReactElement {
   const [taskArray, setTaskArray] = useState([...tasksData])
 
-  function addTask(name: string) {
+  function addTask(name: string = 'No Name') {
     setTaskArray((taskArray) => [...taskArray, { name, completed: false, taskId: uuidv4() }])
   }
 
