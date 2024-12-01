@@ -82,10 +82,10 @@ I things aren't working as you are expecting, console log out the variables and 
 
 ## Exercises
 
-- [ ] [Object and arrays](./1-objects-and-arrays/README.md) (2hrs)
-- [ ] [Strings and numbers](./2-strings-and-numbers/README.md) (2hrs)
-- [ ] [Data structures](./3-data-structures/README.md) (2hrs)
-- [ ] [Types](./4-types/README.md) (2hrs)
+- [x] [Object and arrays](./1-objects-and-arrays/README.md) (2hrs)
+- [x] [Strings and numbers](./2-strings-and-numbers/README.md) (2hrs)
+- [x] [Data structures](./3-data-structures/README.md) (2hrs)
+- [x] [Types](./4-types/README.md) (2hrs)
 
 <br />
 
