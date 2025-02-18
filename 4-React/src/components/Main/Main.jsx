@@ -2,6 +2,20 @@ import { Logo } from '../Logo'
 import { Subtitle } from '../Subtitle'
 import { DogList } from '../DogList'
 
+/**
+ * Renders the main layout of the application displaying a list of dogs.
+ *
+ * This React functional component creates an array of dog objects, each
+ * containing properties such as name, breed, superpower, and imageSrc.
+ * It then renders the following UI components:
+ * - Logo: Displays the application logo.
+ * - Subtitle: Shows a descriptive subtitle ("Canines using supercanine abilities for social good.").
+ * - DogList: Receives the array of dog objects and renders the list of dogs.
+ *
+ * Note: There is commented-out code for rendering individual Dog components that could be utilized in the future.
+ *
+ * @returns {JSX.Element} The JSX layout for the Main component.
+ */
 export function Main() {
   // Create array of dog info objects
   let DogsArray = []

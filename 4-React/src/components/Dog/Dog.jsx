@@ -1,3 +1,15 @@
+/**
+ * A React functional component that displays a dog's profile.
+ *
+ * This component renders a structured layout that includes the dog's name, breed, superpower, and an image.
+ * The image source is constructed dynamically based on the dog's breed (converted to lowercase) and points to a PNG file within the `images` directory.
+ *
+ * @param {Object} props - The properties for the Dog component.
+ * @param {string} props.name - The name of the dog.
+ * @param {string} props.breed - The breed of the dog.
+ * @param {string} props.superpower - The superpower of the dog.
+ * @returns {JSX.Element} The JSX element representing the dog's profile.
+ */
 export function Dog(props) {
   return (
     <div className="dog-wrapper">
