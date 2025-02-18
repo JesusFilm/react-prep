@@ -31,7 +31,6 @@ export function Form({ addTask }: FormProps): ReactElement {
           label=""
           variant="filled"
           onChange={(e) => {
-            // console.log('keyboard input: ', e.target.value)
             setTaskName(e.target.value)
           }}
           sx={{ ml: 1, width: '70%' }}
