@@ -7,7 +7,7 @@ export interface Task {
 }
 
 export const tasks: Task[] = [
-  { name: 'task1', completed: false, id: uuidv4() },
-  { name: 'task2', completed: false, id: uuidv4() },
-  { name: 'task3', completed: false, id: uuidv4() },
+  // { name: 'task1', completed: false, id: uuidv4() },
+  // { name: 'task2', completed: false, id: uuidv4() },
+  // { name: 'task3', completed: false, id: uuidv4() },
 ]

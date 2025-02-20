@@ -19,14 +19,34 @@ export function TaskCard({
 }: TaskCardProps): ReactElement {
   return (
     <div>
-      <Box display="flex" alignItems="center">
+      <Box
+        display="flex"
+        alignItems="center"
+        sx={{
+          mt: 2,
+          ml: 1,
+          mr: 1,
+          width: '80%',
+          borderRadius: 2,
+          bgcolor: 'primary.main',
+        }}
+      >
         <Typography
-          style={{ textDecoration: task.completed ? 'line-through' : 'none' }}
+          fontFamily="Pacifico"
+          sx={{
+            textDecoration: task.completed ? 'line-through' : 'none',
+            ml: 1,
+            color: 'white',
+          }}
           onClick={() => completeHandler(task.id)}
         >
           {task.name}
         </Typography>
-        <IconButton aria-label="delete" onClick={() => deleteHandler(task.id)}>
+        <IconButton
+          aria-label="cardDelete"
+          onClick={() => deleteHandler(task.id)}
+          sx={{ ml: 'auto' }}
+        >
           <DeleteIcon />
         </IconButton>
       </Box>

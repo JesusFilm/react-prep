@@ -24,6 +24,7 @@ export function Form({ addTask }: FormProps): ReactElement {
 
   return (
     <div>
+      {/* <Box display="flex" alignItems="center" gap={3}> */}
       <Box display="flex" alignItems="center" gap={3}>
         <TextField
           id="filled-basic"
