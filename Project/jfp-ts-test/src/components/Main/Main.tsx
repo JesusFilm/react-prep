@@ -13,7 +13,6 @@ export function Main(): ReactElement {
 
   // Add a new task card object
   const addTask = (newTaskName: string) => {
-    console.log('Adding task: ', newTaskName)
     setTasks([
       ...arrTasks,
       {
@@ -36,14 +35,12 @@ export function Main(): ReactElement {
       return task
     })
     setTasks(arrUpdatedTasks)
-    console.log(arrUpdatedTasks)
   }
 
   // Delete task card object
   const deleteTask = (id: string) => {
     const arrUpdatedTasks = arrTasks.filter((task) => task.id !== id)
     setTasks(arrUpdatedTasks)
-    console.log(arrUpdatedTasks)
   }
 
   return (
