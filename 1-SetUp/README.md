@@ -53,7 +53,6 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
 
   _branches are what allows us to all work collaboratively_
 
--
 
 2. Making your first commit.
 
@@ -79,7 +78,7 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
 
   ![push](https://lh6.googleusercontent.com/-ojCbxhpX54_7lgQDCRIFJ-1Q6w8eFkP4laQUCe0lxGEQTUcv1QkxNUNbc_GlayBYRo=w2400)
 
-- Create a new pull request (PR) on github
+- Create a new pull request (PR) on Github
 
   - Select your branch from the list of branches (you get to it by clicking on the button similar to the one below), and click `Create Pull Request`
 
@@ -87,9 +86,13 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
 
   - Make sure to select **your main branch** as the base branch. (`[user-name]-main`)
 
-  - Click `Create Pull Request`
+  - Click `Compare & pull request`
 
-    ![create pr](https://lh6.googleusercontent.com/h8NZUIqBl2-LMtfrWIh52KlTdlDKYWalIxvziIOknGFFn-68K1kVcmcZr-N2AkdfLec=w2400)
+    ![compare and pull request](https://lh3.googleusercontent.com/d/17v845oLDfnMgsH3btRNk49UPidDjOGvj)
+
+  - Click `Create pull request`
+
+    ![create pull request](https://lh6.googleusercontent.com/h8NZUIqBl2-LMtfrWIh52KlTdlDKYWalIxvziIOknGFFn-68K1kVcmcZr-N2AkdfLec=w2400)
 
     _Depending on the teams your on, you may be required to fill in a description as well as the list on the right_
 
@@ -97,6 +100,6 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
 
   ![review and merge](https://lh3.googleusercontent.com/hICRLK6D6YSU0ajmFxgTuK9GwTvk8XAY3q2SvIF2wT6zcWzMYzp1_JY2kxq3JPEjiq8=w2400)
 
-  _Have a look at the `Commits` tab and the `Files changed` tab, these are what your reviewers will be looking at when working apart of a project_
+  _Have a look at the `Commits` tab and the `Files changed` tab, these are what your reviewers will be looking at when working on a part of a project_
 
-Note: You can push changes straight to your main branch and don't have to raise a PR to make a change. But most projects you'll be apart of will require you to.
+Note: You can push changes straight to your main branch and don't have to raise a PR to make a change. But most projects you'll be a part of will require you to.
