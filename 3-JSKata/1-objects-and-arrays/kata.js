@@ -19,7 +19,11 @@ function ageOneYear(obj) {
 // {
 //   key: value
 // }
-function makeObject(key, value) {}
+function makeObject(key, value) {
+  return {
+    [key]: value
+  }
+}
 
 // getPropertyValue should return the value of the
 // property contained in the `key` of `obj`
