@@ -44,7 +44,11 @@ function addName(obj, name) {
 // deleteProperty should return a new copy of `obj` without the property name
 // that matches the `key` parameter
 // Tip: consider JavaScript's `delete` operator
-function deleteProperty(obj, key) {}
+function deleteProperty(obj, key) { 
+  const newObj = {...obj}
+  delete newObj[key]
+  return newObj
+}
 
 // returnErrorIfFalsy should return a JavaScript Error object with message:
 //   'Oh no, an error!'
