@@ -34,7 +34,12 @@ function getPropertyValue(obj, key) {
 // addName should return a copy of `obj` with the addition of a `name`
 // property that has the value of the `name` argument
 // Tip: consider the object literal spread syntax
-function addName(obj, name) {}
+function addName(obj, name) {
+  return {
+    ...obj,
+    name: name
+  }
+}
 
 // deleteProperty should return a new copy of `obj` without the property name
 // that matches the `key` parameter
