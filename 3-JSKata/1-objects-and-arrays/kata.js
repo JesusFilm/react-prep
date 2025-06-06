@@ -94,7 +94,9 @@ function makeArrayOfItems(...theArgs) {
 // hasItem should return true if `item` is present in `arr` at least once,
 // otherwise it should return false.
 // Tip: there is an array function that makes this straightforward
-function hasItem(arr, item) {}
+function hasItem(arr, item) {
+  return arr.includes(item)
+}
 
 // getItemAtIndex should return arr[idx] but only if that index exists:
 // if it doesn't, return a JavaScript Error object.
