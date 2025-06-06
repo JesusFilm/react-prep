@@ -27,7 +27,9 @@ function makeObject(key, value) {
 
 // getPropertyValue should return the value of the
 // property contained in the `key` of `obj`
-function getPropertyValue(obj, key) {}
+function getPropertyValue(obj, key) {
+  return obj[key]
+}
 
 // addName should return a copy of `obj` with the addition of a `name`
 // property that has the value of the `name` argument
