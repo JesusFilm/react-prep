@@ -10,7 +10,9 @@ function getGreeting(name) {
 
 // ageOneYear should return a new object with an `age` property 1 greater
 // than the `age` property of `obj`
-function ageOneYear(obj) {}
+function ageOneYear(obj) {
+  return {age: obj.age + 1}
+}
 
 // makeObject should return an object that looks like this:
 // (but using the arguments passed to the function)
