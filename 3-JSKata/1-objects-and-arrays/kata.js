@@ -77,7 +77,13 @@ function getValues(obj) {
 // makeArrayOfItem should return an array that is `length` long, made up of
 // `item`. For example, makeArrayOfItem('foo', 2) would return:
 // ['foo', 'foo']
-function makeArrayOfItem(item, length) {}
+function makeArrayOfItem(item, length) {
+  const newArray = []
+ for (let i = 0; i < length; i++){
+  newArray.push(item)
+ }
+  return newArray
+}
 
 // makeArrayOfItems should return an array containing all arguments passed to it
 // Tip: consider JavaScript's Rest parameters
