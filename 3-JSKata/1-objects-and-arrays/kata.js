@@ -4,7 +4,9 @@
 
 // getGreeting should return a string containing
 // 'Hello ' and the contents of `name`
-function getGreeting(name) {}
+function getGreeting(name) {
+  return 'Hello ' + name
+}
 
 // ageOneYear should return a new object with an `age` property 1 greater
 // than the `age` property of `obj`
