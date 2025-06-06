@@ -87,7 +87,9 @@ function makeArrayOfItem(item, length) {
 
 // makeArrayOfItems should return an array containing all arguments passed to it
 // Tip: consider JavaScript's Rest parameters
-function makeArrayOfItems() {}
+function makeArrayOfItems(...theArgs) {
+  return [...theArgs]
+}
 
 // hasItem should return true if `item` is present in `arr` at least once,
 // otherwise it should return false.
