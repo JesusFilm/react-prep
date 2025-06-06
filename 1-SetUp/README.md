@@ -9,7 +9,6 @@ To get started try the following:
 1. Install [Visual Studio Code](https://code.visualstudio.com/)
 1. Install [Docker Desktop](https://www.docker.com/get-started)
 1. Start Docker Desktop
-   - **PC users**: Windows limits resources to WSL 2 (Memory/CPU), this limit can be configured in your [.wslconfig file](https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configure-global-options-with-wslconfig).
 1. Start VS Code and add [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) Extension
 1. Run `Dev-Containers: Clone Repository in Container Volume...` from the Command Palette (F1).
 1. Pick GitHub (You'll need to authenticate with GitHub), then enter `JesusFilm/react-prep`, finally choose the `main` branch to clone.
@@ -58,7 +57,7 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
 
 2. Making your first commit.
 
-- Create another new branch and call it `complete-first-task`
+- Create another new branch and call it `[user-name]-complete-first-task`
 
 - Tick off the first task from the main [readme](../README.md) by making the following change
 
