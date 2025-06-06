@@ -70,7 +70,7 @@ The most important thing is not to panic! Welcome to your first introduction to 
 
 ## Kata
 
-The file you'll be working in is `kata.js`. This file is full of incomplete functions with comments describing what they should do. Every time you run the tests (using `npm test nameOfTheFunctionYoureWorkingOn`) you're checking to see if you've completed each function correctly. When you finish it successfully, it will show up GREEN and you can move on to the next function.
+The file you'll be working in is `kata.js`. This file is full of incomplete functions with comments describing what they should do. Every time you run the tests (using `npm test 1-tests/[nameOfTheFunctionYoureWorkingOn]`) you're checking to see if you've completed each function correctly. When you finish it successfully, it will show up GREEN and you can move on to the next function.
 
 Let's try it! Open `kata.js` in your editor. The first function looks like this:
 
@@ -107,11 +107,12 @@ Now you should press the `q` key in the terminal to stop the test runner (`w` wi
 
 This way we can practice the basics of JavaScript and build up our muscle memory:
 
-1.  read what the next function is supposed to do
-1.  run the tests using `npm test nameOfTheFunctionYoureWorkingOn`
-1.  write the code and save the file
-1.  read any errors and keep trying
-1.  rinse and repeat until all the tests pass
+1.  Read what the next function is supposed to do
+1.  Run the tests using `npm test 1-tests/[nameOfTheFunctionYoureWorkingOn]`
+1.  Write the code and save the file
+1.  Read any errors and keep trying
+1.  Rinse and repeat until all the tests pass
+1.  Finally press `q` key in the terminal to stop the test runner
 
 ## Making sure you're finished
 

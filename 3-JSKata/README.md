@@ -78,7 +78,7 @@ const answer = 123
 console.log(answer)
 ```
 
-I things aren't working as you are expecting, console log out the variables and different parts of your code. This will help you get a clearer idea of what your code is doing and where its going wrong.
+If things aren't working as you are expecting, `console.log` out the variables and different parts of your code. This will help you get a clearer idea of what your code is doing and where its going wrong.
 
 ## Exercises
 
