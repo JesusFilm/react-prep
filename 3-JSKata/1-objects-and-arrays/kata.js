@@ -119,7 +119,11 @@ function replaceItemAtIndex(arr, idx, item) {
 
 // insertItemAtIndex should return a copy of `arr` with `item` inserted at
 // `idx` without overwriting any array values (the array should get longer)
-function insertItemAtIndex(arr, item, idx) {}
+function insertItemAtIndex(arr, item, idx) {
+  const newArray = [...arr]
+  newArray.splice(idx, 0, item)
+  return newArray
+}
 
 // deleteItemAtIndex should return a copy of `arr` without
 // the element at `idx` (the array should get shorter).
