@@ -134,7 +134,9 @@ function deleteItemAtIndex(arr, idx) {
 }
 
 // deleteItem should return an array with every instance of `item` removed
-function deleteItem(arr, item) {}
+function deleteItem(arr, item) {
+  return arr.filter((element) => element !== item )
+}
 
 // zipObject should return an object built from two arrays
 // For example, given ['foo', 'bar'] and [1, 2] it would return
