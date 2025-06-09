@@ -170,7 +170,10 @@ function findOneByProperty(arr, search) {
 
 // findAll should return an array containing all objects in `arr` that
 // have the property and value of `search`
-function findAll(arr, search) {}
+function findAll(arr, search) {
+  const [key, value] = Object.entries(search)[0]
+  return arr.filter((obj) => obj[key] === value)
+}
 
 module.exports = {
   addName,
