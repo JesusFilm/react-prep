@@ -150,7 +150,13 @@ function zipObject(keys, values) {
 // unzipObject should return an array of arrays, each one a pair of keys and values
 // For example, given {foo: 1, bar: 2} it would return
 // [['foo', 1], ['bar', 2]]
-function unzipObject(obj) {}
+function unzipObject(obj) {
+  const newArray = []
+  for(const [key, value] of Object.entries(obj)){
+    newArray.push([key, value])
+  }
+  return newArray
+}
 
 // findOneByProperty should return an object from `arr` that has the
 // property AND value of `search`. For example, given:
