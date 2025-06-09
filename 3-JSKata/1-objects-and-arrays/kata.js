@@ -163,7 +163,10 @@ function unzipObject(obj) {
 //   [{a: 1}, {b: 2, c: 3}] and {b: 2}
 // it will return:
 //   {b: 2, c: 3}
-function findOneByProperty(arr, search) {}
+function findOneByProperty(arr, search) {
+  const [key, value] = Object.entries(search)[0]
+  return arr.find((obj) => obj[key] === value)
+}
 
 // findAll should return an array containing all objects in `arr` that
 // have the property and value of `search`
