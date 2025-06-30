@@ -53,7 +53,6 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
 
   _branches are what allows us to all work collaboratively_
 
-
 2. Making your first commit.
 
 - Create another new branch and call it `[user-name]-complete-first-task`
@@ -61,7 +60,7 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
 - Tick off the first task from the main [readme](../README.md) by making the following change
 
   ```
-  - [x] 1. [Initial Set Up](/1-SetUp/README.md)
+  - [Done] 1. [Initial Set Up](/1-SetUp/README.md)
   ```
 
 - Stage the change by going to `Source Control` and pressing the `+` next to the file you changed
