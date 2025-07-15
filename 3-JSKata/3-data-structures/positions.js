@@ -1,6 +1,10 @@
-function getFirst(arr) {}
+function getFirst(arr) {
+  return arr.shift()
+}
 
-function getLast(arr) {}
+function getLast(arr) {
+ return arr.pop()
+}
 
 module.exports = {
   getFirst,
