@@ -165,14 +165,13 @@ function zipObject(keys, values) {
 // For example, given {foo: 1, bar: 2} it would return
 // [['foo', 1], ['bar', 2]]
 function unzipObject(obj) {
-  let out1 = []
-  let out2 = []
-  keys = Object.keys(obj)
+  let output = []
+  let keys = Object.keys(obj)
   for (let i = 0; i < keys.length; i++) {
-    out1.push([keys[i]])
-    out2.push(obj[keys])
+    temp = [keys[i], obj[keys[i]]]
+    output.push(temp)
   }
-  return [out1, out2]
+  return output
 }
 
 // findOneByProperty should return an object from `arr` that has the
@@ -180,11 +179,27 @@ function unzipObject(obj) {
 //   [{a: 1}, {b: 2, c: 3}] and {b: 2}
 // it will return:
 //   {b: 2, c: 3}
-function findOneByProperty(arr, search) {}
+function findOneByProperty(arr, search) {
+  let keys = Object.keys(search)[0]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].hasOwnProperty(keys) && arr[i][keys] == search[keys]) {
+      return arr[i]
+    }
+  }
+}
 
 // findAll should return an array containing all objects in `arr` that
 // have the property and value of `search`
-function findAll(arr, search) {}
+function findAll(arr, search) {
+  let output = []
+  let keys = Object.keys(search)[0]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].hasOwnProperty(keys) && arr[i][keys] == search[keys]) {
+      output.push(arr[i])
+    }
+  }
+  return output
+}
 
 module.exports = {
   addName,
