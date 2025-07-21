@@ -2,10 +2,10 @@ function where(arr, searchDetails) {
   let newArr = []
   const searchKey = Object.keys(searchDetails)
 
-  for (obj of arr) {
+  for (const obj of arr) {
     let match = true
 
-    for (i in searchKey) {
+    for (const i in searchKey) {
       if (obj[searchKey[i]] != searchDetails[searchKey[i]]) {
         match = false
       }

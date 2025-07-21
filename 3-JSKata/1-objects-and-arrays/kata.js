@@ -86,20 +86,13 @@ function getValues(obj) {
 // `item`. For example, makeArrayOfItem('foo', 2) would return:
 // ['foo', 'foo']
 function makeArrayOfItem(item, length) {
-  let newArray = []
-  let count = 1
-  while (count <= length) {
-    newArray.push(item)
-    count++
-  }
-  return newArray
+  return Array(length).fill(item)
 }
 
 // makeArrayOfItems should return an array containing all arguments passed to it
 // Tip: consider JavaScript's Rest parameters
 function makeArrayOfItems() {
-  let newArray = [...arguments]
-  return newArray
+  return [...arguments]
 }
 
 // hasItem should return true if `item` is present in `arr` at least once,
@@ -147,7 +140,7 @@ function deleteItemAtIndex(arr, idx) {
 // deleteItem should return an array with every instance of `item` removed
 function deleteItem(arr, item) {
   let newArr = []
-  for (i in arr) {
+  for (const i in arr) {
     if (arr[i] != item) {
       newArr.push(arr[i])
     }
@@ -160,7 +153,7 @@ function deleteItem(arr, item) {
 // { foo: 1, bar: 2 }
 function zipObject(keys, values) {
   let newObj = {}
-  for (i in keys) {
+  for (const i in keys) {
     newObj[keys[i]] = values[i]
   }
   return newObj
@@ -170,14 +163,7 @@ function zipObject(keys, values) {
 // For example, given {foo: 1, bar: 2} it would return
 // [['foo', 1], ['bar', 2]]
 function unzipObject(obj) {
-  newArr = []
-  objKeys = Object.keys(obj)
-  objValues = Object.values(obj)
-  for (i in objKeys) {
-    let info = [objKeys[i], objValues[i]]
-    newArr.push(info)
-  }
-  return newArr
+  return Object.entries(obj)
 }
 
 // findOneByProperty should return an object from `arr` that has the
@@ -188,11 +174,7 @@ function unzipObject(obj) {
 function findOneByProperty(arr, search) {
   let key = Object.keys(search)[0]
   let value = search[key]
-  for (obj of arr) {
-    if (obj[key] == value) {
-      return obj
-    }
-  }
+  return arr.find((obj) => obj[key] == value)
 }
 
 // findAll should return an array containing all objects in `arr` that

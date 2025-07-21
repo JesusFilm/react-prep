@@ -38,7 +38,7 @@ function isEmail(str) {
 
 function countIf(array, fn) {
   count = 0
-  for (item of array) {
+  for (const item of array) {
     if (fn(item)) {
       count++
     }
