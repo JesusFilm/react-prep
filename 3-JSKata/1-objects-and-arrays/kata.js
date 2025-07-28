@@ -42,12 +42,24 @@ function getPropertyValue(obj, key) {
 // addName should return a copy of `obj` with the addition of a `name`
 // property that has the value of the `name` argument
 // Tip: consider the object literal spread syntax
-function addName(obj, name) {}
+function addName(obj, name) {
+  const objectAddName = Object.assign({}, obj)
+
+  objectAddName.name = name
+
+  return objectAddName
+}
 
 // deleteProperty should return a new copy of `obj` without the property name
 // that matches the `key` parameter
 // Tip: consider JavaScript's `delete` operator
-function deleteProperty(obj, key) {}
+function deleteProperty(obj, key) {
+  const objectDeleteProperty = Object.assign({}, obj)
+
+  delete objectDeleteProperty[key]
+
+  return objectDeleteProperty
+}
 
 // returnErrorIfFalsy should return a JavaScript Error object with message:
 //   'Oh no, an error!'
