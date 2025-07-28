@@ -26,18 +26,18 @@ function ageOneYear(obj) {
 //   key: value
 // }
 function makeObject(key, value) {
-  let keyRead = key
+  const newObj = {}
 
-  const newObj = {
-    keyRead: value,
-  }
+  newObj[key] = value
 
   return newObj
 }
 
 // getPropertyValue should return the value of the
 // property contained in the `key` of `obj`
-function getPropertyValue(obj, key) {}
+function getPropertyValue(obj, key) {
+  return obj[key]
+}
 
 // addName should return a copy of `obj` with the addition of a `name`
 // property that has the value of the `name` argument
