@@ -79,7 +79,9 @@ function getKeys(obj) {
 
 // getValues should return an array of the object's own values
 // For example, given { foo: 1, bar: 2 } it would return [1, 2]
-function getValues(obj) {}
+function getValues(obj) {
+  return Object.values(obj)
+}
 
 /**
  * Arrays
@@ -88,11 +90,21 @@ function getValues(obj) {}
 // makeArrayOfItem should return an array that is `length` long, made up of
 // `item`. For example, makeArrayOfItem('foo', 2) would return:
 // ['foo', 'foo']
-function makeArrayOfItem(item, length) {}
+function makeArrayOfItem(item, length) {
+  const myArray = []
+
+  for (let i = 0; i < length; i++) {
+    myArray.push(item)
+  }
+
+  return myArray
+}
 
 // makeArrayOfItems should return an array containing all arguments passed to it
 // Tip: consider JavaScript's Rest parameters
-function makeArrayOfItems() {}
+function makeArrayOfItems(...item) {
+  return item // Using the rest Parameter, it captures everything and stores it in an array
+}
 
 // hasItem should return true if `item` is present in `arr` at least once,
 // otherwise it should return false.
