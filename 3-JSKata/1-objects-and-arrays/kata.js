@@ -109,11 +109,26 @@ function makeArrayOfItems(...item) {
 // hasItem should return true if `item` is present in `arr` at least once,
 // otherwise it should return false.
 // Tip: there is an array function that makes this straightforward
-function hasItem(arr, item) {}
+function hasItem(arr, item) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == item) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
 
 // getItemAtIndex should return arr[idx] but only if that index exists:
 // if it doesn't, return a JavaScript Error object.
-function getItemAtIndex(arr, idx) {}
+function getItemAtIndex(arr, idx) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == arr[idx]) {
+      return arr[i]
+    }
+  }
+  return new Error()
+}
 
 // replaceItemAtIndex should return a copy of `arr` with
 // the element at `idx` replaced with `item`
