@@ -12,9 +12,8 @@ function getGreeting(name) {
 // than the `age` property of `obj`
 function ageOneYear(obj) {
   const newObj = {
-    name: 'Mickey Mouse',
+    ...obj,
     age: obj.age + 1,
-    email: 'mickey@disney.com',
   }
 
   return newObj
@@ -66,7 +65,7 @@ function deleteProperty(obj, key) {
 // if val evaluates to false
 // Tip: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
 function returnErrorIfFalsy(val) {
-  if (val == false) {
+  if (!val) {
     return new Error('Oh no, an error!')
   }
 }
@@ -133,11 +132,33 @@ function getItemAtIndex(arr, idx) {
 // replaceItemAtIndex should return a copy of `arr` with
 // the element at `idx` replaced with `item`
 // Tip: consider the array literal spread syntax
-function replaceItemAtIndex(arr, idx, item) {}
+function replaceItemAtIndex(arr, idx, item) {
+  const tempArray = []
+
+  for (let i = 0; i < arr.length; i++) {
+    tempArray[i] = arr[i]
+    if (arr[i] == arr[idx]) {
+      tempArray[i] = item
+    }
+  }
+
+  return tempArray
+}
 
 // insertItemAtIndex should return a copy of `arr` with `item` inserted at
 // `idx` without overwriting any array values (the array should get longer)
-function insertItemAtIndex(arr, item, idx) {}
+function insertItemAtIndex(arr, item, idx) {
+  const tempArray = []
+
+  for (let i = 0; i < arr.length; i++) {
+    tempArray[i] = arr[i]
+    if (i == idx) {
+      tempArray.splice(i, 0, item)
+    }
+  }
+
+  return tempArray
+}
 
 // deleteItemAtIndex should return a copy of `arr` without
 // the element at `idx` (the array should get shorter).
