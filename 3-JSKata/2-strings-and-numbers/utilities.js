@@ -1,8 +1,18 @@
-function getType(thing) {}
+function getType(thing) {
+  return typeof thing
+}
 
-function isNumber(thing) {}
+function isNumber(thing) {
+  if (typeof thing === 'number') {
+    return true
+  } else {
+    return false
+  }
+}
 
-function toNumber(str) {}
+function toNumber(str) {
+  return Number(str)
+}
 
 function isStringNumber(str) {}
 
