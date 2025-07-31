@@ -122,7 +122,7 @@ function hasItem(arr, item) {
 // if it doesn't, return a JavaScript Error object.
 function getItemAtIndex(arr, idx) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == arr[idx]) {
+    if (i == idx) {
       return arr[i]
     }
   }
@@ -162,10 +162,29 @@ function insertItemAtIndex(arr, item, idx) {
 
 // deleteItemAtIndex should return a copy of `arr` without
 // the element at `idx` (the array should get shorter).
-function deleteItemAtIndex(arr, idx) {}
+function deleteItemAtIndex(arr, idx) {
+  const tempArray = []
+
+  for (let i = 0; i < arr.length; i++) {
+    tempArray[i] = arr[i]
+    if (i == idx) {
+      tempArray.splice(idx, 1)
+    }
+  }
+
+  return tempArray
+}
 
 // deleteItem should return an array with every instance of `item` removed
-function deleteItem(arr, item) {}
+function deleteItem(arr, item) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == item) {
+      arr.splice(i, 0, item)
+    }
+  }
+
+  return arr
+}
 
 // zipObject should return an object built from two arrays
 // For example, given ['foo', 'bar'] and [1, 2] it would return
