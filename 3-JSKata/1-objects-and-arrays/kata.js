@@ -68,6 +68,7 @@ function returnErrorIfFalsy(val) {
   if (!val) {
     return new Error('Oh no, an error!')
   }
+  return val
 }
 
 // keys should return an array of the object's property names (keys)
@@ -112,10 +113,9 @@ function hasItem(arr, item) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == item) {
       return true
-    } else {
-      return false
     }
   }
+  return false
 }
 
 // getItemAtIndex should return arr[idx] but only if that index exists:
