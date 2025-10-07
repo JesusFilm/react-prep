@@ -62,7 +62,16 @@ function isEmail(str) {
   }
 }
 
-function countIf(array, fn) {}
+function countIf(array, fn) {
+  let count = 0
+
+  for (let i = 0; i < array.length; i++) {
+    if (fn(array[i]) != false) {
+      count += 1
+    }
+  }
+  return count
+}
 
 function filterStringsWithCommas(str) {}
 
