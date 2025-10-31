@@ -88,7 +88,18 @@ function filterStringsWithCommas(str) {
   }
 }
 
-function splitStringByCommas(str) {}
+function splitStringByCommas(str) {
+  let index
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == ',') {
+      index = str[i]
+    }
+  }
+
+  newStr = str.split(index)
+
+  return newStr
+}
 
 module.exports = {
   getType,
