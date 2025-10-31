@@ -73,7 +73,20 @@ function countIf(array, fn) {
   return count
 }
 
-function filterStringsWithCommas(str) {}
+function filterStringsWithCommas(str) {
+  let count = 0
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == ',') {
+      count += 1
+    }
+  }
+
+  if (count > 0) {
+    return true
+  } else {
+    return false
+  }
+}
 
 function splitStringByCommas(str) {}
 
