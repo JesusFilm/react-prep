@@ -1,0 +1,149 @@
+JSX
+
+import { useState, useEffect } from 'react';
+import Head from 'next/head';
+
+export default function Home() {
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [filter, setFilter] = useState('all');
+
+  // Load todos from localStorage on mount
+  useEffect(() => {
+    const savedTodos = localStorage.getItem('todos');
+    if (savedTodos) {
+      setTodos(JSON.parse(savedTodos));
+    }
+  }, []);
+
+  // Save todos to localStorage whenever todos change
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
+  const addTodo = (e) => {
+    e.preventDefault();
+    if (inputValue.trim()) {
+      setTodos([...todos, {
+        id: Date.now(),
+        text: inputValue.trim(),
+        completed: false
+      }]);
+      setInputValue('');
+    }
+  };
+
+  const toggleTodo = (id) => {
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
+  const clearCompleted = () => {
+    setTodos(todos.filter(todo => !todo.completed));
+  };
+
+  const filteredTodos = todos.filter(todo => {
+    if (filter === 'active') return !todo.completed;
+    if (filter === 'completed') return todo.completed;
+    return true;
+  });
+
+  const activeTodos = todos.filter(todo => !todo.completed);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8">
+      <Head>
+        <title>Todo App</title>
+        <meta name="description" content="A simple todo app built with Next.js" />
+      </Head>
+
+      <main className="max-w-md mx-auto bg-white rounded-xl shadow-md p-6">
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          Todo App
+        </h1>
+
+        {/* Add Todo Form */}
+        <form onSubmit={addTodo} className="mb-6">
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="What needs to be done?"
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+
+        {/* Todo List */}
+        <div className="space-y-2 mb-6">
+          {filteredTodos.map(todo => (
+            <div
+              key={todo.id}
+              className={`flex items-center gap-3 p-3 rounded-lg border ${
+                todo.completed ? 'bg-gray-50 border-gray-200' : 'bg-white border-gray-300'
+              }`}
+            >
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => toggleTodo(todo.id)}
+                className="h-5 w-5 text-blue-500 rounded focus:ring-blue-400"
+              />
+              <span
+                className={`flex-1 ${
+                  todo.completed ? 'line-through text-gray-500' : 'text-gray-800'
+                }`}
+              >
+                {todo.text}
+              </span>
+              <button
+                onClick={() => deleteTodo(todo.id)}
+                className="text-red-500 hover:text-red-700 transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+          ))}
+        </div>
+
+        {/* Filters and Stats */}
+        <div className="flex justify-between items-center text-sm text-gray-600">
+          <span>{activeTodos.length} items left</span>
+          
+          <div className="flex gap-2">
+            {['all', 'active', 'completed'].map(f => (
+              <button
+                key={f}
+                onClick={() => setFilter(f)}
+                className={`px-3 py-1 rounded ${
+                  filter === f ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'
+                }`}
+              >
+                {f.charAt(0).toUpperCase() + f.slice(1)}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={clearCompleted}
+            className="text-gray-600 hover:text-gray-800 transition-colors"
+          >
+            Clear Completed
+          </button>
+        </div>
+      </main>
+    </div>
+  );
+}
