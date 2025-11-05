@@ -17,5 +17,4 @@ Key learnings
 
 If you complete all the tasks ahead of time, have a look at this stretch goals
 
-- [Stretch material](./7-Strectch.md)
-- testing
+- [Stretch material](./7-Stretch.md)
