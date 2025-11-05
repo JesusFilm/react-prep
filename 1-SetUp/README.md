@@ -103,3 +103,11 @@ fork/exec /usr/local/bin/docker-compose-v1: bad CPU type in executable
   _Have a look at the `Commits` tab and the `Files changed` tab, these are what your reviewers will be looking at when working on a part of a project_
 
 Note: You can push changes straight to your main branch and don't have to raise a PR to make a change. But most projects you'll be a part of will require you to.
+
+### Still confused?
+
+Watch a [quick video](https://drive.google.com/file/d/1mFhsRM86VS_x_07V69HJH0_zTxyNniQL/view?usp=sharing) where Edmond:
+- creates a branch 
+- makes commits
+- pushes the changes to remote (GitHub)
+- creates a PR (pull request)
