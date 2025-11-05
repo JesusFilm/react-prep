@@ -8,12 +8,12 @@ There are intentional gaps left in the instructions, try to figure out what you 
 
 Key learnings
 
-- [Typescript](./1-Typescript.md)
-- [Material UI](./2-Mui.md)
-- [UseState Hook](./3-UseState.md)
-- [UseEffect Hook](./4-UseEffect.md)
-- [Unit tests](./5-UnitTests.md)
-- [Storybook](./6-Storybook.md)
+- [Typescript](./instructions/1-Typescript.md)
+- [Material UI](./instructions/2-Mui.md)
+- [UseState Hook](./instructions/3-UseState.md)
+- [UseEffect Hook](./instructions/4-UseEffect.md)
+- [Unit tests](./instructions/5-UnitTests.md)
+- [Storybook](./instructions/6-Storybook.md)
 
 If you complete all the tasks ahead of time, have a look at this stretch goals
 
