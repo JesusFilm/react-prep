@@ -109,5 +109,5 @@ Note: You can push changes straight to your main branch and don't have to raise 
 Watch a [quick video](https://drive.google.com/file/d/1mFhsRM86VS_x_07V69HJH0_zTxyNniQL/view?usp=sharing) where Edmond:
 - creates a branch 
 - makes commits
-- pushes the changes to remote (Github)
+- pushes the changes to remote (GitHub)
 - creates a PR (pull request)
