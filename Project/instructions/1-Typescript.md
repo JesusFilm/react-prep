@@ -14,12 +14,15 @@ And use the following options
 
 ```
 ✔ What is your project named? … jfp-ts-test
+✔ Would you like to use the recommended Next.js defaults? › No, customize settings
 ✔ Would you like to use TypeScript? … Yes
-✔ Would you like to use ESLint? … Yes
+✔ Which linter would you like to use? › ESLint
+✔ Would you like to use React Compiler? … Yes
 ✔ Would you like to use Tailwind CSS? … No
 ✔ Would you like to use `src/` directory? … Yes
 ✔ Would you like to use App Router? (recommended) … Yes
-✔ Would you like to customize the default import alias (@/*)? … No
+✔ Would you like to use Turbopack? (recommended) … Yes
+✔ Would you like to customize the import alias (`@/*` by default)? … No
 ```
 
 2. Remove the unneeded boilerplate code
