@@ -72,6 +72,13 @@ Make the following components in the `components` folder.
 > Each new component you create should be a new sub folder with the title of the component. The contents of this sub folder will have the component itself as well as an index file that exports this component.
 >
 > This helps with keeping everything tidy and organized.
+> ```
+> src
+>   - components
+>     - Main
+>       - index.ts
+>       - Main.tsx
+> ```
 
 1. Create a component called `Main`. It should take no props and replace the `<>Hello World</>` in `pages.ts`.
     - Create a folder called `Main`
@@ -82,18 +89,8 @@ Make the following components in the `components` folder.
 
 3. Create a component called `Form`. Props can be left blank for this for now.
 
-4. Create a component called `TaskCard`, its props should be type `task` (from the data file)
+4. Create a component called `Pomodoro`, its props should be type `timer` (from the data file)
 
-> - For each new component you must create a new sub folder with the title of that component.
-> - The contents of should have the component itself as well as a index file that exports the component.
->
-> ```
-> src
->   - components
->     - Main
->       - index.ts
->       - Main.tsx
-> ```
->
-> - The component return type should be `ReactElement`
-> - At this point we're only creating the skeleton for the project, components can return an empty fragment.
+5. Give each of these components a return type of `ReactElement`.
+
+    - At this point we're only creating the skeleton for the project, components can return an empty fragment.
