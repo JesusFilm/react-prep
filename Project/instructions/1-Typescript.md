@@ -69,9 +69,7 @@ Make the following components in the `components` folder.
 
 > [!NOTE]
 > 
-> Each new component you create should be a new sub folder with the title of the component as we have done here.
->
->The contents of this sub folder will have the component itself as well as an index file that exports this component.
+> Each new component you create should be a new sub folder with the title of the component. The contents of this sub folder will have the component itself as well as an index file that exports this component.
 >
 > This helps with keeping everything tidy and organized.
 
