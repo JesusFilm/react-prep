@@ -1,10 +1,9 @@
 import type { ReactElement } from "react"
 
-export function Main(): ReactElement {
+export function Form(): ReactElement {
   return (
     <div>
-      <h1>Main</h1>
+      <h1>Form</h1>
     </div>
   )
 }
-
