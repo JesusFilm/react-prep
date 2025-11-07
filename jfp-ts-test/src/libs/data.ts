@@ -5,7 +5,6 @@ export enum TimerState {
   COMPLETED = 'COMPLETED',
 }
 
-// cspell:disable-next-line
 export interface PomodoroTimer {
   id: string
   label: string
@@ -18,7 +17,6 @@ export interface PomodoroTimer {
   state: TimerState
 }
 
-// cspell:disable-next-line
 export const timers: PomodoroTimer[] = [
   {
     id: '1',

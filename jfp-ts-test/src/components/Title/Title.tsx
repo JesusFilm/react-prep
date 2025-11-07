@@ -1,3 +1,4 @@
+import Typography from "@mui/material/Typography"
 import type { ReactElement } from "react"
 interface TitleProps {
   label?: string
@@ -6,7 +7,7 @@ interface TitleProps {
 export function Title({ label }: TitleProps): ReactElement {
   return (
     <div>
-      <h1>{label}</h1>
+      <Typography variant="h1">{label}</Typography>
     </div>
   )
 }
