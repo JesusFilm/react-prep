@@ -28,7 +28,7 @@ And use the following options
 2. Remove the unneeded boilerplate code
 
    - Remove imports from `src/app/page.tsx`
-   - Replace the entire `<Main> ... </Main>` tag,with `<>Hello World</>`
+   - Replace inside the `return`, with `<>Hello World</>`
    - In `src/app/layout.tsx` remove the `global.css` import
 
 3. Make the following new folders in `src`
@@ -38,18 +38,47 @@ And use the following options
 ## Make a data file
 
 1. In the `libs` folder create a file called `data.ts`
-2. Create a interface called `Task` with a 2 properties
+- This will be your mock data so you can build out the UI.
+2. Create a [interface](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png) called `PomodoroTimer` with these properties:
 
-   - `name` with type `string`
-   - `completed` with type `boolean`
+   - `id` with type `string`
+   - `label` with type `string`
+   - `durationMinutes` with type `number`
+   - `remainingSeconds` with type `number`
+   - `breakDurationMinutes` with type `number`
+   - `breakEverySessions` with type `number`
+   - `completedSessions` with type `number`
+   - `totalSession` with type `number`
+   
+3. Create a string [enum](https://www.typescriptlang.org/docs/handbook/enums.html) called `TimerState` with these constant members:
 
-3. Create an **typed** array called tasks and fill it with 3 or more items
+```
+  STARTED = 'STARTED',
+  PAUSED = 'PAUSED',
+  STOPPED = 'STOPPED',
+  COMPLETED = 'COMPLETED',
+```
+
+4. Add the property `state` to the interface and give it the type `TimerState`.
+
+5. Create an **typed** array called `timers` and fill it with 3 or more timers.
 
 ## Make some base components
 
-Make the following components in the `components` folder
+Make the following components in the `components` folder.
+
+> [!NOTE]
+> 
+> Each new component you create should be a new sub folder with the title of the component as we have done here.
+>
+>The contents of this sub folder will have the component itself as well as an index file that exports this component.
+>
+> This helps with keeping everything tidy and organized.
 
 1. Create a component called `Main`. It should take no props and replace the `<>Hello World</>` in `pages.ts`.
+    - Create a folder called `Main`
+    - Create a file called `Main.tsx`
+    - Create a file called `index.ts`
 
 2. Create a component called `Title`. It should take in an **optional** prop called `label` with type `string`
 
