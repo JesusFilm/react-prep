@@ -1,4 +1,5 @@
-function Main() {
+
+export function Main() {
   return (
     <div>
       <h1>Main</h1>
@@ -6,4 +7,3 @@ function Main() {
   )
 }
 
-export default Main
