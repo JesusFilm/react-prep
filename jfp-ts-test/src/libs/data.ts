@@ -1,21 +1,21 @@
 export enum TimerState {
-  STARTED = 'started',
-  PAUSED = 'paused',
-  STOPPED = 'stopped',
-  COMPLETED = 'completed',
+  STARTED = 'STARTED',
+  PAUSED = 'PAUSED',
+  STOPPED = 'STOPPED',
+  COMPLETED = 'COMPLETED',
 }
 
 // cspell:disable-next-line
 export interface PomodoroTimer {
   id: string
   label: string
-  state: TimerState
   durationMinutes: number
   remainingSeconds: number
   breakDurationMinutes: number
   breakEverySessions: number
   completedSessions: number
   totalSessions: number
+  state: TimerState
 }
 
 // cspell:disable-next-line
