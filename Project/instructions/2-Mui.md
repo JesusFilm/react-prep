@@ -10,19 +10,19 @@ As you build the components play around with the style and placements of each co
 
 ## Title
 
-This should use a `typography` component from MUI to display the label. It should display some default text if no label is passed in.
+This should use a `Typography` component from MUI to display the label. It should display some default text if no label is passed in.
 
 ## Form
 
-This should have a `TextField` and `Button` component from MUI
+This should utilize the `TextField` and `Button` component from MUI.
 
-## TaskCard
+## Timer
 
-This component should display the name and the completed status of a task.
+This component should display the name, the remaining time and the completed status of a timer.
 
 ## Main
 
-Import the array from `data.ts` and use it to render out a `TaskCard` for each task.
+Import the `timers` array from `data.ts` and use it to render out a `Timer` for each timer.
 
 When react renders components with an array, each item needs to have a unique key.
 
