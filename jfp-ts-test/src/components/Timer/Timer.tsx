@@ -6,10 +6,10 @@ import Image from 'next/image';
 
 interface TimerProps {
   timer: Timer;
-  onDeleteTimer: (id: string) => void;
+  handleDeleteTimer: (id: string) => void;
 }
 
-export function Timer({ timer, onDeleteTimer }: TimerProps) {
+export function Timer({ timer, handleDeleteTimer }: TimerProps) {
   const isComplete = timer.remainingSeconds <= 0;
   const [catFact, setCatFact] = useState('');
   const [loading, setLoading] = useState(false);
@@ -73,7 +73,7 @@ export function Timer({ timer, onDeleteTimer }: TimerProps) {
                 </Stack>
                 <Button
                   color="error"
-                  onClick={() => onDeleteTimer(timer.id)}
+                  onClick={() => handleDeleteTimer(timer.id)}
                 >
                   Delete
                 </Button>

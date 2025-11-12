@@ -4,13 +4,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { useEffect, useState, type ReactElement } from 'react';
 import { Form } from '../Form';
 import { TimerList } from '../TimerList';
-import type { Timer as TimerEntry } from '@/libs/data';
 import { Title } from '../Title';
+import type { Timer, Timers } from '@/libs/data';
 
 export function Main(): ReactElement {
-  const [timers, setTimers] = useState<TimerEntry[]>([]);
+  const [timers, setTimers] = useState<Timers>([]);
 
-  function createTimer(label: string, durationSeconds: number): TimerEntry {
+  function createTimer(label: string, durationSeconds: number): Timer {
     const safeDuration = Math.max(1, durationSeconds);
   
     return {
@@ -76,7 +76,7 @@ export function Main(): ReactElement {
     <>
       <Title label="Timer App" />
       <Form handleAddTimer={handleAddTimer} />
-      <TimerList timers={timers} onDeleteTimer={handleDeleteTimer} />
+      <TimerList timers={timers} handleDeleteTimer={handleDeleteTimer} />
     </>
   );
 }

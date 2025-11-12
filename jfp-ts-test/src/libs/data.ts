@@ -6,7 +6,9 @@ export interface Timer {
   isRunning: boolean;
 }
 
-const timers: Timer[] = [
+export type Timers = Timer[];
+
+const timers: Timers = [
   {
     id: '1',
     label: 'Timer 1',
