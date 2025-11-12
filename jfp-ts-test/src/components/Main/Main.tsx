@@ -5,10 +5,10 @@ import { useEffect, useState, type ReactElement } from 'react';
 import { Form } from '../Form';
 import { TimerList } from '../TimerList';
 import { Title } from '../Title';
-import type { Timer, Timers } from '@/libs/data';
+import type { Timer } from '@/libs/data';
 
 export function Main(): ReactElement {
-  const [timers, setTimers] = useState<Timers>([]);
+  const [timers, setTimers] = useState<Timer[]>([]);
 
   function createTimer(label: string, durationSeconds: number): Timer {
     const safeDuration = Math.max(1, durationSeconds);
