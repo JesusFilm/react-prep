@@ -20,7 +20,7 @@ And use the following options
 ✔ Would you like to use React Compiler? … Yes
 ✔ Would you like to use Tailwind CSS? … No
 ✔ Would you like to use `src/` directory? … Yes
-✔ Would you like to use App Router? (recommended) … No
+✔ Would you like to use App Router? (recommended) … Yes
 ✔ Would you like to use Turbopack? (recommended) … Yes
 ✔ Would you like to customize the import alias (`@/*` by default)? … No
 ```
