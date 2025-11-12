@@ -1,76 +1,68 @@
-'use client'
+'use client';
 
+import { useState, type FormEvent } from 'react';
 import {
-  TextField,
-  Typography,
+  Button,
   Card,
   CardContent,
   Stack,
+  TextField,
+  Typography,
 } from '@mui/material';
-import { PomodoroConfig, TimerState } from '@/libs/data';
 
 interface FormProps {
-  config: PomodoroConfig;
-  status: TimerState;
-  onUpdate: (config: PomodoroConfig) => void;
+  handleAddTimer: (label: string, durationMinutes: number) => void;
 }
 
-export function Form({ config, status, onUpdate }: FormProps) {
-  const isDisabled = status !== TimerState.IDLE;
+export function Form({ handleAddTimer }: FormProps) {
+  const [label, setLabel] = useState('');
+  const [durationMinutes, setDurationMinutes] = useState('1');
 
-  const handleChange = (key: keyof PomodoroConfig, rawValue: number) => {
-    if (isDisabled || Number.isNaN(rawValue)) return;
-    const value = Math.max(1, Math.floor(rawValue));
-    onUpdate({ ...config, [key]: value });
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const parsedDuration = Number(durationMinutes);
+    if (!Number.isFinite(parsedDuration) || parsedDuration <= 0) {
+      return;
+    }
+
+    handleAddTimer(label, parsedDuration);
+    setLabel('');
+    setDurationMinutes('1');
   };
 
   return (
-    <Card sx={{ maxWidth: 400, mx: 'auto', mt: 4, p: 2 }}>
+    <Card sx={{ maxWidth: 480, mx: 'auto', mt: 4, p: 2 }}>
       <CardContent>
-        <Typography variant="h6" gutterBottom>
-          Pomodoro Settings
-        </Typography>
-
-        <Stack spacing={2}>
+        <Stack
+          component="form"
+          spacing={2}
+          onSubmit={handleSubmit}
+        >
+          <Typography variant="h6">Create a timer</Typography>
           <TextField
-            label="Session Duration (min)"
-            type="number"
-            value={config.sessionDuration}
-            onChange={e => handleChange('sessionDuration', Number(e.target.value))}
-            disabled={isDisabled}
+            label="Label"
+            value={label}
+            onChange={event => setLabel(event.target.value)}
+            placeholder="e.g. Laundry"
             fullWidth
-            inputProps={{ min: 1 }}
           />
-
           <TextField
-            label="Short Break (min)"
+            label="Duration (minutes)"
             type="number"
-            value={config.shortBreakDuration}
-            onChange={e => handleChange('shortBreakDuration', Number(e.target.value))}
-            disabled={isDisabled}
-            fullWidth
+            value={durationMinutes}
+            onChange={event => setDurationMinutes(event.target.value)}
             inputProps={{ min: 1 }}
-          />
-
-          <TextField
-            label="Long Break (min)"
-            type="number"
-            value={config.longBreakDuration}
-            onChange={e => handleChange('longBreakDuration', Number(e.target.value))}
-            disabled={isDisabled}
             fullWidth
-            inputProps={{ min: 1 }}
+            required
           />
-
-          <TextField
-            label="Sessions Before Long Break"
-            type="number"
-            value={config.sessionsBeforeLongBreak}
-            onChange={e => handleChange('sessionsBeforeLongBreak', Number(e.target.value))}
-            disabled={isDisabled}
-            fullWidth
-            inputProps={{ min: 1 }}
-          />
+          <Button
+            type="submit"
+            variant="contained"
+            disabled={!durationMinutes || Number(durationMinutes) <= 0}
+          >
+            Add timer
+          </Button>
         </Stack>
       </CardContent>
     </Card>

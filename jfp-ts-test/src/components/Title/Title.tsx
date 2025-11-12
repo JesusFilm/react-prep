@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
 import type { ReactElement } from "react"
 interface TitleProps {
@@ -6,8 +7,8 @@ interface TitleProps {
 
 export function Title({ label }: TitleProps): ReactElement {
   return (
-    <div>
+    <Box sx={{ maxWidth: 480, mx: 'auto', mt: 4 }}>
       <Typography variant="h2">{label}</Typography>
-    </div>
-  )
+    </Box>
+    )
 }
