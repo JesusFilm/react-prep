@@ -24,12 +24,12 @@ This component should display the name, the remaining time and the completed sta
 
 Import the `timers` array from `data.ts` and use it to render out a `Timer` for each timer.
 
-When react renders components with an array, each item needs to have a unique key.
+> [!IMPORTANT]
+> When react renders components with an array, each item needs to have a unique key.
+>
+> ```
+> npm i uuid
+> npm i --save @types/uuid
+> ```
 
-```
-npm i uuid
-npm i --save @types/uuid
-
-```
-
-[How to use UUID](https://github.com/uuidjs/uuid#readme)
+> [How to use UUID](https://github.com/uuidjs/uuid#readme)
