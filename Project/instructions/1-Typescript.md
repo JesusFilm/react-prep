@@ -47,21 +47,10 @@ And use the following options
    - `remainingSeconds` with type `number`
    - `isRunning` with type `boolean`
 
-   >[!NOTE]
-   >Make sure to export this interface so you can use it throughout your project.
-   
-3. Create a type [type](https://www.typescriptlang.org/docs/handbook/enums.html) called `TimerState` with these constant members:
+> [!NOTE]
+> Make sure to export this interface so you can use it throughout your project.
 
-```
-  STARTED = 'STARTED',
-  PAUSED = 'PAUSED',
-  STOPPED = 'STOPPED',
-  COMPLETED = 'COMPLETED',
-```
-
-4. Add the property `state` to the interface and give it the type `TimerState`.
-
-5. Create an **typed** array called `timers` and fill it with 3 or more timers.
+3. Create an **typed** array called `timers` and fill it with 3 or more timers.
 
 ## Make some base components
 
