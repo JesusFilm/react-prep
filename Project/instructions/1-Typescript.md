@@ -20,7 +20,7 @@ And use the following options
 ✔ Would you like to use React Compiler? … Yes
 ✔ Would you like to use Tailwind CSS? … No
 ✔ Would you like to use `src/` directory? … Yes
-✔ Would you like to use App Router? (recommended) … Yes
+✔ Would you like to use App Router? (recommended) … No
 ✔ Would you like to use Turbopack? (recommended) … Yes
 ✔ Would you like to customize the import alias (`@/*` by default)? … No
 ```
@@ -39,18 +39,18 @@ And use the following options
 
 1. In the `libs` folder create a file called `data.ts`
 - This will be your mock data so you can build out the UI.
-2. Create a [interface](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png) called `PomodoroTimer` with these properties:
+2. Create a [interface](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png) called `Timer` with these properties:
 
    - `id` with type `string`
    - `label` with type `string`
-   - `durationMinutes` with type `number`
+   - `durationSeconds` with type `number`
    - `remainingSeconds` with type `number`
-   - `breakDurationMinutes` with type `number`
-   - `breakEverySessions` with type `number`
-   - `completedSessions` with type `number`
-   - `totalSession` with type `number`
+   - `isRunning` with type `boolean`
+
+   >[!NOTE]
+   >Make sure to export this interface so you can use it throughout your project.
    
-3. Create a string [enum](https://www.typescriptlang.org/docs/handbook/enums.html) called `TimerState` with these constant members:
+3. Create a type [type](https://www.typescriptlang.org/docs/handbook/enums.html) called `TimerState` with these constant members:
 
 ```
   STARTED = 'STARTED',
