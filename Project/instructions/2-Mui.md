@@ -31,5 +31,4 @@ Import the `timers` array from `data.ts` and use it to render out a `Timer` for 
 > npm i uuid
 > npm i --save @types/uuid
 > ```
-
 > [How to use UUID](https://github.com/uuidjs/uuid#readme)
