@@ -2,18 +2,19 @@
 
 [Watch this video](https://youtu.be/O6P86uwfdR0)
 
-Create a MUI `Switch` component using useState to test your understanding (delete after)
+Create a MUI `Switch` component using `useState` to test your understanding. You can delete this after as this won't be needed for the actual project.
 
 ## Form
 
-When the button in the form is clicked a new task should created (and rendered) in the task list.
+When the button in the form is clicked a new timer should be created (and rendered) in the timer list.
 
-## TaskCard
+## Timer
 
-A task should be able to be completed, and still viewable in the task list.
+A timer should start counting down once it's added.
 
-A task can also be deleted. When deleted, the task should be removed from the list.
+The timer should show that it has finished/completed once it runs to zero and still visible in the timer list.
 
-## Hint
+A timer can also be deleted. When deleted, the timer should be removed from the list.
 
-Put the task array in a state
+> [!TIP]
+> Put the timer array in a state.
