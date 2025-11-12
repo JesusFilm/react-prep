@@ -6,6 +6,10 @@ Create a MUI `Switch` component using `useState` to test your understanding. You
 
 ## Form
 
+This form should allow the user to set name/label for a timer.
+
+This form should should allow the user to set the amount of time for the timer.
+
 When the button in the form is clicked a new timer should be created (and rendered) in the timer list.
 
 ## Timer
