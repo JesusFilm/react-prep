@@ -39,7 +39,7 @@ And use the following options
 
 1. In the `libs` folder create a file called `data.ts`
 - This will be your mock data so you can build out the UI.
-2. Create a [interface](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png) called `Timer` with these properties:
+2. Create an [interface](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png) called `Timer` with these properties:
 
    - `id` with type `string`
    - `label` with type `string`
@@ -78,7 +78,7 @@ Make the following components in the `components` folder.
 
 3. Create a component called `Form`. Props can be left blank for this for now.
 
-4. Create a component called `Pomodoro`, its props should be type `timer` (from the data file)
+4. Create a component called `Timer`, its props should be type `Timer` (from the data file)
 
 5. Give each of these components a return type of `ReactElement`.
 
