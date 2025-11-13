@@ -16,19 +16,19 @@ interface FormProps {
 
 export function Form({ handleAddTimer }: FormProps) {
   const [label, setLabel] = useState('');
-  const [durationMinutes, setDurationMinutes] = useState('1');
+  const [durationSeconds, setDurationSeconds] = useState('30');
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const parsedDuration = Number(durationMinutes);
+    const parsedDuration = Number(durationSeconds);
     if (!Number.isFinite(parsedDuration) || parsedDuration <= 0) {
       return;
     }
 
     handleAddTimer(label, parsedDuration);
     setLabel('');
-    setDurationMinutes('1');
+    setDurationSeconds('1');
   };
 
   return (
@@ -48,10 +48,10 @@ export function Form({ handleAddTimer }: FormProps) {
             fullWidth
           />
           <TextField
-            label="Duration (minutes)"
+            label="Duration (seconds)"
             type="number"
-            value={durationMinutes}
-            onChange={event => setDurationMinutes(event.target.value)}
+            value={durationSeconds}
+            onChange={event => setDurationSeconds(event.target.value)}
             inputProps={{ min: 1 }}
             fullWidth
             required
@@ -59,7 +59,7 @@ export function Form({ handleAddTimer }: FormProps) {
           <Button
             type="submit"
             variant="contained"
-            disabled={!durationMinutes || Number(durationMinutes) <= 0}
+            disabled={!durationSeconds || Number(durationSeconds) <= 0}
           >
             Add timer
           </Button>

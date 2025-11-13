@@ -36,12 +36,12 @@ export function Main(): ReactElement {
     const tick = () => {
       setTimers(prevTimers =>
         prevTimers.map(timer => {
-          if (!timer.isRunning) {
+          if (!timer.isRunning) { // Do nothing if timer is done
             return timer;
           }
 
           const nextRemaining = Math.max(0, timer.remainingSeconds - 1);
-          if (nextRemaining === timer.remainingSeconds) {
+          if (nextRemaining === timer.remainingSeconds) { // Do nothing if remaining seconds is the same
             return timer;
           }
 
@@ -63,8 +63,7 @@ export function Main(): ReactElement {
     };
   }, [hasRunningTimer]);
 
-  function handleAddTimer(label: string, durationMinutes: number) {
-    const durationSeconds = Math.max(1, Math.floor(durationMinutes * 60));
+  function handleAddTimer(label: string,  durationSeconds: number) {
     setTimers(prev => [...prev, createTimer(label, durationSeconds)]);
   };
 
