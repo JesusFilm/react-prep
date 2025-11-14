@@ -1,7 +1,7 @@
 export function Main() {
   return (
     <div>
-      <h1>Characteristic Feedback Systems</h1>
+      <header>Characteristic Feedback Systems</header>
     </div>
   )
 }
