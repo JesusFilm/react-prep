@@ -13,8 +13,7 @@ Key learnings
 - [UseState Hook](./instructions/3-UseState.md)
 - [UseEffect Hook](./instructions/4-UseEffect.md)
 - [Unit tests](./instructions/5-UnitTests.md)
-- [Storybook](./instructions/6-Storybook.md)
 
 If you complete all the tasks ahead of time, have a look at this stretch goals
 
-- [Stretch material](./7-Stretch.md)
+- [Stretch material](./instructions/7-Stretch.md)
