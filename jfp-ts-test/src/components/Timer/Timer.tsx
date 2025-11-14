@@ -1,11 +1,11 @@
 import { Button, Card, CardContent, Stack, Typography } from '@mui/material';
-import type { Timer } from '@/libs/data';
+import type { TimerModel } from '@/libs/data';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 interface TimerProps {
-  timer: Timer;
+  timer: TimerModel;
   handleDeleteTimer: (id: string) => void;
 }
 

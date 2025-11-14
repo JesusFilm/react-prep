@@ -1,12 +1,12 @@
-import { Timer as TimerComponent } from '../Timer';
+import { Timer } from '../Timer';
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import type { Timer } from '@/libs/data';
+import { TimerModel } from '@/libs/data';
 
 interface TimerListProps {
-  timers: Timer[];
+  timers: TimerModel[];
   handleDeleteTimer: (id: string) => void;
 }
 
@@ -24,7 +24,7 @@ const noTimerCard = (
     <Stack spacing={2} sx={{ maxWidth: 480, mx: 'auto', mt: 4 }}>
       {timers.length === 0 ? noTimerCard : timers.map(timer => {
         return (
-          <TimerComponent key={timer.id} timer={timer} handleDeleteTimer={handleDeleteTimer} />
+          <Timer key={timer.id} timer={timer} handleDeleteTimer={handleDeleteTimer} />
         );
       })}
     </Stack>
