@@ -39,5 +39,5 @@ let timeoutId: ReturnType<typeof setTimeout>;
     };
 ```
 
-> [!HINT]
+> [!TIP]
 > What might need to be in the dependency array?
