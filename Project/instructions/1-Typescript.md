@@ -39,7 +39,7 @@ And use the following options
 
 1. In the `libs` folder create a file called `data.ts`
 - This will be your mock data so you can build out the UI.
-2. Create an [interface](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png) called `Timer` with these properties:
+2. Create an [interface](https://www.typescriptlang.org/static/TypeScript%20Interfaces-34f1ad12132fb463bd1dfe5b85c5b2e6.png) called `TimerModel` with these properties:
 
    - `id` with type `string`
    - `label` with type `string`
