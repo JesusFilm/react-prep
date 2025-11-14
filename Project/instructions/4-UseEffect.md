@@ -38,3 +38,6 @@ let timeoutId: ReturnType<typeof setTimeout>;
       clearTimeout(timeoutId);
     };
 ```
+
+> [!HINT]
+> What might need to be in the dependency array?
