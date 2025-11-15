@@ -21,7 +21,7 @@ The recommended time is how much time you should spend on that task. If you find
 - [x] 1. [Initial Set Up](/1-SetUp/README.md) (1.5hrs)
 - [x] 2. [Basics](/2-Basics/README.md) (7hrs)
 - [x] 3. [Java Script Kata's](/3-JSKata/README.md) (8hrs)
-- [ ] 4. [Basic React](/4-React/README.md) (8hrs)
+- [x] 4. [Basic React](/4-React/README.md) (8hrs)
 - [ ] 5. [Build your first react app](/5-MyFirstApp/README.md) (4hrs +)
 
 ## The next step
@@ -29,4 +29,3 @@ The recommended time is how much time you should spend on that task. If you find
 (If you're doing the internship, we'll start this one together at the start of the internship and is **not** a part of the pre-work)
 
 [Project](./Project/README.md)
-# jay-chen-is-so-handsome
