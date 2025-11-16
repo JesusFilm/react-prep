@@ -16,13 +16,13 @@ export default function Home() {
         Material UI
       </Link>
       <Link
-        href="/useState"
+        href="/state"
         className="rounded-md bg-black px-4 py-2 text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
       >
         useState
       </Link>
       <Link
-        href="/usEffect"
+        href="/effect"
         className="rounded-md bg-black px-4 py-2 text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
       >
         useEffect
