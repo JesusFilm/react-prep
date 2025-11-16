@@ -1,4 +1,4 @@
-# Todo app
+# Timer app
 
 This is to consolidate learnings from the previous modules and to prepare you for contributing to the CORE project.
 
