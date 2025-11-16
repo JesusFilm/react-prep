@@ -78,7 +78,7 @@ Make the following components in the `components` folder.
 
 3. Create a component called `Form`. Props can be left blank for this for now.
 
-4. Create a component called `Timer`, its props should be type `Timer` (from the data file)
+4. Create a component called `Timer`, its props should be type `TimerModel` (from the data file)
 
 5. Give each of these components a return type of `ReactElement`.
 
