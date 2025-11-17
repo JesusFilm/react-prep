@@ -1,6 +1,7 @@
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
 
 export function UseMuiExample() {
   return (
@@ -9,12 +10,14 @@ export function UseMuiExample() {
   alignItems: 'center',
   width: '100%',
   p: 2,
+  gap: 2,
  }}>
   <Typography variant="h3">Mui Example</Typography>
   <Stack direction='row' spacing={1}>
   <Button variant="contained">Button 1</Button>
   <Button variant="contained">Button 2</Button>
   </Stack>
+  <TextField label="Name" variant="outlined" />
  </Stack>
   )
 }
