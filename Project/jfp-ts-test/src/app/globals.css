@@ -35,6 +35,12 @@ a {
   text-decoration: none;
 }
 
+/* ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
