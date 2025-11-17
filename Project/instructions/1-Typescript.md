@@ -7,7 +7,7 @@
 1. In your terminal paste in the following command.
 
 ```
-npx create-next-app@latest
+npx create-next-app@15
 ```
 
 And use the following options
@@ -21,17 +21,24 @@ And use the following options
 ✔ Would you like to use Tailwind CSS? … No
 ✔ Would you like to use `src/` directory? … Yes
 ✔ Would you like to use App Router? (recommended) … Yes
-✔ Would you like to use Turbopack? (recommended) … Yes
+✔ Would you like to use Turbopack? (recommended) … No
 ✔ Would you like to customize the import alias (`@/*` by default)? … No
 ```
 
-2. Remove the unneeded boilerplate code
+2. Enable WATCHPACK_POLLING
+  - In `package.json`, make this edit to the `dev` line under `"scripts"`.
+
+  ```
+  "dev": "WATCHPACK_POLLING=true next dev
+  ```
+
+3. Remove the unneeded boilerplate code
 
    - Remove imports from `src/app/page.tsx`
    - Replace inside the `return`, with `<>Hello World</>`
    - In `src/app/layout.tsx` remove the `global.css` import
 
-3. Make the following new folders in `src`
+4. Make the following new folders in `src`
    - `components` (The path should be `src/components`)
    - `libs` (The path should be `src/libs`)
 
