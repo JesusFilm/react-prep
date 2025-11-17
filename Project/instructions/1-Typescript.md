@@ -7,7 +7,7 @@
 1. In your terminal paste in the following command.
 
 ```
-npx create-next-app@latest
+npx create-next-app@15
 ```
 
 And use the following options
@@ -21,7 +21,7 @@ And use the following options
 ✔ Would you like to use Tailwind CSS? … No
 ✔ Would you like to use `src/` directory? … Yes
 ✔ Would you like to use App Router? (recommended) … Yes
-✔ Would you like to use Turbopack? (recommended) … Yes
+✔ Would you like to use Turbopack? (recommended) … No
 ✔ Would you like to customize the import alias (`@/*` by default)? … No
 ```
 
