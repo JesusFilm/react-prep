@@ -20,7 +20,7 @@ export function Main() {
     <div>
       <>Hello World</>
       <Form></Form>
-      <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', width: '25%' }}>
         <ul>{timerList}</ul>
       </Box>
     </div>
