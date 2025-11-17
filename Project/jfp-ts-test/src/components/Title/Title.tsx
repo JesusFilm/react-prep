@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+import { Typography } from '@mui/material'
 
 interface TitleProps {
   label: string
@@ -7,7 +8,7 @@ interface TitleProps {
 export function Title({ label }: TitleProps): ReactElement {
   return (
     <div>
-      <h1>`${label}`</h1>
+      <Typography>`${label}`</Typography>
     </div>
   )
 }
