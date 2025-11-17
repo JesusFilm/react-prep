@@ -10,7 +10,7 @@ export default function Home() {
         Typescript
       </Link>
       <Link
-        href="/useState"
+        href="/mui"
         className="rounded-md bg-black px-4 py-2 text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
       >
         Material UI
