@@ -1,3 +1,5 @@
-export function Timer() {
+import { ReactElement } from 'react'
+
+export function Timer(): ReactElement {
   return <></>
 }
