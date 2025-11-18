@@ -8,7 +8,7 @@ interface TitleProps {
 export function Title({ label }: TitleProps): ReactElement {
   return (
     <div>
-      <Typography>`${label}`</Typography>
+      <Typography>{label}</Typography>
     </div>
   )
 }

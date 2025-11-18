@@ -1,8 +1,12 @@
+'use client'
+
 import { Form } from '../Form'
-import { TimerModel, timers } from '../../libs/data'
+import { timers } from '../../libs/data'
 import { Timer } from '../Timer'
 import { v4 as uuidv4 } from 'uuid'
 import { Box } from '@mui/material'
+import { useState } from 'react'
+import { Title } from '../Title'
 
 export function Main() {
   const timerList = timers.map((x) => (
@@ -16,9 +20,11 @@ export function Main() {
     ></Timer>
   ))
 
+  const [timerState, setTimerState] = useState([])
+
   return (
     <div>
-      <>Hello World</>
+      <Title label="Timer App"></Title>
       <Form></Form>
       <Box sx={{ display: 'flex', flexDirection: 'column', width: '25%' }}>
         <ul>{timerList}</ul>
