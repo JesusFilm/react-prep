@@ -1,7 +1,8 @@
-import { Card, CardContent } from '@mui/material'
+import { Card, CardContent, Stack } from '@mui/material'
 import { ReactElement } from 'react'
+import DeleteIcon from '@mui/icons-material/Delete'
 
-interface TimerProps {
+export interface TimerProps {
   id: string
   label: string
   durationSeconds: number
@@ -20,9 +21,12 @@ export function Timer({
     <div>
       <Card>
         <CardContent>
-          <h1>{label}</h1>
-          <p>remaining time:{remainingSeconds}</p>
-          <p>total time:{durationSeconds}</p>
+          <Stack>
+            <h1>{label}</h1>
+            <DeleteIcon />
+          </Stack>
+          <p>remaining time: {remainingSeconds}</p>
+          <p>total time: {durationSeconds}</p>
           <p>{isRunning ? 'running' : 'complete'}</p>
         </CardContent>
       </Card>
