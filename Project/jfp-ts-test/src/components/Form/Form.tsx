@@ -3,6 +3,7 @@ import { Box, TextField } from '@mui/material/'
 import Button from '@mui/material/Button'
 import { useState } from 'react'
 import { TimerModel } from '@/libs/data'
+import { v4 as uuidv4 } from 'uuid'
 
 interface FormProps {
   handleSubmit: Dispatch<SetStateAction<TimerModel[]>>
@@ -59,6 +60,7 @@ export function Form({ handleSubmit, timerState }: FormProps): ReactElement {
             handleSubmit([
               ...timerState,
               {
+                key: uuidv4(),
                 id: timerState.length.toString(),
                 label: title,
                 durationSeconds: seconds,

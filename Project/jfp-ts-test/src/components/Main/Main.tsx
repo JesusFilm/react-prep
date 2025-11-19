@@ -3,7 +3,6 @@
 import { Form } from '../Form'
 import { TimerModel, timers } from '../../libs/data'
 import { Timer } from '../Timer'
-import { v4 as uuidv4 } from 'uuid'
 import { Box } from '@mui/material'
 import { useState } from 'react'
 import { Title } from '../Title'
@@ -11,15 +10,18 @@ import { Title } from '../Title'
 export function Main() {
   const [timerState, setTimerState] = useState<TimerModel[]>([])
 
+  console.log('timers', timerState)
+
   const timerList = timerState.map((x) => (
     <Timer
-      key={uuidv4()}
-      id={x.id}
+      key={x.key}
       label={x.label}
       durationSeconds={x.durationSeconds}
       remainingSeconds={x.remainingSeconds}
       isRunning={x.isRunning}
-    ></Timer>
+      handleClose={setTimerState}
+      timerState={timerState}
+    />
   ))
 
   return (
