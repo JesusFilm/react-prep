@@ -1,6 +1,16 @@
 import { ReactElement } from 'react'
-import { Container } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 
-export function Title(label?: string): ReactElement {
-  return <div></div>
+interface TitleProps {
+  label?: string
+}
+
+export function Title({ label }: TitleProps): ReactElement {
+  return (
+    <div>
+      <Typography variant="h1" component="h1">
+        {label}
+      </Typography>
+    </div>
+  )
 }
