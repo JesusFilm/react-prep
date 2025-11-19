@@ -24,13 +24,7 @@ export function Timer({
   handleClose,
   timerState,
 }: TimerProps): ReactElement {
-  function timerRemover(target: number) {
-    // const result = timerState.find((timer) => timer.id == target)
-    // if (result === undefined) return
-    // const index = timerState.indexOf(result)
-    // console.log([timerState.slice(0, index)])
-    console.log(id)
-
+  function timerRemover() {
     return timerState
       .slice(0, id)
       .concat(timerState.slice(id + 1, timerState.length))
@@ -45,9 +39,8 @@ export function Timer({
           <Stack>
             <h1>{label}</h1>
             <IconButton
-              onClick={(current) => {
-                const target = id
-                const newTimerState = timerRemover(id)
+              onClick={() => {
+                const newTimerState = timerRemover()
                 handleClose(newTimerState)
               }}
             >
