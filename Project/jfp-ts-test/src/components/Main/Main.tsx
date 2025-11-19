@@ -12,9 +12,10 @@ export function Main() {
 
   console.log('timers', timerState)
 
-  const timerList = timerState.map((x) => (
+  const timerList = timerState.map((x, index) => (
     <Timer
       key={x.key}
+      id={index}
       label={x.label}
       durationSeconds={x.durationSeconds}
       remainingSeconds={x.remainingSeconds}

@@ -5,6 +5,7 @@ import { TimerModel } from '@/libs/data'
 
 export interface TimerProps {
   key: string
+  id: number
   label: string
   durationSeconds: number
   remainingSeconds: number
@@ -15,6 +16,7 @@ export interface TimerProps {
 
 export function Timer({
   key,
+  id,
   label,
   durationSeconds,
   remainingSeconds,
@@ -22,14 +24,18 @@ export function Timer({
   handleClose,
   timerState,
 }: TimerProps): ReactElement {
-  console.log('key', key)
-  console.log('label', label)
-  function timerRemover(target: string) {
-    const result = timerState.find((timer) => timer.key === target)
-    if (result === undefined) return
-    const index = timerState.indexOf(result)
-    console.log([timerState.slice(0, index)])
-    return [timerState.slice(0, index)]
+  function timerRemover(target: number) {
+    // const result = timerState.find((timer) => timer.id == target)
+    // if (result === undefined) return
+    // const index = timerState.indexOf(result)
+    // console.log([timerState.slice(0, index)])
+    console.log(id)
+
+    return timerState
+      .slice(0, id)
+      .concat(timerState.slice(id + 1, timerState.length))
+
+    // return timerState.filter((timer) => id !== target)
   }
 
   return (
@@ -40,9 +46,9 @@ export function Timer({
             <h1>{label}</h1>
             <IconButton
               onClick={(current) => {
-                const target = key
-                const newTimerState = timerRemover(key)
-                // handleClose(newTimerState)
+                const target = id
+                const newTimerState = timerRemover(id)
+                handleClose(newTimerState)
               }}
             >
               <DeleteIcon />
