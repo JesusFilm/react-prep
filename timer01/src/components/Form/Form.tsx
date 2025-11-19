@@ -5,7 +5,7 @@ export function Form(): ReactElement {
   return (
     <div>
       <Container>
-        <Stack py={3} m={7} gap={2}>
+        <Stack py={3} m={40} gap={2}>
           <TextField
             sx={{ mb: 2 }}
             id="Max Time"

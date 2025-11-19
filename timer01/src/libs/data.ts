@@ -1,4 +1,4 @@
-interface TimerModel {
+export interface TimerModel {
   id: string
   label: string
   durationSeconds: number
@@ -6,7 +6,7 @@ interface TimerModel {
   isRunning: boolean
 }
 
-const timers: TimerModel[] = [
+export const timers: TimerModel[] = [
   {
     id: 'thing',
     label: 'time',
