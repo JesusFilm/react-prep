@@ -15,7 +15,6 @@ export interface TimerProps {
 }
 
 export function Timer({
-  key,
   id,
   label,
   durationSeconds,
