@@ -1,7 +1,7 @@
 import { Countries, countries } from './countryData'
 
 export interface Country {
-  name: string
+  name: Countries
   imageUrl: string
   alt: string
   description: string

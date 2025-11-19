@@ -81,6 +81,25 @@ export function UseEffectExample(): ReactElement {
           )}
         </CardContent>
       </Card>
+
+      {/* <ButtonGroup variant="outlined">
+        <Button
+          onClick={() => {
+            setOption('jpg')
+          }}
+          variant={option === 'jpg' ? 'contained' : 'outlined'}
+        >
+          JPG
+        </Button>
+        <Button
+          onClick={() => {
+            setOption('png')
+          }}
+          variant={option === 'png' ? 'contained' : 'outlined'}
+        >
+          PNG
+        </Button>
+      </ButtonGroup> */}
     </Box>
   )
 }
