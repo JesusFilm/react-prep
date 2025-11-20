@@ -4,6 +4,8 @@
 
     [React Testing library docs](https://testing-library.com/docs/react-testing-library/intro/)
 
+    [Jest and React Testing Library docs](https://www.robinwieruch.de/react-testing-library/)
+
     [Watch up to and including video 8](https://youtu.be/T2sv8jXoP4s?si=RFAYAj98ufulkSf-)
 
 2. Install the React Testing Library and Jest dependencies
