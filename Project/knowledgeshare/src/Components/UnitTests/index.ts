@@ -1,0 +1,1 @@
+export { MyCoolForm } from './MyCoolForm';
