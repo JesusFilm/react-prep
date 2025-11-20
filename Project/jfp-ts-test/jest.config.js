@@ -5,6 +5,7 @@ const createJestConfig = nextJest({
 })
 
 const customJestConfig = {
+  transformIgnorePatterns: ['node_modules/(?!uuid)'],
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testRegex: '.*\\.test\\.tsx?$',

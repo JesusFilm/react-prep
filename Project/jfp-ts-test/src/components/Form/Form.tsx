@@ -1,5 +1,5 @@
 import { Dispatch, ReactElement, SetStateAction } from 'react'
-import { Box, TextField } from '@mui/material/'
+import { Box, TextField } from '@mui/material'
 import Button from '@mui/material/Button'
 import { useState } from 'react'
 import { TimerModel } from '@/libs/data'
@@ -12,8 +12,6 @@ interface FormProps {
 
 export function Form({ handleSubmit, timerState }: FormProps): ReactElement {
   const [title, setTitle] = useState('New Timer')
-  // const [hours, setHours] = useState(0)
-  // const [minutes, setMinutes] = useState(0)
   const [seconds, setSeconds] = useState(60)
 
   const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,7 +37,7 @@ export function Form({ handleSubmit, timerState }: FormProps): ReactElement {
     <div>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <TextField
-          id="title"
+          id="titleTextfield"
           label="Title"
           onChange={handleTitleChange}
           sx={{ mx: '5px' }}
