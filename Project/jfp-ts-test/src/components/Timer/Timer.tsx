@@ -1,4 +1,4 @@
-import { Card, CardContent, IconButton, Stack } from '@mui/material'
+import { Card, CardContent, IconButton, Stack, Typography } from '@mui/material'
 import { Dispatch, ReactElement, SetStateAction } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { TimerModel } from '@/libs/data'
@@ -35,20 +35,31 @@ export function Timer({
     <div>
       <Card>
         <CardContent>
-          <Stack>
-            <h1>{label}</h1>
-            <IconButton
-              onClick={() => {
-                const newTimerState = timerRemover()
-                handleClose(newTimerState)
-              }}
-            >
-              <DeleteIcon />
-            </IconButton>
+          <Stack
+            sx={{
+              fontWeight: 'fontWeightBold',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}
+          >
+            <Typography variant="h3" sx={{ color: 'blue' }}>
+              {label}
+            </Typography>
+            <div>
+              <IconButton
+                onClick={() => {
+                  const newTimerState = timerRemover()
+                  handleClose(newTimerState)
+                }}
+              >
+                <DeleteIcon />
+              </IconButton>
+            </div>
           </Stack>
-          <p>remaining time: {remainingSeconds}</p>
-          <p>total time: {durationSeconds}</p>
-          <p>{isRunning ? 'running' : 'complete'}</p>
+          <Typography>remaining time: {remainingSeconds}</Typography>
+          <Typography>total time: {durationSeconds}</Typography>
+          <Typography>{isRunning ? 'running' : 'complete'}</Typography>
         </CardContent>
       </Card>
     </div>

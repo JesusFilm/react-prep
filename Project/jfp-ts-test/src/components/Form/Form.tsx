@@ -56,6 +56,7 @@ export function Form({ handleSubmit, timerState }: FormProps): ReactElement {
           onChange={handleSecondsChange}
         />
         <Button
+          variant="contained"
           onClick={() => {
             handleSubmit([
               ...timerState,

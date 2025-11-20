@@ -65,7 +65,13 @@ export function Main() {
     <div>
       <Title label="Timer App"></Title>
       <Form handleSubmit={setTimerState} timerState={timerState}></Form>
-      <Box sx={{ display: 'flex', flexDirection: 'column', width: '25%' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '25%',
+        }}
+      >
         <ul>{timerList}</ul>
       </Box>
     </div>
