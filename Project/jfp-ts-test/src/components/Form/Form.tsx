@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { TimerModel } from '@/libs/data'
 import { v4 as uuidv4 } from 'uuid'
 
+// FORM NO LONGER IN USE, REPLACED WITH DIALOGUE
 interface FormProps {
   handleSubmit: Dispatch<SetStateAction<TimerModel[]>>
   timerState: TimerModel[]

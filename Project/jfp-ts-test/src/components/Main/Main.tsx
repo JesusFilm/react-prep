@@ -6,6 +6,7 @@ import { Timer } from '../Timer'
 import { Box, Stack } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { Title } from '../Title'
+import { Dialogue } from '../Dialogue'
 
 export function Main() {
   const [timerState, setTimerState] = useState<TimerModel[]>([])
@@ -65,7 +66,8 @@ export function Main() {
     <div>
       <Stack className="wrapper" sx={{ mx: '2%', justifyContent: 'center' }}>
         <Title label="Timer App"></Title>
-        <Form handleSubmit={setTimerState} timerState={timerState}></Form>
+        <Dialogue handleSubmit={setTimerState} timerState={timerState} />
+        {/* <Form handleSubmit={setTimerState} timerState={timerState}></Form> */}
         <Box
           sx={{
             display: 'flex',
