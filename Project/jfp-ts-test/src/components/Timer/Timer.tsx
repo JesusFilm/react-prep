@@ -33,7 +33,7 @@ export function Timer({
 
   return (
     <div>
-      <Card>
+      <Card sx={{ my: '5%' }}>
         <CardContent>
           <Stack
             sx={{
@@ -43,7 +43,7 @@ export function Timer({
               justifyContent: 'space-between',
             }}
           >
-            <Typography variant="h3" sx={{ color: 'blue' }}>
+            <Typography variant="h4" sx={{ color: 'blue' }}>
               {label}
             </Typography>
             <div>
@@ -59,7 +59,13 @@ export function Timer({
           </Stack>
           <Typography>remaining time: {remainingSeconds}</Typography>
           <Typography>total time: {durationSeconds}</Typography>
-          <Typography>{isRunning ? 'running' : 'complete'}</Typography>
+          <div>
+            {isRunning ? (
+              <Typography sx={{ color: 'blue' }}>running</Typography>
+            ) : (
+              <Typography sx={{ color: 'green' }}>complete</Typography>
+            )}
+          </div>
         </CardContent>
       </Card>
     </div>

@@ -38,7 +38,12 @@ export function Form({ handleSubmit, timerState }: FormProps): ReactElement {
   return (
     <div>
       <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-        <TextField id="title" label="Title" onChange={handleTitleChange} />
+        <TextField
+          id="title"
+          label="Title"
+          onChange={handleTitleChange}
+          sx={{ mx: '5px' }}
+        />
         {/* <TextField
           id="hours"
           label="Hours"
@@ -54,9 +59,11 @@ export function Form({ handleSubmit, timerState }: FormProps): ReactElement {
           id="seconds"
           label="Seconds"
           onChange={handleSecondsChange}
+          sx={{ mx: '5px' }}
         />
         <Button
           variant="contained"
+          sx={{ mx: '5px' }}
           onClick={() => {
             handleSubmit([
               ...timerState,

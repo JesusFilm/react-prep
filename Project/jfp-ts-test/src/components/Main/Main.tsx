@@ -3,7 +3,7 @@
 import { Form } from '../Form'
 import { TimerModel, timers } from '../../libs/data'
 import { Timer } from '../Timer'
-import { Box } from '@mui/material'
+import { Box, Stack } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { Title } from '../Title'
 
@@ -63,17 +63,20 @@ export function Main() {
 
   return (
     <div>
-      <Title label="Timer App"></Title>
-      <Form handleSubmit={setTimerState} timerState={timerState}></Form>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          width: '25%',
-        }}
-      >
-        <ul>{timerList}</ul>
-      </Box>
+      <Stack className="wrapper" sx={{ mx: '2%', justifyContent: 'center' }}>
+        <Title label="Timer App"></Title>
+        <Form handleSubmit={setTimerState} timerState={timerState}></Form>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            flexWrap: 'wrap',
+            width: '35%',
+          }}
+        >
+          <ul>{timerList}</ul>
+        </Box>
+      </Stack>
     </div>
   )
 }

@@ -8,7 +8,9 @@ interface TitleProps {
 export function Title({ label }: TitleProps): ReactElement {
   return (
     <div>
-      <Typography>{label}</Typography>
+      <Typography variant="h3" sx={{ mb: '2%' }}>
+        {label}
+      </Typography>
     </div>
   )
 }
