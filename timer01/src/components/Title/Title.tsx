@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { Container, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 
 interface TitleProps {
   label?: string

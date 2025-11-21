@@ -1,9 +1,8 @@
 'use client'
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react'
 import { Button, Container, Stack, TextField } from '@mui/material'
-import { useFormControl } from '@mui/material/FormControl'
-import { Timer } from '../Timer'
-import { TimerModel, timers } from '@/libs/data'
+
+import { TimerModel } from '@/libs/data'
 import { v4 } from 'uuid'
 
 interface FormProps {
@@ -14,8 +13,9 @@ export function Form({ setTimers }: FormProps): ReactElement {
   const [count, setCount] = useState(0)
   const [name, setName] = useState('')
 
+  function deleteTimer() {}
+
   function addTimer() {
-    console.log(v4())
     setTimers((prevtimers) => {
       return [
         ...prevtimers,
@@ -60,6 +60,9 @@ export function Form({ setTimers }: FormProps): ReactElement {
           />
           <Button onClick={addTimer} variant="contained">
             Add Timer
+          </Button>
+          <Button onClick={deleteTimer} variant="contained">
+            Delete Timer
           </Button>
         </Stack>
       </Container>
