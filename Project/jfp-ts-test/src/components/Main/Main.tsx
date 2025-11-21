@@ -3,10 +3,12 @@
 import { Form } from '../Form'
 import { TimerModel, timers } from '../../libs/data'
 import { Timer } from '../Timer'
-import { Box, Stack } from '@mui/material'
+import { Box, Button, Stack, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { Title } from '../Title'
 import { Dialogue } from '../Dialogue'
+import { FetchFact } from '../FetchFact'
+import { useSnackbar } from 'notistack'
 
 export function Main() {
   const [timerState, setTimerState] = useState<TimerModel[]>([])
@@ -62,11 +64,27 @@ export function Main() {
     // }
   }, [])
 
+  const { enqueueSnackbar } = useSnackbar()
+  const [fact, setFact] = useState('')
+
+  useEffect(() => {
+    enqueueSnackbar(<Typography>{fact}</Typography>)
+  }, [fact, enqueueSnackbar])
+
+  const handleClick = async () => {
+    const message = await FetchFact()
+    setFact(message)
+    // const message = '123456'
+  }
+
   return (
     <div>
       <Stack className="wrapper" sx={{ mx: '2%', justifyContent: 'center' }}>
         <Title label="Timer App"></Title>
-        <Dialogue handleSubmit={setTimerState} timerState={timerState} />
+        <Stack sx={{ flexDirection: 'row' }}>
+          <Dialogue handleSubmit={setTimerState} timerState={timerState} />
+          <Button onClick={handleClick}>click for cool cat fact</Button>
+        </Stack>
         {/* <Form handleSubmit={setTimerState} timerState={timerState}></Form> */}
         <Box
           sx={{

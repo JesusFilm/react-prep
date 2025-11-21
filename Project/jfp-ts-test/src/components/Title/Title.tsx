@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
 import { Typography } from '@mui/material'
+import { FetchFact } from '../FetchFact'
 
 interface TitleProps {
   label: string
