@@ -20,7 +20,7 @@ export function Timer({ timers }: TimerProps): ReactElement {
           {timers.map((timer) => (
             <div key={timer.id}>
               <Typography variant="h6">{timer.label}</Typography>
-              <Typography key={timer.id}>{timer.remainingSeconds}</Typography>
+              <Typography>{timer.remainingSeconds}</Typography>
             </div>
           ))}
         </Stack>

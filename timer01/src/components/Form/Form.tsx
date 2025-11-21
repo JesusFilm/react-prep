@@ -4,31 +4,36 @@ import { Button, Container, Stack, TextField } from '@mui/material'
 import { useFormControl } from '@mui/material/FormControl'
 import { Timer } from '../Timer'
 import { TimerModel, timers } from '@/libs/data'
+import { v4 } from 'uuid'
 
 interface FormProps {
   setTimers: Dispatch<SetStateAction<TimerModel[]>>
 }
 
 export function Form({ setTimers }: FormProps): ReactElement {
+  const [count, setCount] = useState(0)
+  const [name, setName] = useState('')
+
   function addTimer() {
-    console.log('Clicked!!!')
-    // setTime(<Timer time />)
+    console.log(v4())
+    setTimers((prevtimers) => {
+      return [
+        ...prevtimers,
+        {
+          id: v4(),
+          label: name,
+          durationSeconds: count,
+          remainingSeconds: count,
+          isRunning: true,
+        },
+      ]
+    })
+    setCount(0)
+    setName('')
   }
 
   // On click: call function that adds timer and clears textfield
 
-  setTimers((prevtimers) => {
-    return [
-      ...prevtimers,
-      {
-        id: '1243',
-        label: 'this is a test',
-        durationSeconds: 10,
-        remainingSeconds: 10,
-        isRunning: true,
-      },
-    ]
-  })
   return (
     <div>
       <Container>
@@ -38,13 +43,20 @@ export function Form({ setTimers }: FormProps): ReactElement {
             id="Max Time"
             label="Max time"
             variant="outlined"
+            value={count}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setCount(Number(event.target.value))
+            }}
           />
           <TextField
             sx={{ mb: 2 }}
             id="Timer Name"
             label="Timer Name"
             variant="outlined"
-            defaultValue=""
+            value={name}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setName(event.target.value)
+            }}
           />
           <Button onClick={addTimer} variant="contained">
             Add Timer
