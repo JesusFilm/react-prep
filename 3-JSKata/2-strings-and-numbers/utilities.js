@@ -1,24 +1,58 @@
-function getType(thing) {}
+function getType(thing) {
+  return typeof thing
+}
 
-function isNumber(thing) {}
+function isNumber(thing) {
+  return typeof thing == 'number'
+}
 
-function toNumber(str) {}
+function toNumber(str) {
+  return Number(str)
+}
 
-function isStringNumber(str) {}
+function isStringNumber(str) {
+  return typeof str == 'string' && !isNaN(str)
+}
 
-function add(a, b) {}
+function add(a, b) {
+  return a + b
+}
 
-function addStrings(a, b) {}
+function addStrings(a, b) {
+  return String(Number(a) + Number(b))
+}
 
-function addStringsOrNumbers(a, b) {}
+function addStringsOrNumbers(a, b) {
+  if (typeof a == 'number' && typeof b == 'number') {
+    return a + b
+  } else {
+    return String(Number(a) + Number(b))
+  }
+}
 
-function isEmail(str) {}
+function isEmail(str) {
+  console.log
+  const emailRegex = /.+@.+\..+/
+  return emailRegex.test(str)
+}
 
-function countIf(array, fn) {}
+function countIf(array, fn) {
+  count = 0
+  for (const item of array) {
+    if (fn(item)) {
+      count++
+    }
+  }
+  return count
+}
 
-function filterStringsWithCommas(str) {}
+function filterStringsWithCommas(str) {
+  return str.includes(',')
+}
 
-function splitStringByCommas(str) {}
+function splitStringByCommas(str) {
+  return str.split(',')
+}
 
 module.exports = {
   getType,
