@@ -1,12 +1,13 @@
 import { ReactElement } from 'react'
-import { Container, Stack, Typography } from '@mui/material'
+import { Container, Stack, Typography, Button } from '@mui/material'
 import { TimerModel } from '@/libs/data'
-
 interface TimerProps {
-  timers: TimerModel[]
+  timer: TimerModel
+  deleteTimer: (timerId: string) => void
 }
 
-export function Timer({ timers }: TimerProps): ReactElement {
+export function Timer({ timer, deleteTimer }: TimerProps): ReactElement {
+  const timerId: string = timer.id
   // typography needs an unique key, to not confuse itself with the others.
 
   // timers.map returns a new array, by taking the labels out of a timer instance out of each element in timer array
@@ -16,12 +17,11 @@ export function Timer({ timers }: TimerProps): ReactElement {
     <div>
       <Container>
         <Stack py={10}>
-          {timers.map((timer) => (
-            <div key={timer.id}>
-              <Typography variant="h6">{timer.label}</Typography>
-              <Typography>{timer.remainingSeconds}</Typography>
-            </div>
-          ))}
+          <Typography variant="h6">{timer.label}</Typography>
+          <Typography>{timer.remainingSeconds} s</Typography>
+          <Button onClick={() => deleteTimer(timerId)} variant="contained">
+            Delete Timer
+          </Button>
         </Stack>
       </Container>
     </div>

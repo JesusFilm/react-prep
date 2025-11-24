@@ -19,13 +19,13 @@ export const timers: TimerModel[] = [
     label: 'dime',
     durationSeconds: 21,
     remainingSeconds: 101,
-    isRunning: false,
+    isRunning: true,
   },
   {
     id: 'no',
     label: 'pi',
     durationSeconds: 9,
     remainingSeconds: 0,
-    isRunning: false,
+    isRunning: true,
   },
 ]
