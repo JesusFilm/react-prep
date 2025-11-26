@@ -33,12 +33,21 @@ export function Form({ setTimers }: FormProps): ReactElement {
 
   return (
     <div>
-      <Container>
-        <Stack py={3} m={40} gap={2}>
+      <Container
+        sx={{
+          gap: 2,
+          ml: -39,
+          mt: 20,
+          width: 300,
+          border: 4,
+          borderRadius: 2,
+        }}
+      >
+        <Stack py={4} m={0.75} gap={2}>
           <TextField
             sx={{ mb: 2 }}
             id="Max Time"
-            label="Max T ime"
+            label="Max Time"
             variant="outlined"
             value={count}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {

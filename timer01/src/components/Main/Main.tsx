@@ -49,8 +49,8 @@ export function Main(): ReactElement {
       <Container>
         <Grid container spacing={2}>
           <Title label="Timers" />
-          <TimerList timers={timers} setTimers={setTimers} />
           <Form setTimers={setTimers} />
+          <TimerList timers={timers} setTimers={setTimers} />
         </Grid>
       </Container>
     </div>

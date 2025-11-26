@@ -15,10 +15,21 @@ export function Timer({ timer, deleteTimer }: TimerProps): ReactElement {
 
   return (
     <div>
-      <Container>
+      <Container
+        sx={{
+          border: 2,
+          margin: 1,
+          borderRadius: 2,
+          width: 250,
+          height: 200,
+          boxShadow: 10,
+        }}
+      >
         <Stack py={10}>
-          <Typography variant="h6">{timer.label}</Typography>
-          <Typography>{timer.remainingSeconds} s</Typography>
+          <Typography variant="h6" sx={{ margin: -1 }}>
+            {timer.label}
+          </Typography>
+          <Typography sx={{ margin: 1 }}>{timer.remainingSeconds} s</Typography>
           <Button onClick={() => deleteTimer(timerId)} variant="contained">
             Delete Timer
           </Button>
