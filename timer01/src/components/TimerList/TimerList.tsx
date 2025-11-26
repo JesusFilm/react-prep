@@ -1,7 +1,6 @@
 import { ReactElement } from 'react'
 import { TimerModel } from '@/libs/data'
 import { Timer } from '@/components/Timer'
-import { v4 } from 'uuid'
 import { Dispatch, SetStateAction } from 'react'
 
 interface TimerProps {
@@ -18,8 +17,8 @@ export function TimerList({ timers, setTimers }: TimerProps): ReactElement {
 
   return (
     <div>
-      {timers.map((timer) => (
-        <Timer key={v4()} timer={timer} deleteTimer={deleteTimer} />
+      {timers.map((timer, key) => (
+        <Timer key={key} timer={timer} deleteTimer={deleteTimer} />
       ))}
     </div>
   )

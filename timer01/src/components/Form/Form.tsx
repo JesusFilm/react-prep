@@ -38,7 +38,7 @@ export function Form({ setTimers }: FormProps): ReactElement {
           <TextField
             sx={{ mb: 2 }}
             id="Max Time"
-            label="Max time"
+            label="Max T ime"
             variant="outlined"
             value={count}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
