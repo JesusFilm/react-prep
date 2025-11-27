@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { Container, Stack, Typography, Button } from '@mui/material'
+import { Stack, Typography, Button } from '@mui/material'
 import { TimerModel } from '@/libs/data'
 interface TimerProps {
   timer: TimerModel
@@ -14,27 +14,21 @@ export function Timer({ timer, deleteTimer }: TimerProps): ReactElement {
   // then aBunchOfLabels is the new array that timers.map spits out
 
   return (
-    <div>
-      <Container
-        sx={{
-          border: 2,
-          margin: 1,
-          borderRadius: 2,
-          width: 250,
-          height: 200,
-          boxShadow: 10,
-        }}
-      >
-        <Stack py={10}>
-          <Typography variant="h6" sx={{ margin: -1 }}>
-            {timer.label}
-          </Typography>
-          <Typography sx={{ margin: 1 }}>{timer.remainingSeconds} s</Typography>
-          <Button onClick={() => deleteTimer(timerId)} variant="contained">
-            Delete Timer
-          </Button>
-        </Stack>
-      </Container>
-    </div>
+    <Stack
+      sx={{
+        border: 2,
+        borderRadius: 2,
+        boxShadow: 10,
+        p: 10,
+      }}
+    >
+      <Stack sx={{ direction: 'column', justifyContent: 'center' }}>
+        <Typography variant="h6">{timer.label}</Typography>
+        <Typography sx={{ margin: 1 }}>{timer.remainingSeconds} s</Typography>
+        <Button onClick={() => deleteTimer(timerId)} variant="contained">
+          Delete Timer
+        </Button>
+      </Stack>
+    </Stack>
   )
 }

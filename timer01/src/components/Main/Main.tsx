@@ -3,7 +3,7 @@ import { ReactElement, useEffect, useState } from 'react'
 import { Title } from '@/components/Title'
 import { Form } from '@/components/Form'
 import { timers as defaultTimers } from '@/libs/data'
-import { Container, Grid } from '@mui/material'
+import { Container, Grid, Stack } from '@mui/material'
 import { TimerList } from '../TimerList/TimerList'
 
 export function Main(): ReactElement {
@@ -45,14 +45,27 @@ export function Main(): ReactElement {
   }, [])
 
   return (
-    <div>
-      <Container>
-        <Grid container spacing={2}>
+    <Container sx={{ height: '100vh', width: '100%' }}>
+      <Stack
+        direction={'row'}
+        sx={{
+          display: 'flex',
+          height: '100%',
+        }}
+      >
+        <Stack
+          sx={{
+            display: 'flex',
+            p: 12,
+            // justifyContent: 'space-evenly',
+            alignItems: 'flex-start',
+          }}
+        >
           <Title label="Timers" />
           <Form setTimers={setTimers} />
-          <TimerList timers={timers} setTimers={setTimers} />
-        </Grid>
-      </Container>
-    </div>
+        </Stack>
+        <TimerList timers={timers} setTimers={setTimers} />
+      </Stack>
+    </Container>
   )
 }

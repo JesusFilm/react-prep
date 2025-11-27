@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 import { TimerModel } from '@/libs/data'
 import { Timer } from '@/components/Timer'
 import { Dispatch, SetStateAction } from 'react'
+import { Grid, Stack } from '@mui/material'
 
 interface TimerProps {
   timers: TimerModel[]
@@ -16,10 +17,10 @@ export function TimerList({ timers, setTimers }: TimerProps): ReactElement {
   }
 
   return (
-    <div>
+    <Stack sx={{ flexDirection: 'column', gap: 2, flexWrap: 'wrap' }}>
       {timers.map((timer, key) => (
         <Timer key={key} timer={timer} deleteTimer={deleteTimer} />
       ))}
-    </div>
+    </Stack>
   )
 }
