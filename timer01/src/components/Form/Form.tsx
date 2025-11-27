@@ -36,8 +36,8 @@ export function Form({ setTimers }: FormProps): ReactElement {
       <Container
         sx={{
           gap: 2,
-          ml: -39,
-          mt: 20,
+          // ml: -39,
+          // mt: 20,
           width: 300,
           border: 4,
           borderRadius: 2,
