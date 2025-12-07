@@ -8,8 +8,6 @@ import { Task } from '../../libs/data'
 export function Main() {
   const [tasks, setTasks] = useState<Task[]>([]) // list of tasks
 
-  console.log('tasks', tasks)
-
   function addTask(newTask: Task): void {
     setTasks([...tasks, newTask])
   }
@@ -39,6 +37,16 @@ export function Main() {
     setTasks(updated)
   }
 
+  function taskMove(id: string, notes: string) {
+    const updated = tasks.map((task) => {
+      if (task.id == id) {
+        return { ...task, notes: notes }
+      }
+      return task
+    })
+    setTasks(updated)
+  }
+
   return (
     <>
       <Form addTask={addTask} tasks={tasks} />
@@ -49,6 +57,7 @@ export function Main() {
           handleComplete={handleComplete}
           selectDay={selectDay}
           deleteTask={deleteTask}
+          taskMove={taskMove}
         />
       ))}
     </>
