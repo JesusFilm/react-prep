@@ -25,6 +25,9 @@ export function Main(): ReactElement {
         isRunning: true,
       },
     ])
+
+    setName('')
+    setTime(5)
   }
 
   function handleNameChange(newName: string) {
@@ -68,7 +71,7 @@ export function Main(): ReactElement {
     return () => {
       clearTimeout(timeoutId)
     }
-  }, [timers])
+  }, [])
 
   return (
     <>
