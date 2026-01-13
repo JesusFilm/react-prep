@@ -4,6 +4,7 @@
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.5",
     "@mui/styled-engine-sc": "^7.3.5",
+    "@types/uuid": "^10.0.0",
     "styled-components": "^6.1.19",
     "uuid": "^13.0.0"
   }

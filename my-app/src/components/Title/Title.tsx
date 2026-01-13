@@ -1,6 +1,10 @@
 import { ReactElement } from 'react'
 import { Typography } from '@mui/material'
 
-export function Title(label: string = 'Jay Chen'): ReactElement {
-  return <Typography>{label}</Typography>
+interface TitleProps {
+  label?: string
+}
+
+export function Title({ label = 'Some label' }: TitleProps): ReactElement {
+  return <Typography fontSize={32}>{label}</Typography>
 }

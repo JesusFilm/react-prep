@@ -19,5 +19,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.semi": false,
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "cSpell.words": ["uuidv"]
 }
