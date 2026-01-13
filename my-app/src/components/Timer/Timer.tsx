@@ -1,7 +1,6 @@
 'use client'
 import { TimerModel } from '@/libs/data'
 import { ReactElement } from 'react'
-import React, { useState } from 'react'
 
 interface TimerProps {
   model: TimerModel
