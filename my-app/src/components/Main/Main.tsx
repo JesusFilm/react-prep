@@ -8,8 +8,6 @@ import { Timer } from '../Timer'
 import { v4 as uuidv4 } from 'uuid'
 
 export function Main(): ReactElement {
-  // Adding new timers
-
   const [name, setName] = useState('')
   const [time, setTime] = useState(5)
   const [timers, setTimers] = useState<TimerModel[]>([])
@@ -18,7 +16,7 @@ export function Main(): ReactElement {
     setTimers((prevTimers) => [
       ...prevTimers,
       {
-        id: '123',
+        id: uuidv4(),
         label: name,
         durationSeconds: time,
         remainingSeconds: time,
@@ -37,8 +35,6 @@ export function Main(): ReactElement {
   function handleTimeChange(newTime: number) {
     setTime(newTime)
   }
-
-  // Counting down timers
 
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout>
@@ -73,11 +69,20 @@ export function Main(): ReactElement {
     }
   }, [])
 
+  function removeTimer(id: string) {
+    const updatedTimers = timers.filter((timer) => timer.id !== id)
+    setTimers(updatedTimers)
+  }
+
   return (
     <>
       <Title />
       {timers.map((timer) => (
-        <Timer key={uuidv4()} model={timer} />
+        <Timer
+          key={timer.id}
+          model={timer}
+          removeTimer={() => removeTimer(timer.id)}
+        />
       ))}
       <Form
         addTimer={addTimer}
