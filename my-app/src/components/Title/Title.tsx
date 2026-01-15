@@ -5,6 +5,6 @@ interface TitleProps {
   label?: string
 }
 
-export function Title({ label = 'Some label' }: TitleProps): ReactElement {
+export function Title({ label = 'Timers' }: TitleProps): ReactElement {
   return <Typography fontSize={32}>{label}</Typography>
 }

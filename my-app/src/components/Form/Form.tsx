@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { TextField, Button } from '@mui/material'
+import { TextField, Button, Box } from '@mui/material'
 
 interface FormProps {
   addTimer: (name: string, time: number) => void
@@ -33,7 +33,9 @@ export function Form({
         onChange={(e) => handleTimeChange(Number(e.target.value))}
       />
 
-      <Button onClick={() => addTimer(name, time)}>Press me!</Button>
+      <Button onClick={() => addTimer(name, time)} sx={{ padding: 2 }}>
+        Press me!
+      </Button>
     </>
   )
 }

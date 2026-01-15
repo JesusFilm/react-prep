@@ -1,11 +1,11 @@
 'use client'
-
 import { ReactElement, useState, useEffect } from 'react'
 import { Title } from '../Title'
 import { Form } from '../Form'
 import { TimerModel } from '@/libs/data'
 import { Timer } from '../Timer'
 import { v4 as uuidv4 } from 'uuid'
+import { Box } from '@mui/material'
 
 export function Main(): ReactElement {
   const [name, setName] = useState('')
@@ -14,7 +14,6 @@ export function Main(): ReactElement {
 
   function addTimer(name: string, time: number) {
     setTimers((prevTimers) => [
-      ...prevTimers,
       {
         id: uuidv4(),
         label: name,
@@ -22,6 +21,7 @@ export function Main(): ReactElement {
         remainingSeconds: time,
         isRunning: true,
       },
+      ...prevTimers,
     ])
 
     setName('')
@@ -75,8 +75,26 @@ export function Main(): ReactElement {
   }
 
   return (
-    <>
-      <Title />
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        p: 4,
+      }}
+    >
+      <Box sx={{ paddingBottom: 5 }}>
+        <Title />
+      </Box>
+      <Box sx={{ paddingBottom: 5 }}>
+        <Form
+          addTimer={addTimer}
+          handleNameChange={handleNameChange}
+          handleTimeChange={handleTimeChange}
+          name={name}
+          time={time}
+        />
+      </Box>
       {timers.map((timer) => (
         <Timer
           key={timer.id}
@@ -84,13 +102,6 @@ export function Main(): ReactElement {
           removeTimer={() => removeTimer(timer.id)}
         />
       ))}
-      <Form
-        addTimer={addTimer}
-        handleNameChange={handleNameChange}
-        handleTimeChange={handleTimeChange}
-        name={name}
-        time={time}
-      />
-    </>
+    </Box>
   )
 }
