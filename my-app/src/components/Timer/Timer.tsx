@@ -1,6 +1,7 @@
 import { TimerModel } from '@/libs/data'
-import { ReactElement } from 'react'
-import { Button, Box } from '@mui/material'
+import { ReactElement, useState, useEffect } from 'react'
+import { Button, Box, CircularProgress } from '@mui/material'
+import axios from 'axios'
 
 interface TimerProps {
   model: TimerModel
@@ -8,6 +9,30 @@ interface TimerProps {
 }
 
 export function Timer({ model, removeTimer }: TimerProps): ReactElement {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const [url, setUrl] = useState()
+
+  console.log(url)
+
+  useEffect(() => {
+    if (model.isRunning) return
+    setLoading(true)
+    axios
+      .get(
+        'https://cataas.com/cat/cute/says/hi?position=center&font=Impact&fontSize=50&fontColor=%23fff&fontBackground=none'
+      )
+      .then((response) => {
+        console.log('response.data', response.data.url)
+        setUrl(response.data.url)
+        setLoading(false)
+      })
+      .catch((err) => {
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [!model.isRunning])
+
   return (
     <Box
       sx={{
@@ -28,7 +53,7 @@ export function Timer({ model, removeTimer }: TimerProps): ReactElement {
         }}
       >
         <Box sx={{}}>{model.label}</Box>
-        <Box sx={{}}>{model.isRunning.toString()}</Box>
+        <Box sx={{}}>{model.isRunning}</Box>
       </Box>
 
       <Box
@@ -41,7 +66,8 @@ export function Timer({ model, removeTimer }: TimerProps): ReactElement {
           paddingBottom: 1.5,
         }}
       >
-        {model.remainingSeconds}
+        {loading ? <CircularProgress /> : url && <img src={url} alt="" />}
+        {!url && model.remainingSeconds}
       </Box>
 
       <Box sx={{ display: 'flex-inline', marginTop: 1 }}>

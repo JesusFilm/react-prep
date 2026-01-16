@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { TextField, Button, Box } from '@mui/material'
+import { TextField, Button } from '@mui/material'
 
 interface FormProps {
   addTimer: (name: string, time: number) => void

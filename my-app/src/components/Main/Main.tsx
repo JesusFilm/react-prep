@@ -12,6 +12,8 @@ export function Main(): ReactElement {
   const [time, setTime] = useState(5)
   const [timers, setTimers] = useState<TimerModel[]>([])
 
+  const [catShown, setCatShown] = useState(false)
+
   function addTimer(name: string, time: number) {
     setTimers((prevTimers) => [
       {
@@ -36,6 +38,11 @@ export function Main(): ReactElement {
     setTime(newTime)
   }
 
+  function removeTimer(id: string) {
+    const updatedTimers = timers.filter((timer) => timer.id !== id)
+    setTimers(updatedTimers)
+  }
+
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout>
 
@@ -43,6 +50,7 @@ export function Main(): ReactElement {
       setTimers((prevTimers) =>
         prevTimers.map((timer) => {
           if (!timer.isRunning) {
+            setCatShown(true)
             return timer
           }
 
@@ -69,39 +77,36 @@ export function Main(): ReactElement {
     }
   }, [])
 
-  function removeTimer(id: string) {
-    const updatedTimers = timers.filter((timer) => timer.id !== id)
-    setTimers(updatedTimers)
-  }
-
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        p: 4,
-      }}
-    >
-      <Box sx={{ paddingBottom: 5 }}>
-        <Title />
+    <>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          p: 4,
+        }}
+      >
+        <Box sx={{ paddingBottom: 5 }}>
+          <Title />
+        </Box>
+        <Box sx={{ paddingBottom: 5 }}>
+          <Form
+            addTimer={addTimer}
+            handleNameChange={handleNameChange}
+            handleTimeChange={handleTimeChange}
+            name={name}
+            time={time}
+          />
+        </Box>
+        {timers.map((timer) => (
+          <Timer
+            key={timer.id}
+            model={timer}
+            removeTimer={() => removeTimer(timer.id)}
+          />
+        ))}
       </Box>
-      <Box sx={{ paddingBottom: 5 }}>
-        <Form
-          addTimer={addTimer}
-          handleNameChange={handleNameChange}
-          handleTimeChange={handleTimeChange}
-          name={name}
-          time={time}
-        />
-      </Box>
-      {timers.map((timer) => (
-        <Timer
-          key={timer.id}
-          model={timer}
-          removeTimer={() => removeTimer(timer.id)}
-        />
-      ))}
-    </Box>
+    </>
   )
 }
